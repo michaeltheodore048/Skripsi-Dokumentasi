@@ -150,19 +150,19 @@ Cara kerja:
 	\item jika di akhir proses didapatkan status akhir, maka string masukan diterima dan bila tidak, maka string masukan ditolak.
 \end{itemize}
 
-\section{Steganografi Teks}
-\label{sec:steganografi_teks}
+\section{Steganografi}
+\label{sec:steganografi}
 
-Kriptografi\cite{Dpcrypto:2009} tradisional berhasil mengamankan pesan secara matematis. Aman secara matematis berarti pesan yang ada bisa saja dibuka, tetapi membutuhkan waktu yang sangat lama. Ketika pesan berhasil dibuka, informasinya sudah tidak lagi bermanfaat. Steganografi menyembunyikan informasi sehingga tidak dapat ditemukan. Kedua hal tersebut memiliki tujuan yang sama, namun melewati proses yang berbeda. Pada steganografi proses penyembunyian dan pembangkitan kembali informasi yang disembunyikan dikenal dengan \textit{embedding} dan \textit{extracting information}. Sementara untuk informasi rahasia yang akan disisipkan dikenal dengan istilah \textit{message} dan hasil dari proses \textit{embedding} disebut dengan \textit{stego-object}.
+Kriptografi\cite{Dpcrypto:2009} tradisional berhasil mengamankan pesan secara matematis. Aman secara matematis berarti pesan yang ada bisa saja dibuka, tetapi membutuhkan waktu yang sangat lama. Ketika pesan berhasil dibuka, informasinya sudah tidak lagi bermanfaat. Steganografi menyembunyikan informasi sehingga tidak dapat ditemukan. Kedua hal tersebut memiliki tujuan yang sama, namun melewati proses yang berbeda. Pada steganografi proses penyembunyian dan ekstraksi kembali informasi yang disembunyikan dikenal dengan istilah \textit{embedding} dan \textit{extracting information}.  Sementara untuk informasi rahasia yang akan disembunyikan dikenal dengan istilah \textit{secret}. Proses \textit{embedding} memerlukan \textit{secret} dan \textit{stego-cover} sebagai media penyembunyiannya. Hasil dari proses \textit{embedding} disebut dengan \textit{stego-object}.
 
-Untuk menyembunyikan informasi tentunya dibutuhkan suatu algoritma. Sebagian algoritma menyembunyikan informasi dengan menggunakan kunci untuk mengatur bagaimana penyisipan informasi. Sebagian lagi menyembunyikan informasi tidak menggunakan kunci, sehingga proses pembangkitannya pun tidak memerlukan kunci. Hal ini mirip dengan kriptografi, walaupun dilakukan dengan cara menyembunyikan informasi ke media penyembunyian atau yang lebih dikenal dengan \textit{stego-cover}.
+Untuk menyembunyikan informasi tentunya dibutuhkan suatu algoritma. Sebagian algoritma menyembunyikan informasi dengan menggunakan kunci untuk mengatur bagaimana penyisipan informasi. Sebagian lagi menyembunyikan informasi tidak menggunakan kunci, sehingga proses ekstraksinya pun tidak memerlukan kunci. Hal ini mirip dengan kriptografi, walaupun dilakukan dengan cara menyembunyikan informasi.
 
 Steganografi teks menggunakan teks sebagai media untuk penyisipan (\textit{embded}) informasi.  Steganografi teks merupakan jenis yang paling jarang digunakan. Hal ini disebabkan sulitnya menyembunyikan teks dalam jumlah besar pada teks lain sebagai medianya. Walaupun demikian, teks sebagai media memiliki kapasitas lebih besar daripada suara, gambar, atau video sebagai medianya karena memiliki ukuran yang lebih kecil dan dapat menampung lebih banyak informasi. Steganografi teks dibedakan menjadi dua kategori, yaitu steganografi dengan memanfaatkan ilmu bahasa (\textit{linguistic steganography}) dan steganografi yang memanfaatkan bentuk visual dari huruf (\textit{format based steganography}).
 
 \subsection{Format Based Steganography\cite{fbs:2009}}
 \label{sec:fb_stegano}
 
-Metode ini menggunakan format fisik dari teks seperti spasi, tinggi huruf, dan format fisik lainnya yang dapat dimanfaatkan untuk menyisipkan informasi. Metode ini secara umum mengubah teks yang ada untuk disisipkan pesan rahasia. Spasi atau karakter yang tidak ditampilkan, kesalahan penulisan yang disengaja disisipkan pada teks, mengubah ukuran tulisan merupakan contoh dari \textit{format-based steganography}. Beberapa cara di atas seperti kesalahan penulisan dapat mengecoh pembaca yang menganggapnya wajar, namun jika memiliki dokumen asli, dapat dilakukan perbandingan antara dokumen yang asli dan dokumen hasil steganografi (\textit{stego-object}), sehingga bagian-bagian yang diganti dapat terlihat.
+Metode ini menggunakan format fisik dari teks seperti spasi, tinggi huruf, dan format fisik lainnya yang dapat dimanfaatkan untuk menyisipkan informasi. Metode ini secara umum mengubah teks yang ada untuk disembunyikan pesan rahasia. Spasi atau karakter yang tidak ditampilkan, kesalahan penulisan yang disengaja disembunyikan pada teks, mengubah ukuran tulisan merupakan contoh dari \textit{format-based steganography}. Beberapa cara di atas seperti kesalahan penulisan dapat mengecoh pembaca yang menganggapnya wajar, namun jika memiliki dokumen asli, dapat dilakukan perbandingan antara dokumen yang asli dan dokumen hasil steganografi (\textit{stego-object}), sehingga bagian-bagian yang diganti dapat terlihat.
 
 \subsubsection{The Word-Shift Coding}
 
@@ -175,7 +175,7 @@ Mirip dengan \textit{line-shift coding}, teknik ini menggeser kata secara horizo
 	\label{fig:1-S0}
 \end{figure}
 
-lalu setelah disisipkan suatu pesan dengan menggunakan \textit{line-shift coding}, muncul kalimat S1.
+lalu setelah disembunyikan suatu pesan dengan menggunakan \textit{line-shift coding}, muncul kalimat S1.
 
 \begin{figure}[H]
 	\centering

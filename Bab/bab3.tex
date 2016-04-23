@@ -1,12 +1,18 @@
 \chapter{Analisis}
-Pada bab ini penulis akan membahas analisis masalah yang mungkin ada pada algoritma. Masalah yang mungkin akan dihadapi adalah beberapa kata yang ada pada \textit{stego cover} memiliki sinonim dengan banyak suku kata yang sama dengan kata aslinya(yang ada pada \textit{stego cover}). Selain itu juga \textit{stego cover} dapat berisi nama orang, sehingga tidak memiliki sinonim.
+Pada bab ini akan dibahas mengenai algoritma yang dipilih untuk menyembunyikan \textit{secret message}. \textit{Stego-cover} yang akan digunakan berupa \textit{text file} yang tentu terdiri dari banyak kata. Algoritma yang dipilih akan memanfaatkan banyaknya suku kata dalam suatu kata. Notasi $\sum$ akan digunakan untuk merepresentasikan banyaknya suku kata dalam suatu kata. Diketahui bahwa $\sum$ dapat bernilai ganjil atau genap. Dua kemungkinan tersebut identik dengan bilangan biner. Dengan demikian diputuskan bahwa $\sum$ yang bernilai genap akan merepresentasikan 0 dan $\sum$ bernilai ganjil merepresentasikan 1. Dapat ditarik kesimpulan berarti 1 kata dapat diubah menjadi 1 bit bilangan biner. Jika sebuah \textit{stego-cover} memiliki 700 kata, berarti \textit{stego-cover} tersebut memiliki kapasitas sebesar 700 bit.
+
+Setelah menemukan cara mengubah \textit{stego-cover} menjadi bilangan biner, \textit{secret message} juga harus diubah menjadi bilangan biner. Diketahui bahwa setiap karakter yang ditampilkan pada layar komputer, memiliki kode ASCII yang unik. Kode ASCII merupakan representasi numerik dari karakter seperti 'a', '1', atau '@'. Kode ASCII merupakan representasi numerik, berarti kode ASCII dapat diubah lagi menjadi bilangan biner. Sebagai contoh, jika sebuah \textit{secret message} terdiri dari n karakter dan tiap karakter diubah menjadi 7 bit bilangan biner dengan memanfaatkan kode ASCII, maka dibutuhkan minimal 7*n bit \textit{stego-cover} untuk dapat menyembunyikan \textit{secret message} tersebut. 
+
+Setelah \textit{stego-cover} dan \textit{secret message} dapat diubah menjadi deret bilangan biner, \textit{stego-cover} harus dapat diubah lagi sedemikian rupa agar 7*n deret biner pertamanya identik dengan deret biner \textit{secret message}. Sehingga saat proses ekstraksi, deret biner dari \textit{stego-cover} dapat diubah lagi menjadi karakter yang sesuai dengan \textit{secret message}. Karena $\sum$ dalam \textit{stego-cover} dapat bernilai 0 atau 1, ada kemungkinan $\sum$ tidak sesuai dengan angka biner dari \textit{secret message} yang akan disembunyikan. Untuk mengatasi hal ini, kata dengan nilai $\sum$ yang tidak sesuai, akan diganti dengan sinonim yang memiliki $\sum$ yang sesuai.
+
+Tentunya semua kata yang ada pada \textit{stego-cover} harus memiliki sinonim agar setiap kata dapat memiliki $\sum$ yang bernilai 0 atau 1. Tesaurus\footnote{http://kbbi.web.id/tesaurus} merupakan buku referensi berupa daftar kata dengan sinonimnya. Namun karena format tesaurus yang memiliki banyak pengelompokkan kata, seperti kata "bobol" bisa berarti "ambrol"/"hancur", bisa juga berarti "buyar"/"tembus". Lalu dari kata "bobol" bisa jadi "membobol" yang juga bisa berarti "membobok", bisa juga berarti "mencuri". Karena format yang terlalu rumit untuk dapat dibaca secara otomatis oleh program, maka diputuskan untuk membuat \textit{file database} yang lebih ringkas. \textit{File database} ini berisi pasangan kata dengan sinonimnya pada tiap barisnya. Karena \textit{file database} dibuat sendiri, maka daftar kata yang ada di dalamnya, masih terbatas, artinya jika pengguna menambahkan \textit{stego-cover} baru, pengguna juga harus melengkapi sinonim yang belum terdaftar pada \textit{file database}.
 
 \section{Hipotesis}
 
 \subsection{Pemenggalan Kata}
-Untuk proses pemenggalan kata, akan menggunakan skripsi Frisca Sumarlin 2010 yang berjudul Aplikasi Pendongeng. Untuk mengenali suku kata dalam bahasa Indonesia, akan digunakan tiga tahap DFSA. Setiap masukan dari DFSA merupakan hasil DFSA tahap sebelumnya. Seperti yang telah dijelaskan , FSA memiliki prinsip kerja membaca hanya satu arah dan tidak bisa membaca mundur masukannya. Sedangkan untuk mengenali suku kata, untuk beberapa kasus kata dibutuhkan kemampuan untuk membaca mundur masukannya. Sebagai contoh, pada kata "anda", huruf ketiga adalah huruf konsonan sehingga pemenggalan suku kata dapat dilakukan pada saat membaca huruf ketiga. Berbeda dengan kata "anda", pada kata "alis", huruf ketiga adalah huruf vokal, \textit{automaton} harus mundur untuk melakukan pemenggalan suku kata.
+Untuk proses pemenggalan kata, akan menggunakan skripsi Frisca Sumarlin 2010 yang berjudul Aplikasi Pendongeng. Untuk mengenali suku kata dalam bahasa Indonesia, akan digunakan tiga tahap DFSA. Setiap masukan dari DFSA merupakan hasil DFSA tahap sebelumnya. Seperti yang telah dijelaskan , FSA memiliki prinsip kerja membaca hanya satu arah dan tidak bisa membaca mundur masukannya. Sedangkan untuk mengenali suku kata, untuk beberapa kasus kata dibutuhkan kemampuan untuk membaca mundur masukannya. Sebagai contoh, pada kata "anda", huruf ketiga adalah huruf konsonan sehingga pemenggalan suku kata dapat dilakukan pada saat membaca huruf ketiga.
 
-Pada tahap 1 ini memang belum sesuai dengan aturan penyukuan kata yang benar, karena itu akan dilakukan tiga tahapan. Untuk diagramnya dapat dilihat pada gambar \ref{fig:1-DFSA-1}.
+Pada tahap 1 ini memang beberapa kata belum sesuai dengan aturan penyukuan kata yang benar, karena itu akan dilakukan tiga tahapan. Untuk diagramnya dapat dilihat pada Gambar \ref{fig:1-DFSA-1}.
 
 \begin{figure}[H]
 	\centering
@@ -15,40 +21,40 @@ Pada tahap 1 ini memang belum sesuai dengan aturan penyukuan kata yang benar, ka
 	\label{fig:1-DFSA-1}
 \end{figure}
 
-Penjelasan tentang \ref{fig:1-DFSA-1}Diagram Transisi DFSA tahap 1 untuk mengenali spasi, vokal(V), konsonan yang terdiri dari 1 huruf (K), konsonan yang terdiri dari 2 huruf (KK), dan konsonan-vokal (KV) adalah sebagai berikut.
+Penjelasan tentang Diagram Transisi DFSA tahap 1 untuk mengenali spasi, vokal (V), konsonan yang terdiri dari 1 huruf (K), konsonan yang terdiri dari 2 huruf (KK), dan konsonan-vokal (KV) adalah sebagai berikut.
 
 \begin{itemize}
-	\item Perpindahan dari status awal (\textit{q0}) ke \textit{q1} adalah untuk mengenali spasi atau \textit{string} kosong.
-	\item Perpindahan dari \textit{q0} ke \textit{q2} adalah untuk mengenali huruf vokal.
-	\item Perpindahan dari \textit{q0} ke \textit{q3} adalah untuk mengenali huruf 'N'.
-	\item Perpindahan dari \textit{q0} ke \textit{q4} adalah untuk mengenali huruf 'K'.
-	\item Perpindahan dari \textit{q0} ke \textit{q5} adalah untuk mengenali huruf 'S'.
-	\item Perpindahan dari \textit{q0} ke \textit{q7} adalah untuk mengenali huruf konsonan selain 'N', 'K', dan 'S'.
-	\item Perpindahan dari \textit{q3} ke \textit{q8} adalah untuk mengenali pola suku kata VK.
-	\item Perpindahan dari \textit{q3} ke \textit{q6} adalah untuk mengenali pola suku kata KK (ng dan ny).
-	\item Perpindahan dari \textit{q3} ke \textit{q8} adalah untuk mengenali pola suku kata KV.
-	\item Perpindahan dari \textit{q4} ke \textit{q6} adalah untuk mengenali pola suku kata KK (kh).
-	\item Perpindahan dari \textit{q4} ke \textit{q8} adalah untuk mengenali pola suku kata KV.
-	\item Perpindahan dari \textit{q5} ke \textit{q6} adalah untuk mengenali pola suku kata KK (sy).
-	\item Perpindahan dari \textit{q5} ke \textit{q8} adalah untuk mengenali pola suku kata KV.
-	\item Perpindahan dari \textit{q7} ke \textit{q8} adalah untuk mengenali pola suku kata KV.
+	\item Perpindahan dari status awal (\textit{$q_0$}) ke \textit{$q_1$} adalah untuk mengenali spasi atau \textit{string} kosong.
+	\item Perpindahan dari \textit{$q_0$} ke \textit{$q_2$} adalah untuk mengenali huruf vokal.
+	\item Perpindahan dari \textit{$q_0$} ke \textit{$q_3$} adalah untuk mengenali huruf 'N'.
+	\item Perpindahan dari \textit{$q_0$} ke \textit{$q_4$} adalah untuk mengenali huruf 'K'.
+	\item Perpindahan dari \textit{$q_0$} ke \textit{$q_5$} adalah untuk mengenali huruf 'S'.
+	\item Perpindahan dari \textit{$q_0$} ke \textit{$q_7$} adalah untuk mengenali huruf konsonan selain 'N', 'K', dan 'S'.
+	\item Perpindahan dari \textit{$q_3$} ke \textit{$q_8$} adalah untuk mengenali pola suku kata VK.
+	\item Perpindahan dari \textit{$q_3$} ke \textit{$q_6$} adalah untuk mengenali pola suku kata KK (ng dan ny).
+	\item Perpindahan dari \textit{$q_3$} ke \textit{$q_8$} adalah untuk mengenali pola suku kata KV.
+	\item Perpindahan dari \textit{$q_4$} ke \textit{$q_6$} adalah untuk mengenali pola suku kata KK (kh).
+	\item Perpindahan dari \textit{$q_4$} ke \textit{$q_8$} adalah untuk mengenali pola suku kata KV.
+	\item Perpindahan dari \textit{$q_5$} ke \textit{$q_6$} adalah untuk mengenali pola suku kata KK (sy).
+	\item Perpindahan dari \textit{$q_5$} ke \textit{$q_8$} adalah untuk mengenali pola suku kata KV.
+	\item Perpindahan dari \textit{$q_7$} ke \textit{$q_8$} adalah untuk mengenali pola suku kata KV.
 \end{itemize}
 
-Sebagai contoh, jika melakukan pemenggalan kata hanya dengan menggunakan \ref{fig:1-DFSA-1}DFSA tahap 1 saja, kata "gondok" tidak dapat dipotong secara sempurna. Berikut langkah-langkahnya.
+Sebagai contoh, jika melakukan pemenggalan kata hanya dengan menggunakan DFSA tahap 1 saja, kata "gondok" tidak dapat dipotong secara sempurna. Berikut langkah-langkahnya.
 
 \begin{itemize}
-	\item Pada status awal (\textit{q0}) huruf ke-1 'g' akan diperiksa.
-	\item Pindah ke \textit{q7} karena huruf 'g' merupakan huruf konsonan selain huruf 'N', 'K', dan 'S'.
-	\item Huruf ke-2 'o' diperiksa dan pindah ke \textit{q8} karena huruf 'o' merupakan huruf vokal. Suku kata ke-1 "go" disimpan, lanjut ke huruf selanjutnya dan mulai lagi dari \textit{q0}.
-	\item Huruf ke-3 'n' diperiksa dan pindah ke \textit{q3} karena huruf ke-3 adalah huruf 'n'.
-	\item Huruf ke-4 'd' diperiksa dan tidak memenuhi syarat untuk ke \textit{q8} ataupun \textit{q6}. Suku kata ke-2 "n" disimpan. Huruf ke-4 'd' kembali ke \textit{q0}.
-	\item Pindah ke \textit{q7} karena huruf 'd' merupakan huruf konsonan selain huruf 'N', 'K', dan 'S'.
-	\item Huruf ke-5 'o' diperiksa dan pindah ke \textit{q8} karena '0' merupakan huruf vokal. Suku kata ke-3 "do" disimpan, lanjut ke huruf selanjutnya dan mulai lagi dari \textit{q0}.
-	\item Huruf ke-6 'k' diperiksa dan pindah ke \textit{q4} karena huruf ke-6 adalah huruf 'K'. Suku kata ke-4 "k" disimpan. Tahap 1 selesai karena semua huruf telah melewati diagram transisi DFSA tahap 1.
+	\item Pada status awal (\textit{$q_0$}) huruf ke-1 'g' akan diperiksa.
+	\item Pindah ke \textit{$q_7$} karena huruf 'g' merupakan huruf konsonan selain huruf 'N', 'K', dan 'S'.
+	\item Huruf ke-2 'o' diperiksa dan pindah ke \textit{$q_8$} karena huruf 'o' merupakan huruf vokal. Suku kata ke-1 "go" disimpan, lanjut ke huruf selanjutnya dan mulai lagi dari \textit{$q_0$}.
+	\item Huruf ke-3 'n' diperiksa dan pindah ke \textit{$q_3$} karena huruf ke-3 adalah huruf 'n'.
+	\item Huruf ke-4 'd' diperiksa dan tidak memenuhi syarat untuk ke \textit{$q_8$} ataupun \textit{$q_6$}. Suku kata ke-2 "n" disimpan. Huruf ke-4 'd' kembali ke \textit{$q_0$}.
+	\item Pindah ke \textit{$q_7$} karena huruf 'd' merupakan huruf konsonan selain huruf 'N', 'K', dan 'S'.
+	\item Huruf ke-5 'o' diperiksa dan pindah ke \textit{$q_8$} karena '0' merupakan huruf vokal. Suku kata ke-3 "do" disimpan, lanjut ke huruf selanjutnya dan mulai lagi dari \textit{$q_0$}.
+	\item Huruf ke-6 'k' diperiksa dan pindah ke \textit{$q_4$} karena huruf ke-6 adalah huruf 'K'. Suku kata ke-4 "k" disimpan. Tahap 1 selesai karena semua huruf telah melewati diagram transisi DFSA tahap 1.
 	\item Didapatkan hasil pemenggalan suku kata "gondok" menjadi "go-n-do-k".
 \end{itemize}
 
-Dapat dilihat bahwa jika hanya menggunakan \ref{fig:1-DFSA-1}DFSA tahap 1, hasilnya masih belum sempurna. Pada tahan 1 hanya dikenali pola suku kata V, K, KV, dan KK. Selanjutnya, setelah melewati tahapan 1 DFSA, \textit{output}nya akan menjadi masukan untuk DFSA tahap 2. Pada tahap 2 ini harus dikenali V, KV, dan pengembangan dari ketiga pola yang dikenali pada tahap pertama. Pada tahap ini, pengembangan yang bisa dilakukan adalah V+K, K+KV, K+KV+K, K+K+KV, K+K+KV+K, K+KV+K, dan KV+K. Untuk digram transisi tahap kedua dapat dilihat pada gambar \ref{fig:2-DFSA-2}.
+Dapat dilihat bahwa jika hanya menggunakan DFSA tahap 1, hasilnya masih belum sempurna. Pada tahap 1 hanya dikenali pola suku kata V, K, KV, dan KK. Selanjutnya, setelah melewati tahapan 1 DFSA, \textit{output}nya akan menjadi masukan untuk DFSA tahap 2. Pada tahap 2 ini harus dikenali V, KV, dan pengembangan dari ketiga pola yang dikenali pada tahap pertama. Pada tahap ini, pengembangan yang bisa dilakukan adalah V+K, K+KV, K+KV+K, K+K+KV, K+K+KV+K, K+KV+K, dan KV+K. Untuk digram transisi tahap kedua dapat dilihat pada Gambar \ref{fig:2-DFSA-2}.
 
 \begin{figure}[H]
 	\centering
@@ -57,18 +63,18 @@ Dapat dilihat bahwa jika hanya menggunakan \ref{fig:1-DFSA-1}DFSA tahap 1, hasil
 	\label{fig:2-DFSA-2}}
 \end{figure}
 
-Penjelasan tentang \ref{fig:1-DFSA-2}Diagram Transisi DFSA tahap 2 untuk mengenali pola suku kata V, VK, K, KKV, KKKV, KKVK, KKKVK, KV, dan KVK adalah sebagai berikut.
+Penjelasan tentang Diagram Transisi DFSA tahap 2 untuk mengenali pola suku kata V, VK, K, KKV, KKKV, KKVK, KKKVK, KV, dan KVK adalah sebagai berikut.
 
 \begin{itemize}
-	\item Perpindahan dari status awal (\textit{q0}) ke \textit{q1} adalah untuk mengenali spasi atau \textit{string} kosong.
-	\item Perpindahan dari \textit{q0} ke \textit{q2} adalah untuk mengenali pola suku kata V.
-	\item Perpindahan dari \textit{q0} ke \textit{q4} adalah untuk mengenali pola suku kata K.
-	\item Perpindahan dari \textit{q0} ke \textit{q7} adalah untuk mengenali pola suku kata KV.
-	\item Perpindahan dari \textit{q2} ke \textit{q3} adalah untuk mengenali pola suku kata VK.
-	\item Perpindahan dari \textit{q4} ke \textit{q4} adalah untuk mengenali pola suku kata KK.
-	\item Perpindahan dari \textit{q4} ke \textit{q5} adalah untuk mengenali pola suku kata KKV atau KKKV.
-	\item Perpindahan dari \textit{q5} ke \textit{q6} adalah untuk mengenali pola suku kata KKVK atau KKKVK.
-	\item Perpindahan dari \textit{q7} ke \textit{q8} adalah untuk mengenali pola suku kata KVK.
+	\item Perpindahan dari status awal (\textit{$q_0$}) ke \textit{$q_1$} adalah untuk mengenali spasi atau \textit{string} kosong.
+	\item Perpindahan dari \textit{$q_0$} ke \textit{$q_2$} adalah untuk mengenali pola suku kata V.
+	\item Perpindahan dari \textit{$q_0$} ke \textit{$q_4$} adalah untuk mengenali pola suku kata K.
+	\item Perpindahan dari \textit{$q_0$} ke \textit{$q_7$} adalah untuk mengenali pola suku kata KV.
+	\item Perpindahan dari \textit{$q_2$} ke \textit{$q_3$} adalah untuk mengenali pola suku kata VK.
+	\item Perpindahan dari \textit{$q_4$} ke \textit{$q_4$} adalah untuk mengenali pola suku kata KK.
+	\item Perpindahan dari \textit{$q_4$} ke \textit{$q_5$} adalah untuk mengenali pola suku kata KKV atau KKKV.
+	\item Perpindahan dari \textit{$q_5$} ke \textit{$q_6$} adalah untuk mengenali pola suku kata KKVK atau KKKVK.
+	\item Perpindahan dari \textit{$q_7$} ke \textit{$q_8$} adalah untuk mengenali pola suku kata KVK.
 \end{itemize}
 
 Pada tahap 2, masih ada tiga pola suku kata yang belum dapat dikenali, yaitu VKK, KVKK, dan KKVKK. Untuk itu masih dibutuhkan satu tahapan lagi untuk dapat mengenali pola-pola tersebut dan mengenali huruf diftong. Pada tahap ini hasil dari DFSA tahap kedua akan menjadi masukan bagi DFSA tahap terakhir yaitu tahap 3.
@@ -80,76 +86,78 @@ Pada tahap 2, masih ada tiga pola suku kata yang belum dapat dikenali, yaitu VKK
 	\label{fig:3-DFSA-3}
 \end{figure}
 
-Penjelasan tentang \ref{fig:1-DFSA-3}Diagram Transisi DFSA tahap 3 untuk mengenali pola suku kata VK, V, VKK, KV, KVK, KVV, KVKK, KKV, KKVK, KKVKK, dan KKVV adalah sebagai berikut.
+Penjelasan tentang Diagram Transisi DFSA tahap 3 untuk mengenali pola suku kata VK, V, VKK, KV, KVK, KVV, KVKK, KKV, KKVK, KKVKK, dan KKVV adalah sebagai berikut.
 
 \begin{itemize}
-	\item Perpindahan dari status awal (\textit{q0}) ke \textit{q1} adalah untuk mengenali spasi atau \textit{string} kosong.
-	\item Perpindahan dari \textit{q0} ke \textit{q2} adalah untuk mengenali pola suku kata VK.
-	\item Perpindahan dari \textit{q0} ke \textit{q4} adalah untuk mengenali pola suku kata KVK.
-	\item Perpindahan dari \textit{q0} ke \textit{q6} adalah untuk mengenali pola suku kata KKVK.
-	\item Perpindahan dari \textit{q0} ke \textit{q8} adalah untuk mengenali pola suku kata V.
-	\item Perpindahan dari \textit{q0} ke \textit{q9} adalah untuk mengenali pola suku kata KV.
-	\item Perpindahan dari \textit{q0} ke \textit{q11} adalah untuk mengenali pola suku kata KKV atau KKKV.
-	\item Perpindahan dari \textit{q2} ke \textit{q3} adalah untuk mengenali pola suku kata VKK.
-	\item Perpindahan dari \textit{q4} ke \textit{q5} adalah untuk mengenali pola suku kata KVKK.
-	\item Perpindahan dari \textit{q6} ke \textit{q7} adalah untuk mengenali pola suku kata KKVKK.
-	\item Perpindahan dari \textit{q9} ke \textit{q10} adalah untuk mengenali pola suku kata KVV.
-	\item Perpindahan dari \textit{q11} ke \textit{q12} adalah untuk mengenali pola suku kata KKVV atau KKKVV.
+	\item Perpindahan dari status awal (\textit{$q_0$}) ke \textit{$q_1$} adalah untuk mengenali spasi atau \textit{string} kosong.
+	\item Perpindahan dari \textit{$q_0$} ke \textit{$q_2$} adalah untuk mengenali pola suku kata VK.
+	\item Perpindahan dari \textit{$q_0$} ke \textit{$q_4$} adalah untuk mengenali pola suku kata KVK.
+	\item Perpindahan dari \textit{$q_0$} ke \textit{$q_6$} adalah untuk mengenali pola suku kata KKVK.
+	\item Perpindahan dari \textit{$q_0$} ke \textit{$q_8$} adalah untuk mengenali pola suku kata V.
+	\item Perpindahan dari \textit{$q_0$} ke \textit{$q_9$} adalah untuk mengenali pola suku kata KV.
+	\item Perpindahan dari \textit{$q_0$} ke \textit{$q_{11}$} adalah untuk mengenali pola suku kata KKV atau KKKV.
+	\item Perpindahan dari \textit{$q_2$} ke \textit{$q_3$} adalah untuk mengenali pola suku kata VKK.
+	\item Perpindahan dari \textit{$q_4$} ke \textit{$q_5$} adalah untuk mengenali pola suku kata KVKK.
+	\item Perpindahan dari \textit{$q_6$} ke \textit{$q_7$} adalah untuk mengenali pola suku kata KKVKK.
+	\item Perpindahan dari \textit{$q_9$} ke \textit{$q_{10}$} adalah untuk mengenali pola suku kata KVV.
+	\item Perpindahan dari \textit{$q_{11}$} ke \textit{$q_{12}$} adalah untuk mengenali pola suku kata KKVV atau KKKVV.
 \end{itemize}
 
 Untuk dapat membagi suku kata, diperlukan automata yang dapat menerima masukan berupa kata dan keluaran berupa suku kata. \textit{Finite State Transducer} merupakan \textit{finite state machine} yang memiliki dua pita, yaitu pita masukan dan pita keluaran. Automata yang telah dirancang adalah DFSA, di mana keluaran yang dihasilkan adalah dikenali atau tidak dikenali. Dengan merubah keluaran dari DFSA tersebut menjadi suku kata untuk setiap sekuens karakter yang telah dikenali, maka DFSA yang telah dirancang dapat dimanfaatkan untuk membagi kata menjadi suku kata. Atas dasar itu, DFSA dipilih untuk melakukan penyukuan kata.
 
-Pemenggalan suku kata akan dipakai untuk mendapatkan banyak suku kata kata-kata yang terdapat pada \textit{stego cover}, sehingga dapat dihitung banyak suku kata tiap katanya. Namun karena kumpulan \textit{stego cover} yang akan dipakai dapat berupa cerita pendek(cerpen) atau puisi, maka isi dari \textit{stego cover} tidak hanya berupa kata-kata alfabet saja, tetapi juga ada angka yang bisa berupa tanggal, kata serapan, dan lain-lain. Hal ini kemudian dapat menjadi hambatan, karena seperti yang kita ketahui bahwa angka tidak memiliki suku kata. Hambatan lainnya juga datang dari kata-kata dalam bahasa asing dan singkatan.
+Pemenggalan suku kata akan dipakai untuk mendapatkan banyak suku kata kata-kata yang terdapat pada \textit{stego-cover}, sehingga dapat dihitung banyak suku kata tiap katanya. Namun karena kumpulan \textit{stego-cover} yang akan dipakai dapat berupa cerita pendek(cerpen) atau puisi, maka isi dari \textit{stego-cover} tidak hanya berupa kata-kata alfabet saja, tetapi juga ada angka yang bisa berupa tanggal, kata serapan, dan lain-lain. Hal ini kemudian dapat menjadi hambatan, karena seperti yang kita ketahui bahwa angka tidak memiliki suku kata. Hambatan lainnya juga datang dari kata-kata dalam bahasa asing dan singkatan.
 
-Setelah menemui hambatan-hambatan di atas, akhirnya diputuskan beberapa solusi. Pertama-tama, dari keseluruhan isi \textit{stego cover}, tanda baca akan diabaikan(kecuali tanda penghubung '-'), sehingga yang akan dipenggal hanyalah kata-katanya saja. Semua angka akan dianggap sebagai satu suku kata. Semua singkatan atau kata dalam bahasa asing, akan dilakukan pemenggalan kata apa adanya.
+Setelah menemui hambatan-hambatan di atas, akhirnya diputuskan beberapa solusi. Pertama-tama, dari keseluruhan isi \textit{stego-cover}, tanda baca akan diabaikan (kecuali tanda penghubung '-'), sehingga yang akan dipenggal hanyalah kata-katanya saja. Satu digit angka akan dihitung sebagai satu suku kata. Semua singkatan atau kata dalam bahasa asing, akan dilakukan pemenggalan kata apa adanya.
 
-\subsection{\textit{Database} kata}
-Penyisipan akan memanfaatkan pasangan kata yang memiliki suku kata berbeda, namun memiliki arti yang sama atau serupa. \textit{Database} kata akan disimpan dalam sebuah \textit{file} dengan ekstensi .txt. Pada \textit{file} tersebut satu per satu kata yang ada pada \textit{stego cover} memiliki sinonimnya sendiri. Pencarian sinonim pertama-tama akan dicari pada Tesaurus. Tesaurus \footnote{http://kbbi.web.id/tesaurus}merupakan buku referensi berupa daftar kata dengan sinonimnya. Kata-kata yang terdaftar di Tesaurus adalah kata baku, sehingga jika pada \textit{stego cover} terdapat kata yang tidak dapat ditemukan pada Tesaurus, diperlukan penanganan tersendiri.
+\subsection{\textit{Database} sinonim}
+Proses \textit{embedding} akan memanfaatkan daftar sinonim yang ada pada \textit{file database}. \textit{File database} kata akan disimpan dalam sebuah \textit{file} dengan ekstensi .txt. Pada \textit{file database} satu per satu kata yang ada pada \textit{stego-cover} memiliki sinonimnya sendiri. Pencarian sinonim pertama-tama akan dicari di tesaurus. Tesaurus \footnote{http://kbbi.web.id/tesaurus}merupakan buku referensi berupa daftar kata dengan sinonimnya. Kata-kata yang terdaftar di tesaurus adalah kata baku, sehingga jika pada \textit{stego-cover} terdapat kata yang tidak dapat ditemukan pada tesaurus, diperlukan penanganan tersendiri.
 
-Solusinya adalah dengan mengubah-ubah imbuhan pada awal atau akhir kalimat, namun tetap memperhatikan konteks kalimat tersebut. Sebagai contoh, pada \textit{stego cover} terdapat kata 'menggendongnya', namun kata tersebut tidak dapat ditemukan pada Tesaurus, karena terdapat imbuhan. Sehingga untuk sinonimnya dapat digunakan kata 'menggendong'. Kedua kata tersebut memiliki jumlah suku kata yang berbeda, namun memiliki arti yang sama.
+Solusinya adalah dengan mengubah-ubah imbuhan pada awal atau akhir kalimat, namun tetap memperhatikan konteks kalimat tersebut. Sebagai contoh, pada \textit{stego-cover} terdapat kata 'menggendongnya', namun kata tersebut tidak dapat ditemukan pada tesaurus, karena terdapat imbuhan. Sehingga untuk sinonimnya dapat digunakan kata 'menggendong'. Kedua kata tersebut memiliki jumlah suku kata yang berbeda, namun memiliki arti yang sama.
 
-Terdapat beberapa kata yang memang tidak memiliki sinonim dengan jumlah suku kata yang berbeda. Kata 'lama' memiliki 2 suku kata, sedangkan sinonim yang ada pada Tesaurus adalah 'lamban' dan 'lelet'. Kedua sinonimnya memiliki suku kata yang genap, tetapi yang dibutuhkan adalah yang bersuku kata ganjil. Hal ini dapat diatasi dengan menyamarkannya sebagai \textit{typo} atau kesalahan pengetikkan. Contohnya dengan memasukkan kata 'lambaan' atau 'lamaa' sebagai sinonim dari kata 'lama'. Kata 'lambaan' dan 'lamaa', jika dipotong suku katanya dengan menggunakan pemotong suku kata yang telah dibuat, kedua kata tersebut memiliki suku kata ganjil.
+Terdapat beberapa kata yang memang tidak memiliki sinonim dengan jumlah suku kata yang berbeda. Kata 'lama' memiliki 2 suku kata, sedangkan sinonim yang ada pada Tesaurus adalah 'lamban' dan 'lelet'. Kedua sinonimnya memiliki $\sum$ genap, tetapi yang dibutuhkan adalah $\sum$ ganjil. Hal ini dapat diatasi dengan menyamarkannya sebagai \textit{typo} atau kesalahan pengetikkan. Contohnya dengan memasukkan kata 'lambaan' atau 'lamaa' sebagai sinonim dari kata 'lama'. Kata 'lambaan' dan 'lamaa', jika dipotong suku katanya dengan menggunakan pemotong suku kata yang telah dibuat, kedua kata tersebut memiliki $\sum$ ganjil.
 
-\subsection{Stego Cover}
-\textit{Stego cover} yang telah dikumpulkan berupa puisi dan cerpen. Alasan dipilihnya cerpen dan puisi sebagai \textit{stego cover}, karena puisi umumnya menggunakan satu kata berulang-ulang, sehingga dapat mengurangi banyaknya kata yang disimpan pada \textit{file database}. Sedangkan cerpen yang dipilih memiliki jumlah kata yang cukup banyak, ini menandakan kapasitas penyimpanan yang cukup besar.
+\subsection{\textit{Stego-cover}}
+\textit{Stego-cover} yang telah dikumpulkan berupa puisi dan cerpen. Alasan dipilihnya cerpen dan puisi sebagai \textit{stego-cover}, karena puisi umumnya menggunakan satu kata berulang-ulang, sehingga dapat mengurangi banyaknya kata yang disimpan pada \textit{file database}. Sedangkan cerpen yang dipilih memiliki jumlah kata yang cukup banyak, ini menandakan kapasitas penyimpanan yang cukup besar.
 
-Dengan dipilihnya cerpen dan puisi sebagai \textit{stego cover}, maka dibutuhkan skema komunikasi yang dapat menyamarkan artikel tersebut agar tidak menimbulkan kecurigaan oleh pihak lain. Skema komunikasi yang dipilih berupa komunikasi antara dua mahasiswa yang gemar mengirim puisi atau cerpen melalui \textit{email}. \textit{Email} yang dikirim mengandung \textit{stego object} yang merupakan hasil dari penyisipan \textit{secret message} pada \textit{stego cover}. Dengan skema komunikasi seperti ini, jika ada pihak lain yang membaca \textit{email} kedua mahasiswa tersebut, tidak akan mencurigai adanya kejanggalan karena kedua mahasiswa gemar berkirim puisi dan cerpen.
+Dengan dipilihnya cerpen dan puisi sebagai \textit{stego-cover}, maka dibutuhkan skema komunikasi yang dapat menyamarkan artikel tersebut agar tidak menimbulkan kecurigaan oleh pihak lain. Skema komunikasi yang dipilih berupa komunikasi antara dua mahasiswa yang gemar mengirim puisi atau cerpen melalui \textit{email}. \textit{Email} yang dikirim mengandung \textit{stego-object} yang merupakan hasil dari \textit{embedding secret message} pada \textit{stego-cover}. Dengan skema komunikasi seperti ini, jika ada pihak lain yang membaca \textit{email} kedua mahasiswa tersebut, tidak akan mencurigai adanya kejanggalan karena kedua mahasiswa gemar berkirim puisi dan cerpen.
 
-\subsection{Penyisipan}
-Proses steganografi akan memanfaatkan suku kata dan sinonim kata itu sendiri. Ide utamanya adalah dengan mengganti kata-kata tertentu yang ada dalam \textit{stego cover} dengan kata-kata yang telah disediakan pada \textit{file database}. File \textit{database} berisi semua kata yang ada pada \textit{stego cover} berpasangan dengan sinonimnya. Pasangan kata yang ada pada \textit{database} merupakan sinonim dengan banyak suku kata yang berbeda(ganjil dan genap) dengan kata aslinya.
+\subsection{\textit{Embedding}}
+Proses \textit{embedding} akan memanfaatkan suku kata dan sinonim kata itu sendiri. Ide utamanya adalah dengan mengganti kata-kata tertentu yang ada dalam \textit{stego-cover} dengan kata-kata yang telah disediakan pada \textit{file database}, agar 7*n deret bilangan biner pertama pada \textit{stego-cover} identik dengan deret bilangan biner \textit{secret message}.  \textit{File database} berisi semua kata yang ada pada \textit{stego cover} berpasangan dengan sinonimnya. Pasangan kata yang ada pada \textit{database} merupakan sinonim dengan $\sum$ yang berbeda (ganjil dan genap) dengan kata aslinya.
 
-Penggantian kata pada \textit{stego cover} ditentukan dari ASCII \textit{secret message} yang akan disisipkan. ASCII\footnote{http://whatis.techtarget.com/definition/ASCII-American-Standard-Code-for-Information-Interchange} (\textit{American Standard Code for Information Interchange}) merupakan format yang paling umum untuk file teks yang ada di komputer dan internet. Kode ASCII yang akan dipakai direpresentasikan dengan 7-bit angka biner, yang berarti ada 7 digit angka 0 atau 1. Pemilihan 7-bit ini dikarenakan kode ASCII pada bilangan desimal hanya ada dari 0 sampai 127, sehingga jika menggunakan 8-bit, angka pertama(paling kiri) akan selalu bernilai 0. Dapat disimpulkan bahwa untuk menyisipkan 7-bit dibutuhkan 7 kata, 8-bit dibutuhkan 8 kata.  Untuk alasan memaksimalkan kapasitas penyisipan, maka diputuskan untuk merepresentasikan 1 karakter menjadi 7-bit.
+Penggantian kata pada \textit{stego-cover} ditentukan dari ASCII \textit{secret message} yang akan disembunyikan. ASCII\footnote{http://whatis.techtarget.com/definition/ASCII-American-Standard-Code-for-Information-Interchange} (\textit{American Standard Code for Information Interchange}) merupakan format yang paling umum untuk \textit{file} teks yang ada di komputer dan internet. Kode ASCII yang akan dipakai direpresentasikan dengan 7-bit angka biner, yang berarti ada 7 digit angka 0 atau 1. Pemilihan 7-bit ini dikarenakan kode ASCII pada bilangan desimal hanya ada dari 0 sampai 127, sehingga jika menggunakan 8-bit, angka pertama(paling kiri) akan selalu bernilai 0. Dapat disimpulkan bahwa untuk menyisipkan 7-bit dibutuhkan 7 kata, 8-bit dibutuhkan 8 kata.  Untuk alasan memaksimalkan kapasitas penyisipan, maka diputuskan untuk merepresentasikan 1 karakter menjadi 7-bit.
 
-Setelah \textit{secret message} diubah menjadi deretan kode ASCII, satu per satu digit kodenya akan dicocokkan dengan banyaknya suku kata pada \textit{stego cover}. Kode digit pertama akan disisipkan pada kata pertama \textit{stego cover}, digit kedua disisipkan pada kata kedua, dst. Jika banyak suku kata pada \textit{stego cover} tidak sesuai dengan kode, maka kata tersebut akan dicari sinonimnya pada \textit{file database}, jika ditemukan kata dengan banyak suku kata yang sesuai dengan kode, maka kata tersebut akan diganti. Pemberitahuan akan muncul jika kata yang tidak sesuai kode tidak memiliki sinonim pada \textit{file database}.
+Setelah \textit{secret message} diubah menjadi deret bilangan biner dengan memanfaatkan kode ASCII, satu per satu digit kodenya akan dicocokkan dengan $\sum$ pada \textit{stego cover}. Kode digit pertama akan disisipkan pada kata pertama \textit{stego-cover}, digit kedua disisipkan pada kata kedua, dst. Jika $\sum$ pada \textit{stego-cover} tidak sesuai dengan digit kodenya, maka kata tersebut akan diganti dengan sinonimnya yang ada pada \textit{file database}. Pemberitahuan akan muncul jika ada kata yang sinonimnya tidak ditemukan pada \textit{file database}.
 
 \subsubsection{Algoritma}
-Seperti yang telah dijelaskan sebelumnya, algoritma ini akan memanfaatkan kata yang ada pada \textit{stego cover} untuk menyisipkan kode ASCII dari pesan rahasia. Proses penyisipan ini juga memanfaatkan \textit{file database} untuk mengubah kata asli yang ada pada \textit{stego cover} dengan kata sinonim yang ada pada \textit{file database} jika banyak suku kata tidak sesuai dengan kode ASCII pesan rahasia.
+Seperti yang telah dijelaskan sebelumnya, algoritma ini akan memanfaatkan kata yang ada pada \textit{stego-cover} untuk menyisipkan kode ASCII dari pesan rahasia ditambah kode ASCII karakter '\#' (untuk menandakan bahwa pesan rahasia telah berakhir). Proses penyisipan ini juga memanfaatkan \textit{file database} untuk mengubah kata asli yang ada pada \textit{stego-cover} dengan sinonim yang ada pada \textit{file database} jika $\sum$ tidak sesuai dengan kode ASCII pesan rahasia.
 
-Algoritma penyisipan pesan rahasia pada \textit{stego cover} dengan memanfaatkan sinonim
+Algoritma \textit{embedding} pesan rahasia pada \textit{stego-cover} dengan memanfaatkan sinonim
 
 \begin{enumerate}
-	\item Meminta input berupa pesan rahasia(\textit{secret}).
-	\item Tiap karakter pada \textit{secret} diubah menjadi kode ASCII 7-bit dan disimpan menjadi \textit{secret code}.
-	\item Hitung berapa banyak angka yang ada pada \textit{secret code}.
-	\item Cari \textit{stego cover} yang dapat menampung \textit{secret code}.(Banyaknya kata yang ada dalam \textit{stego cover} > banyak angka yang ada pada \textit{secret code}).
-	\item Bangkitkan angka acak dari 0 sampai banyaknya \textit{stego cover} yang dapat menampung \textit{secret code}. Angka acak ini dinamakan \textit{random}.
-	\item Buka file ke-\textit{random} dan baca per kata dengan mengabaikan tanda baca dan spasi.
-	\item Untuk tiap kata ke-n, lakukan pemenggalan kata dan hitung banyaknya suku kata pada kata ke-n tersebut dan lakukan operasi \textit{mod} 2. Hasil operasi ini dinamakan banyakSK.
-	\item Cocokkan banyakSK dengan angka ke-n yang ada pada \textit{secret code} secara berurutan.(banyakSK kata ke-n dicocokkan dengan angka ke-n \textit{secret code})
-	\item Jika pada tahap 7 didapatkan banyakSK yang tidak sesuai dengan angka ke-n \textit{secret code}, lanjut ke tahap 9. Jika sesuai, ulangi tahap 7 sampai semua angka pada \textit{secret code} berhasil disisipkan.
-	\item Cari sinonim kata tersebut pada \textit{file database}. Kata yang diambil hanya kata dengan banyakSK yang memiliki nilai berbeda.
-	\item Dari kata-kata yang didapatkan dari tahap 10, akan dilakukan pengambilan kata secara acak.
-	\item Kata yang telah diambil dari tahap 11, akan menggantikan kata yang tidak sesuai sebelumnya.
+	\item Meminta input berupa pesan rahasia(\textit{secret message}).
+	\item Tiap karakter pada \textit{secret message} diubah menjadi kode ASCII 7-bit dan disimpan menjadi \textit{secret code}.
+	\item Tambahkan deret biner 0100011, yang merupakan kode ASCII untuk karakter '\#' untuk menandakan bahwa \textit{secret message} telah berakhir.
+	\item Jika n adalah banyak karakter yang ada pada \textit{secret message}, maka panjang \textit{secret code} = 7*n+1 (ditambah karakter '\#').
+	\item Cari \textit{stego cover} yang dapat menampung \textit{secret code}. (Banyaknya kata yang ada dalam \textit{stego cover} $\geq$ panjang \textit{secret code}).
+	\item Bangkitkan angka acak (r) dari 0 sampai banyaknya \textit{stego cover} yang dapat menampung \textit{secret code} - 1. 
+	\item Buka \textit{file} ke-(r) dan baca per kata dengan mengabaikan tanda baca dan spasi.
+	\item Untuk 7*n+1 kata pertama, lakukan pemenggalan kata dan dapatkan nilai $\sum$.
+	\item Cocokkan nilai $\sum$ dengan angka ke-n yang ada pada \textit{secret code} secara berurutan. ($\sum$ kata ke-n dicocokkan dengan angka ke-n \textit{secret code}).
+	\item Jika pada tahap 9 didapatkan $\sum$ yang tidak sesuai dengan angka ke-n \textit{secret code}, lanjut ke tahap 11. Jika sesuai, ulangi tahap 9.
+	\item Cari sinonim kata tersebut pada \textit{file database}. Kata yang diambil hanya kata dengan nilai $\sum$ yang berbeda.
+	\item Dari kata-kata yang didapatkan dari tahap 11, akan dilakukan pengambilan satu kata secara acak.
+	\item Kata yang telah diambil dari tahap 12, akan menggantikan kata yang tidak sesuai sebelumnya.
+	\item Kembali ke tahap 9.
 \end{enumerate}
 
-\subsection{Ekstraksi Pesan Rahasia}
-Pada proses pengekstraksian kembali pesan rahasia akan dibutuhkan input berupa \textit{stego-object} yang merupakan hasil dari penyisipan. Perangkat pertama-tama akan membaca secara keseluruhan inputnya, lalu melakukan pemenggalan kata sama seperti yang dilakukan pada saat proses penyisipan. Selesai melakukan pemenggalan kata, banyak suku kata tiap katanya akan dihitung dan dilakukan operasi \textit{mod} 2 sehingga didapatkan angka 0 dan 1. Saat ini telah didapatkan deretan angka 0 dan 1 yang dinamakan \textit{secret code}. Saat menyisipkan memang 1 karakter diubah menjadi kode ASCII 7-bit, namun \textit{java} menyediakan fungsi untuk mengubah deret biner 8-bit menjadi karakter. Sehingga untuk setiap 7-bit pada \textit{secret code} dapat ditambahkan angka 0 di paling kiri sebelum dijadikan \textit{input} pada fungsi \textit{java} tersebut.
+\subsection{\textit{Extracting Information}}
+Pada proses pengekstraksian kembali pesan rahasia akan dibutuhkan input berupa \textit{stego-object} yang merupakan hasil dari \textit{embedding}. Perangkat lunak pertama-tama akan membaca secara keseluruhan inputnya, lalu melakukan pemenggalan kata sama seperti yang dilakukan pada saat proses \textit{embedding}. Selesai melakukan pemenggalan kata, dari tiap kata akan didapatkan $/sum$nya. Saat ini telah didapatkan deretan angka 0 dan 1 yang dinamakan \textit{secret code}. Saat proses \textit{embedding}, memang 1 karakter diubah menjadi kode ASCII 7-bit, namun \textit{java} menyediakan fungsi untuk mengubah deret biner 8-bit menjadi karakter. Sehingga untuk setiap 7-bit pada \textit{secret code} dapat ditambahkan angka 0 di paling kiri sebelum dijadikan \textit{input} pada fungsi \textit{java} tersebut.
 
-Setelah selesai mengubah bit-bit yang ada menjadi karakter, hasilnya akan ditampilkan pada layar. Proses ektraksi ini melibatkan semua kata yang ada pada \textit{stego-object}, sehingga kata yang tidak disisipkan pesan rahasia pun ikut terekstraksi. Hasilnya pesan rahasia yang diekstrak, dapat menampilkan karakter-karakter yang tidak memiliki arti. Hal ini dibiarkan agar penerima \textit{stego-object} dapat mengekstraksi pesan rahasia tanpa memerlukan informasi apapun. Alasan lainnya juga agar \textit{stego cover} dapat memaksimalkan kapasitas penyisipan.
+Setelah selesai mengubah bit-bit yang ada menjadi karakter, hasilnya akan ditampilkan pada layar. Proses ektraksi ini melibatkan semua kata yang ada pada \textit{stego-object}, sehingga kata yang tidak disisipkan pesan rahasia pun ikut terekstraksi. Namun karena saat proses \textit{embedding} telah ditambahkan kode ASCII dari karakter '\#', maka \textit{secret message} berakhir saat ditemukan karakter '\#'. 
 
 \section{Analisis Use Case}
 
-Diagram \textit{use case} perangkat lunak steganografi ini memiliki satu aktor, yaitu pengguna. Berikut diagram \textit{usecase} dari perangkat lunak yang akan dibangun.
+Diagram \textit{usecase} perangkat lunak steganografi ini memiliki dua aktor, yaitu pengirim dan penerima. Pengirim berarti aktor yang akan melakukan \textit{embedding} dan mengirimkan \textit{stego-object}, sedangkan penerima berarti aktor yang menerima \textit{stego-object} dan melakukan \textit{extract information} untuk mendapatka \textit{secret message}. Berikut diagram \textit{usecase} dari perangkat lunak yang akan dibangun.
 
 \begin{figure}[H]
 	\centering
@@ -160,8 +168,11 @@ Diagram \textit{use case} perangkat lunak steganografi ini memiliki satu aktor, 
 
 Dari diagram di atas dapat dilihat dua \textit{use case}, yakni:
 \begin{enumerate}
-	\item \textbf{Menyisipkan pesan}, pengguna mengetikkan pesan rahasia yang akan disisipkan.
-	\item \textbf{Mengekstraksi kembali pesan rahasia}, pengguna akan memasukkan \textit{stego-object} yang diterima.
+	\item \textbf{Menyembunyikan pesan}, pengirim mengetikkan pesan rahasia yang akan disembunyikan.
+	\item \textbf{Menambahkan \textit{stego-cover}}, pengirim menyalin teks sebagai \textit{stego-cover}. Jika pengirim menambahkan \textit{stego-cover}, maka pengirim wajib melengkapi sinonim yang belum terdaftar agar \textit{stego-cover} dapat digunakan.
+	\item \textbf{Menambahkan sinonim}, pengirim mengetikkan kata beserta dengan sinonimnya pada masing-masing kotak yang telah disediakan.
+	\item \textbf{Memeriksa semua sinonim}, pengirim dapat memeriksa kata apa saja yang belum memiliki sinonim dengan menekan tombol yang telah disediakan.
+	\item \textbf{Mengekstraksi kembali pesan rahasia}, penerima akan memasukkan \textit{stego-object} yang diterima.
 \end{enumerate}
 
 \subsection{Skenario Use Case}
