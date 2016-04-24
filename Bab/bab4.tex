@@ -1,0 +1,135 @@
+\chapter{Perancangan}
+Bab ini akan membahas mengenai perancangan aplikasi. Perancangan aplikasi akan meliputi tampilan antarmuka, diagram kelas lengkap beserta dengan deskripsi dan fungsinya.
+
+\section{Perancangan Antarmuka}
+
+Agar pengguna dapat menggunakan perangkat lunak ini dengan nyaman, maka dibutuhkan antarmuka. Rancangan antarmuka yang dibuat terdiri dari satu \textit{frame} dan di dalamnya terdapat beberapa \textit{tab}.
+
+\subsection{\textit{Tab Embed}}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1.8]{Gambar/tab-embed}
+	\caption{Tampilan \textit{tab Embed}} 
+	\label{fig:1-tab-embed}
+\end{figure}
+
+Pada \textit{tab Embed} (dapat dilihat pada Gambar \ref{fig:1-tab-embed}) terdapat beberapa elemen sebagai berikut.
+
+\begin{enumerate}
+	\item \textbf{\textit{Text box secret message}}, pengguna dapat mengetikkan pesan rahasia yang akan disembunyikan pada bagian ini.
+	\item \textbf{Tombol \textit{Embed}}, pengguna dapat menekan tombol ini untuk melakukan proses \textit{embedding}.
+	\item \textbf{\textit{Text area stego-object}}, hasil proses \textit{embedding} yang merupakan \textit{stego-object} akan muncul pada bagian ini.
+\end{enumerate}
+
+\subsection{\textit{Tab Extract}}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1.8]{Gambar/tab-extract}
+	\caption{Tampilan \textit{tab Extract}} 
+	\label{fig:2-tab-extract}
+\end{figure}
+
+Pada \textit{tab Extract} (dapat dilihat pada Gambar \ref{fig:2-tab-extract}) terdapat beberapa elemen sebagai berikut.
+
+\begin{enumerate}
+	\item \textbf{\textit{Text area stego-object}}, pengguna dapat menyalin \textit{stego-object} yang diterima pada bagian ini.
+	\item \textbf{Tombol Ekstrak}, pengguna dapat menekan tombol ini untuk melakukan proses \textit{extracting}.
+	\item \textbf{\textit{Text box secret message}}, hasil \textit{extracting} akan ditampilkan pada bagian ini.
+\end{enumerate} 
+
+\subsection{\textit{Tab} Tambah \textit{Cover}}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1.8]{Gambar/tab-tambah-cover}
+	\caption{Tampilan \textit{tab} Tambah \textit{Cover}} 
+	\label{fig:3-tab-tambah-cover}
+\end{figure}
+
+Pada \textit{tab} Tambah \textit{Cover} (dapat dilihat pada Gambar \ref{fig:3-tab-tambah-cover}) terdapat beberapa elemen sebagai berikut.
+
+\begin{enumerate}
+	\item \textbf{\textit{Text box} judul}, pengguna dapat mengetikkan judul dari \textit{stego-cover} yang akan ditambahkan pada bagian ini.
+	\item \textbf{Tombol Tambah \textit{Cover}}, pengguna dapat menekan tombol ini untuk menambahkan \textit{stego-cover} yang telah disalin pada no 3.
+	\item \textbf{\textit{Text area stego-cover}}, pengguna dapat menyalin \textit{stego-cover} yang memenuhi persyaratan di bagian ini.	
+\end{enumerate} 
+
+\subsection{\textit{Tab} Tambah Sinonim}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1.8]{Gambar/tab-tambah-sinonim}
+	\caption{Tampilan \textit{tab} Tambah Sinonim} 
+	\label{fig:4-tab-tambah-sinonim}
+\end{figure}
+
+Pada \textit{tab} Tambah Sinonim (dapat dilihat pada Gambar \ref{fig:4-tab-tambah-sinonim}) terdapat beberapa elemen sebagai berikut.
+
+\begin{enumerate}
+	\item \textbf{\textit{Text box} kata pada \textit{cover}}, kata pada \textit{cover} berarti kata yang ada pada \textit{stego-cover}, pengguna dapat mengetikkannya pada bagian ini.
+	\item \textbf{\textit{Text box} sinonim}, pengguna dapat mengetik sinonimnya pada bagian ini.
+	\item \textbf{Tombol Tambahkan}, pengguna dapat menekan tombol ini untuk memasukkan pasangan kata dan sinonim yang baru ke \textit{file database}.
+	\item \textbf{\textit{Text Area} Error Log}, akan menampilkan daftar kata yang belum memiliki sinonim jika pengguna menekan tombol Periksa semua sinonim.
+	\item \textbf{Tombol Periksa semua sinonim}, akan memeriksa semua kata dari tiap \textit{stego-cover} yang terdaftar dan menampilkan daftar kata yang belum memiliki sinonim.
+\end{enumerate} 
+
+\subsection{\textit{Tab} Petunjuk}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1.8]{Gambar/tab-petunjuk}
+	\caption{Tampilan \textit{tab} Petunjuk} 
+	\label{fig:5-tab-petunjuk}
+\end{figure}
+
+\textit{Tab} Petunjuk (dapat dilihat pada Gambar \ref{fig:5-tab-petunjuk}) sebenarnya hanya dibuat untuk membantu pengguna yang baru pertama kali memakai perangkat lunak ini. Pada \textit{tab} ini berisi petunjuk-petunjuk yang dapat membantu pengguna untuk mengoperasikan perangkat lunak ini.
+
+\section{Diagram Kelas Rinci}
+
+Diagram kelas sebelumnya yang dapat dilihat pada Gambar \ref{fig:3_classdiagram} mengalami beberapa perubahan dan penambahan kelas.
+
+\section{Analisis Diagram Aktivitas}
+
+Diagram aktivitas dari perangkat lunak dibagi menjadi dua. Diagram aktivitas saat menyisipkan pesan dapat dilihat pada \ref{fig:4_activity-penyisipan}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{Gambar/activity-penyisipan}
+	\caption{Activity Diagram perangkat lunak steganografi saat menyisipkan} 
+	\label{fig:4_activity-penyisipan}
+\end{figure}
+
+Dari diagram aktivitas dapat dijelaskan sebagai berikut:
+
+\begin{enumerate}
+	\item Pengguna memasukkan input berupa string (pesan rahasia)
+	\item Pesan akan diubah ke bentuk ASCII
+	\item Dokumen korpus akan dibuka satu per satu
+	\item Untuk setiap dokumen yang dibuka akan dilakukan penyukuan kata dan dilakukan penyandian. Angka 1 untuk kata dengan jumlah suku kata genap dan angka 2 untuk kata dengan jumlah suku kata ganjil
+	\item Pesan rahasia yang telah diubah ke bentuk ASCII dan dokumen yang telah disandikan akan dibandingkan. Dari sini akan dihasilkan dua kemungkinan:
+	\begin{itemize}
+		\item Jika ditemukan dokumen cocok dengan pesan rahasia, akan diambil kalimat yang sesuai
+		\item Jika tidak ditemukan dokumen yang cocok, dari dokumen yang paling mirip akan dilakukan modifikasi (perubahan sinonim atau perubahan kalimat aktif/pasif)
+	\end{itemize}
+	\item Jika telah didapatkan kalimat yang sesuai, kalimat akan ditampilkan dan program selesai
+\end{enumerate}
+
+Diagram aktivitas ekstraksi dapat dilihat pada 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{Gambar/activity-ekstraksi}
+	\caption{Activity Diagram perangkat lunak steganografi saat proses ekstraksi} 
+	\label{fig:4_activity-ekstraksi}
+\end{figure}
+
+Dari diagram aktivitas di atas dapat dijelaskan sebagai berikut:
+
+\begin{enumerate}
+	\item Pengguna akan memberikan input berupa stego-object dari program yang sama
+	\item Sistem lalu akan menyukukan kata-kata yang ada. Setelah itu dilakukan penyandian, angka 0 untuk kata dengan jumlah suku kata genap dan angka 1 untuk jumlah ganjil
+	\item Selesai melakukan penyandian, hasilnya akan diubah menjadi karakter ASCII yang sesuai
+	\item Kini sudah didapatkan pesan dengan karakter ASCII, hasil akan ditampilkan pada layar
+\end{enumerate}

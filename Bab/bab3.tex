@@ -107,7 +107,7 @@ Untuk dapat membagi suku kata, diperlukan automata yang dapat menerima masukan b
 
 Pemenggalan suku kata akan dipakai untuk mendapatkan banyak suku kata kata-kata yang terdapat pada \textit{stego-cover}, sehingga dapat dihitung banyak suku kata tiap katanya. Namun karena kumpulan \textit{stego-cover} yang akan dipakai dapat berupa cerita pendek(cerpen) atau puisi, maka isi dari \textit{stego-cover} tidak hanya berupa kata-kata alfabet saja, tetapi juga ada angka yang bisa berupa tanggal, kata serapan, dan lain-lain. Hal ini kemudian dapat menjadi hambatan, karena seperti yang kita ketahui bahwa angka tidak memiliki suku kata. Hambatan lainnya juga datang dari kata-kata dalam bahasa asing dan singkatan.
 
-Setelah menemui hambatan-hambatan di atas, akhirnya diputuskan beberapa solusi. Pertama-tama, dari keseluruhan isi \textit{stego-cover}, tanda baca akan diabaikan (kecuali tanda penghubung '-'), sehingga yang akan dipenggal hanyalah kata-katanya saja. Satu digit angka akan dihitung sebagai satu suku kata. Semua singkatan atau kata dalam bahasa asing, akan dilakukan pemenggalan kata apa adanya.
+Setelah menemui hambatan-hambatan di atas, akhirnya diputuskan beberapa solusi. Pertama-tama, dari keseluruhan isi \textit{stego-cover}, tanda baca akan diabaikan (kecuali tanda penghubung '-'), sehingga yang akan dipenggal hanyalah kata-katanya saja. Satu digit angka akan dihitung sebagai satu suku kata, namun pada \textit{stego-cover} diputuskan untuk tidak boleh mengandung angka sama sekali, karena tidak memiliki sinonim. Semua singkatan atau kata dalam bahasa asing, akan dilakukan pemenggalan kata apa adanya.
 
 \subsection{\textit{Database} sinonim}
 Proses \textit{embedding} akan memanfaatkan daftar sinonim yang ada pada \textit{file database}. \textit{File database} kata akan disimpan dalam sebuah \textit{file} dengan ekstensi .txt. Pada \textit{file database} satu per satu kata yang ada pada \textit{stego-cover} memiliki sinonimnya sendiri. Pencarian sinonim pertama-tama akan dicari di tesaurus. Tesaurus \footnote{http://kbbi.web.id/tesaurus}merupakan buku referensi berupa daftar kata dengan sinonimnya. Kata-kata yang terdaftar di tesaurus adalah kata baku, sehingga jika pada \textit{stego-cover} terdapat kata yang tidak dapat ditemukan pada tesaurus, diperlukan penanganan tersendiri.
@@ -157,7 +157,7 @@ Setelah selesai mengubah bit-bit yang ada menjadi karakter, hasilnya akan ditamp
 
 \section{Analisis Use Case}
 
-Diagram \textit{usecase} perangkat lunak steganografi ini memiliki dua aktor, yaitu pengirim dan penerima. Pengirim berarti aktor yang akan melakukan \textit{embedding} dan mengirimkan \textit{stego-object}, sedangkan penerima berarti aktor yang menerima \textit{stego-object} dan melakukan \textit{extract information} untuk mendapatka \textit{secret message}. Berikut diagram \textit{usecase} dari perangkat lunak yang akan dibangun.
+Diagram \textit{use case} perangkat lunak steganografi ini memiliki dua aktor, yaitu pengirim dan penerima. Pengirim berarti aktor yang akan melakukan \textit{embedding} dan mengirimkan \textit{stego-object}, sedangkan penerima berarti aktor yang menerima \textit{stego-object} dan melakukan \textit{extract information} untuk mendapatka \textit{secret message}. Berikut diagram \textit{use case} dari perangkat lunak yang akan dibangun.
 
 \begin{figure}[H]
 	\centering
@@ -168,49 +168,116 @@ Diagram \textit{usecase} perangkat lunak steganografi ini memiliki dua aktor, ya
 
 Dari diagram di atas dapat dilihat dua \textit{use case}, yakni:
 \begin{enumerate}
-	\item \textbf{Menyembunyikan pesan}, pengirim mengetikkan pesan rahasia yang akan disembunyikan.
+	\item \textbf{\textit{Embedding}}, pengirim mengetikkan pesan rahasia yang akan disembunyikan.
 	\item \textbf{Menambahkan \textit{stego-cover}}, pengirim menyalin teks sebagai \textit{stego-cover}. Jika pengirim menambahkan \textit{stego-cover}, maka pengirim wajib melengkapi sinonim yang belum terdaftar agar \textit{stego-cover} dapat digunakan.
 	\item \textbf{Menambahkan sinonim}, pengirim mengetikkan kata beserta dengan sinonimnya pada masing-masing kotak yang telah disediakan.
 	\item \textbf{Memeriksa semua sinonim}, pengirim dapat memeriksa kata apa saja yang belum memiliki sinonim dengan menekan tombol yang telah disediakan.
-	\item \textbf{Mengekstraksi kembali pesan rahasia}, penerima akan memasukkan \textit{stego-object} yang diterima.
+	\item \textbf{\textit{Extracting}}, penerima akan memasukkan \textit{stego-object} yang diterima.
+	\item \textbf{Membaca petunjuk}, pengirim dan penerima dapat membaca petunjuk terkait cara menggunakan perangkat lunak ini.
 \end{enumerate}
 
 \subsection{Skenario Use Case}
 
 \begin{enumerate}
-	\item \textbf{Menyisipkan pesan}
+	\item \textbf{\textit{Embedding}}
 	\begin{itemize}
-		\item Nama: Menyisipkan pesan
-		\item Aktor: Pengguna
-		\item Deskripsi: Mengetikkan pesan rahasia yang akan disisipkan		
+		\item Nama: \textit{Embedding}
+		\item Aktor: Pengirim
+		\item Deskripsi: Mengetikkan pesan rahasia yang akan disembunyikan.
 		\item Prakondisi: -
-		\item Tujuan: Menyisipkan pesan rahasia yang diketikkan ke dalam salah satu dokumen yang ada di dalam dokumen korpus
+		\item Tujuan: Menyembunyikan pesan rahasia yang diketikkan ke dalam salah satu \textit{stego-cover} yang ada di dalam dokumen korpus.
 		\item Skenario:
 			\begin{enumerate}
-				\item Pengguna mengetikkan pesan rahasia yang akan disisipkan
-				\item Pengguna menekan tombol sisipkan
-				\item Sistem lalu akan mengubah pesan yang diketik menjadi kode ASCII
-				\item Sistem mencari dokumen yang cocok dengan kode ASCII pesan rahasia
-				\item \textit{Stego-object} sebagai hasil dari penyisipan akan muncul pada layar.
+				\item Pengirim mengetikkan pesan rahasia yang akan disembunyikan.
+				\item Pengirim menekan tombol \textit{Embed}.
+				\item Sistem lalu akan mengubah pesan yang diketik menjadi kode ASCII.
+				\item Sistem mencari \textit{stego-cover} yang dapat menampung pesan yang sudah dalam bentuk ASCII.
+				\item Sistem melakukan proses \textit{embedding} dengan bantuan \textit{file database}.
+				\item \textit{Stego-object} sebagai hasil dari proses \textit{embedding} akan muncul pada kotak hasil.
 			\end{enumerate}
 	\end{itemize}
 	
-	\item \textbf{Mengekstraksi pesan rahasia}
+	\item \textbf{Menambahkan \textit{stego-cover}}
 	\begin{itemize}
-		\item Nama: Mengekstraksi pesan rahasia
-		\item Aktor: Pengguna
-		\item Deskripsi: Memasukkan \textit{stego-object} yang didapatkan
-		\item Prakondisi: Telah memiliki \textit{stego-object} yang dihasilkan dari perangkat lunak ini
-		\item Tujuan: Mengkestraksi pesan rahasia yang telah disisipkan sebelumnya
+		\item Nama: Menambahkan \textit{stego-cover}
+		\item Aktor: Pengirim
+		\item Deskripsi: Menyalin teks yang berupa puisi atau cerpen misalnya, untuk dijadikan \textit{stego-cover}.
+		\item Prakondisi: Telah memiliki teks yang memenuhi syarat untuk dijadikan \textit{stego-cover}. Pengirim telah menuliskan judul untuk file tersebut.
+		\item Tujuan: Menambahkan variasi \textit{stego-cover}.
 		\item Skenario:
 			\begin{enumerate}
-				\item Pengguna menyalin \textit{stego-object} yang didapat dari perangkat yang sama
-				\item Pengguna menekan tombol Ekstrak
-				\item Sistem akan melakukan penyukuan kata
-				\item Masing-masing kata akan dijumlahkan suku katanya
-				\item Sistem menyandikan jumlah suku kata yang genap menjadi 0 dan yang ganjil menjadi 1
-				\item Sistem akan mengubah deret biner menjadi karakter yang sesuai dengan kode ASCII
-				\item Pesan rahasia akan ditampilkan pada layar
+				\item Pengirim mengetikkan judul untuk \textit{stego-cover} yang baru.			
+				\item Pengirim menyalin teks yang akan dijadikan \textit{stego-cover}.
+				\item Pengirim menekan tombol Tambahkan Cover.
+				\item Sistem akan membuat file dengan nama \textit{file} yang dimasukkan pengirim, dan menuliskan \textit{stego-cover} dalam \textit{file} tersebut.
+				\item Sistem juga menuliskan nama \textit{file} beserta kapasitas \textit{stego-cover} pada file lain yang merupakan daftar \textit{stego-cover} yang ada.
+				\item Akan tampil peringatan jika \textit{stego-cover} berhasil / gagal ditambahkan.
+			\end{enumerate}
+	\end{itemize}
+	
+	\item \textbf{Menambahkan sinonim}
+	\begin{itemize}
+		\item Nama: Menambahkan sinonim
+		\item Aktor: Pengirim
+		\item Deskripsi: Mengetikkan kata beserta sinonim yang nilai $\sum$-nya berbeda.
+		\item Prakondisi: -
+		\item Tujuan: Menambahkan daftar kata dan sinonimnya.
+		\item Skenario:
+			\begin{enumerate}
+				\item Pengirim mengetikkan kata yang ada pada \textit{stego-cover}, yang akan ditambahkan sinonimnya.
+				\item Pengirim mengetikkan sinonim dari kata pada tahap 1.
+				\item Sistem akan menghitung nilai $\sum$ kata pada tahap 1 dan $\sum$ sinonim pada tahap 2.
+				\item Jika nilai $\sum$ sama, maka akan ditampilkan hasil pemenggalan kata dari sinonim yang diketikkan.
+				\item Jika nilai $\sum$ berbeda, maka sistem akan menambahkan kata beserta sinonimnya pada \textit{file database}.
+				\item Akan tampil peringatan jika sinonim berhasil ditambahkan.
+			\end{enumerate}
+	\end{itemize}
+	
+	\item \textbf{Memeriksa semua sinonim}
+	\begin{itemize}
+		\item Nama: Memeriksa semua sinonim
+		\item Aktor: Pengirim
+		\item Deskripsi: Pengirim dapat melihat kata apa saja yang belum memiliki sinonim.
+		\item Prakondisi: -
+		\item Tujuan: Menginformasikan kata mana saja yang belum memiliki sinonim.
+		\item Skenario:
+			\begin{enumerate}
+				\item Pengirim menekan tombol Periksa semua sinonim.
+				\item Sistem akan memeriksa semua kata yang ada pada semua \textit{stego-cover} untuk dicari sinonimnya pada \textit{file database}.
+				\item Kata yang belum memiliki sinonim akan ditampilkan.
+			\end{enumerate}
+	\end{itemize}
+	
+	\item \textbf{\textit{Extracting}}
+	\begin{itemize}
+		\item Nama: \textit{Extracting}
+		\item Aktor: Penerima
+		\item Deskripsi: Menyalin \textit{stego-object} yang didapatkan dari pengirim.
+		\item Prakondisi: Telah memiliki \textit{stego-object} yang dihasilkan dari perangkat lunak yang sama.
+		\item Tujuan: Mengkestraksi pesan rahasia yang telah disembunyikan sebelumnya.
+		\item Skenario:
+			\begin{enumerate}
+				\item Penerima menyalin \textit{stego-object} yang didapat dari perangkat yang sama.
+				\item Penerima menekan tombol \textit{Extract}.
+				\item Sistem akan mengeksekusi fungsi ekstraksi.
+				\item \textit{Secret message} yang merupakan hasil ekstraksi akan ditampilkan.
+				\item Karakter '$\#$' menandakan akhir dari \textit{secret message}.
+			\end{enumerate}
+	\end{itemize}
+	
+	\item \textbf{Membaca petunjuk}
+	\begin{itemize}
+		\item Nama: Membaca petunjuk
+		\item Aktor: Pengirim atau penerima
+		\item Deskripsi: Membaca petunjuk penggunaan perangkat lunak.
+		\item Prakondisi: -
+		\item Tujuan: Memberi pemahaman kepada pengirim dan penerima mengenai cara menggunakan perangkat lunak ini.
+		\item Skenario:
+			\begin{enumerate}
+				\item Pengirim atau penerima membaca petunjuk tentang \textit{embedding}.
+				\item Pengirim atau penerima membaca petunjuk tentang \textit{extract}.
+				\item Pengirim atau penerima membaca petunjuk tentang \textit{cover} (\textit{stego-cover}).
+				\item Pengirim atau penerima membaca petunjuk tentang sinonim.
 			\end{enumerate}
 	\end{itemize}
 \end{enumerate}
@@ -253,49 +320,4 @@ Keterangan atas diagram kelas akan dijelaskan sebagai berikut:
 		\item Fungsi ekstraksiPesanRahasia, memiliki parameter stegoObject yang merupakan \textit{stego-object} yang disalin oleh pengguna dari hasil penyisipan menggunakan perangkat lunak yang sama dan akan mengeksekusi rangkaian pengekstraksian kembali pesan rahasia
 		\item Fungsi toBiner, memiliki parameter dokumen. Parameter dokumen merupakan dokumen yang telah dilakukan penyukuan, sehingga fungsi ini hanya menghitung jumlah suku kata untuk setiap katanya. Jumlah kata akan disandikan dengan 0 untuk jumlah genap dan 1 untuk jumlah ganjil
 	\end{itemize}
-	
-\end{enumerate}
-
-\subsection{Analisis Diagram Aktivitas}
-
-Diagram aktivitas dari perangkat lunak dibagi menjadi dua. Diagram aktivitas saat menyisipkan pesan dapat dilihat pada \ref{fig:4_activity-penyisipan}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.5]{Gambar/activity-penyisipan}
-	\caption{Activity Diagram perangkat lunak steganografi saat menyisipkan} 
-	\label{fig:4_activity-penyisipan}
-\end{figure}
-
-Dari diagram aktivitas dapat dijelaskan sebagai berikut:
-
-\begin{enumerate}
-	\item Pengguna memasukkan input berupa string (pesan rahasia)
-	\item Pesan akan diubah ke bentuk ASCII
-	\item Dokumen korpus akan dibuka satu per satu
-	\item Untuk setiap dokumen yang dibuka akan dilakukan penyukuan kata dan dilakukan penyandian. Angka 1 untuk kata dengan jumlah suku kata genap dan angka 2 untuk kata dengan jumlah suku kata ganjil
-	\item Pesan rahasia yang telah diubah ke bentuk ASCII dan dokumen yang telah disandikan akan dibandingkan. Dari sini akan dihasilkan dua kemungkinan:
-	\begin{itemize}
-		\item Jika ditemukan dokumen cocok dengan pesan rahasia, akan diambil kalimat yang sesuai
-		\item Jika tidak ditemukan dokumen yang cocok, dari dokumen yang paling mirip akan dilakukan modifikasi (perubahan sinonim atau perubahan kalimat aktif/pasif)
-	\end{itemize}
-	\item Jika telah didapatkan kalimat yang sesuai, kalimat akan ditampilkan dan program selesai
-\end{enumerate}
-
-Diagram aktivitas ekstraksi dapat dilihat pada 
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.5]{Gambar/activity-ekstraksi}
-	\caption{Activity Diagram perangkat lunak steganografi saat proses ekstraksi} 
-	\label{fig:4_activity-ekstraksi}
-\end{figure}
-
-Dari diagram aktivitas di atas dapat dijelaskan sebagai berikut:
-
-\begin{enumerate}
-	\item Pengguna akan memberikan input berupa stego-object dari program yang sama
-	\item Sistem lalu akan menyukukan kata-kata yang ada. Setelah itu dilakukan penyandian, angka 0 untuk kata dengan jumlah suku kata genap dan angka 1 untuk jumlah ganjil
-	\item Selesai melakukan penyandian, hasilnya akan diubah menjadi karakter ASCII yang sesuai
-	\item Kini sudah didapatkan pesan dengan karakter ASCII, hasil akan ditampilkan pada layar
 \end{enumerate}
