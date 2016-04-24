@@ -44,7 +44,7 @@
 \contentsline {subsection}{\numberline {4.1.3}\textit {Tab} Tambah \textit {Cover}}{32}{subsection.4.1.3}
 \contentsline {subsection}{\numberline {4.1.4}\textit {Tab} Tambah Sinonim}{33}{subsection.4.1.4}
 \contentsline {subsection}{\numberline {4.1.5}\textit {Tab} Petunjuk}{34}{subsection.4.1.5}
-\contentsline {section}{\numberline {4.2}Diagram Kelas Rinci}{34}{section.4.2}
-\contentsline {section}{\numberline {4.3}Analisis Diagram Aktivitas}{34}{section.4.3}
-\contentsline {chapter}{Daftar Referensi}{37}{chapter*.11}
+\contentsline {section}{\numberline {4.2}Diagram Kelas Lengkap}{34}{section.4.2}
+\contentsline {section}{\numberline {4.3}Analisis Diagram Aktivitas}{36}{section.4.3}
+\contentsline {chapter}{Daftar Referensi}{39}{chapter*.11}
 \renewcommand {\cftchappresnum }{\bf \scshape }

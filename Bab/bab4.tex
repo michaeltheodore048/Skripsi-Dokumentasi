@@ -86,9 +86,89 @@ Pada \textit{tab} Tambah Sinonim (dapat dilihat pada Gambar \ref{fig:4-tab-tamba
 
 \textit{Tab} Petunjuk (dapat dilihat pada Gambar \ref{fig:5-tab-petunjuk}) sebenarnya hanya dibuat untuk membantu pengguna yang baru pertama kali memakai perangkat lunak ini. Pada \textit{tab} ini berisi petunjuk-petunjuk yang dapat membantu pengguna untuk mengoperasikan perangkat lunak ini.
 
-\section{Diagram Kelas Rinci}
+\section{Diagram Kelas Lengkap}
 
-Diagram kelas sebelumnya yang dapat dilihat pada Gambar \ref{fig:3_classdiagram} mengalami beberapa perubahan dan penambahan kelas.
+Diagram kelas sebelumnya yang dapat dilihat pada Gambar \ref{fig:3_classdiagram} mengalami beberapa perubahan dan penambahan kelas. Diagram kelas lengkap dapat dilihat pada Gambar \ref{fig:6-class-diagram-lengkap}.
+
+Deskripsi setiap kelas beserta dengan atribut dan fungsinya akan dijelaskan sebagai berikut.
+
+\begin{enumerate}
+	\item Kelas PemotongKata\\
+	Kelas ini merupakan kelas yang merepresentasikan pemotong kata. Fungsi-fungsi yang ada pada kelas ini adalah:
+	\begin{itemize}
+		\item \textbf{public String getPattern(String input)}\\
+		Berfungsi untuk mendapatkan pola suku kata.\\
+		\textbf{Parameter:}
+		\begin{itemize}
+			\item \textbf{input} Teks yang akan dicari pola suku katanya.
+		\end{itemize}
+		
+		\item \textbf{public ArrayList generateLevel1(String text)}\\
+		Berfungsi untuk melakukan DFSA tahap 1.\\
+		\textbf{Parameter:}
+		\begin{itemize}
+			\item \textbf{text} Teks yang akan didapatkan suku katanya.
+		\end{itemize}
+		
+		\item \textbf{public ArrayList generateLevel2(ArrayList lv1)}\\
+		Berfungsi untuk melakukan DFSA tahap 2.\\
+		\textbf{Parameter:}
+		\begin{itemize}
+			\item \textbf{lv1} Merupakan kembalian dari fungsi generateLevel1().
+		\end{itemize}
+		
+		\item \textbf{public ArrayList generateLevel3(ArrayList lv2)}\\
+		Berfungsi untuk melakukan DFSA tahap 3.\\
+		\textbf{Parameter:}
+		\begin{itemize}
+			\item \textbf{lv2} Merupakan kembalian dari fungsi generateLevel2().
+		\end{itemize}
+		
+		\item \textbf{public int getJumlahSukuKata(String in)}\\
+		Berfungsi untuk menghitung banyaknya suku kata.\\
+		\textbf{Parameter:}
+		\begin{itemize}
+			\item \textbf{in} Merupakan teks yang akan dicari banyak suku katanya.
+		\end{itemize}
+	\end{itemize}
+	
+	\item Kelas DatabaseReader\\
+	Kelas ini berfungsi untuk membaca \textit{file database} dengan tujuan mencari sinonim. Atribut yang ada pada kelas DatabaseReader adalah:
+	\begin{itemize}
+		\item \textbf{FileReader fr:} Objek FileReader yang berfungsi untuk membuka suatu \textit{file}.
+		\item \textbf{BufferedReader br:} Objek BufferedReader yang berfungsi untuk membaca isi dari \textit{file} yang dibuka FileReader.
+		\item \textbf{PemotongKata pk:} Objek PemotongKata yang akan berfungsi untuk memotong kata.
+	\end{itemize}
+	
+	Fungsi-fungsi yang dimiliki kelas ini adalah:
+	
+	\begin{itemize}
+		\item \textbf{DatabaseReader()}\\
+		Merupakan \textit{constructor} dari kelas DatabaseReader yang akan menginisialisasi atribut-atributnya.
+		\item \textbf{String findSynonym(String input)}\\
+		Berfungsi untuk mencari sinonim dari parameter.\\
+		\textbf{Parameter:}
+		\begin{itemize}
+			\item \textbf{input} Kata yang akan dicari sinonimnya.
+		\end{itemize}
+	\end{itemize}
+	
+	\item Kelas Embedder\\
+	Kelas ini berfungsi untuk menangani seluruh kegiatan \textit{embedding} pesan ke dalam \textit{stego-cover}. Atribut yang ada pada kelas Embedder adalah:
+	\begin{itemize}
+		\item \textbf{DatabaseReader dr:} Objek DatabaseReader berfungsi untuk membaca \textit{file database}.
+		\item \textbf{PemotongKata pk:} Objek PemotongKata berfungsi untuk memotong kata.
+		\item \textbf{FileReader fr:} Objek FileReader yang berfungsi untuk membuka suatu \textit{file}.
+		\item \textbf{BufferedReader br:} Objek BufferedReader yang berfungsi untuk membaca isi dari \textit{file} yang dibuka FileReader.
+	\end{itemize}
+\end{enumerate}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.6]{Gambar/class-diagram-lengkap}
+	\caption{Diagram kelas lengkap} 
+	\label{fig:6-class-diagram-lengkap}
+\end{figure}
 
 \section{Analisis Diagram Aktivitas}
 

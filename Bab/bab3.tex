@@ -288,7 +288,7 @@ Diagram kelas perangkat lunak steganografi dapat dilihat pada \ref{fig:3_classdi
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.5]{Gambar/classdiagram}
+	\includegraphics[scale=0.8]{Gambar/classdiagram}
 	\caption{Class Diagram perangkat lunak steganografi} 
 	\label{fig:3_classdiagram}
 \end{figure}
@@ -298,26 +298,29 @@ Keterangan atas diagram kelas akan dijelaskan sebagai berikut:
 \begin{enumerate}
 	\item \textbf{Kelas Dokumen}
 	\begin{itemize}
-		\item Atribut text, untuk menampung teks dari dokumen berupa string
+		\item Atribut \textit{text}, untuk menampung teks dari dokumen berupa \textit{string}.
+		\item \textit{Constructor} Dokumen, memiliki parameter bertipe \textit{string}, parameter akan mengisi atribut teks.
+		\item Fungsi getText, merupakan \textit{getter} untuk atribut \textit{text}.
+		\item Fungsi setText, merupakan \textit{setter} untuk atribut \textit{text}.		
 	\end{itemize}
 	\item \textbf{Kelas Pesan}
 	\begin{itemize}
-		\item Atribut text, untuk menampung teks dari pesan berupa string
-		\item Atribut biner, untuk menampung teks dari pesan berupa biner, tetapi dalam bentuk string
-		\item Fungsi toBiner, memiliki parameter text. Fungsi ini akan merubah tiap karakter yang ditampung di atribut text menjadi kode ASCII dalam bentuk biner.
+		\item Atribut \textit{text}, untuk menampung teks dari pesan berupa \textit{string}.
+		\item \textit{Constructor} Pesan, memiliki parameter bertipe \textit{string}, parameter akan mengisi atribut teks.
+		\item Fungsi toBiner, memiliki parameter bertipe \textit{string}. Fungsi ini akan mengembalikan bentuk biner dari isi atribut \textit{text}.
 	\end{itemize}
 	\item \textbf{Kelas PemotongKata}
 	\begin{itemize}
-		\item Atribut dokumen, untuk menampung isi dokumen
-		\item Atribut hasilAnalisis, untuk menyimpan hasil dari penyukuan kata
-		\item Atribut pesan, untuk menyimpan pesan rahasia yang akan disisipkan
-		\item Atribut stegoObject, untuk menyimpan stego-object yang akan diektraksi
-		\item Fungsi dfsaTahap1, memiliki parameter dokumen menghasilkan keluaran berupa hasil proses dfsa tahap pertama
-		\item Fungsi dfsaTahap2, memiliki parameter tahap1 yang merupakan keluaran dfsaTahap1 dan mengeluarkan hasil proses dfsa tahap kedua
-		\item Fungsi dfsaTahap3, memiliki parameter tahap2 yang merupakan keluaran dfsaTahap2 dan mengeluarkan hasil penyukuan kata dari text
-		\item Fungsi normalisasiText, memiliki parameter dokumen dan menghasilkan keluaran berupa teks tanpa tanda baca dan simbol, sehingga siap untuk dipotong berdasarkan suku katanya
-		\item Fungsi sisipkan, memiliki parameter pesan yang merupakan pesan rahasia yang diketikkan oleh pengguna dan akan mengeksekusi rangkaian penyisipan pesan
-		\item Fungsi ekstraksiPesanRahasia, memiliki parameter stegoObject yang merupakan \textit{stego-object} yang disalin oleh pengguna dari hasil penyisipan menggunakan perangkat lunak yang sama dan akan mengeksekusi rangkaian pengekstraksian kembali pesan rahasia
-		\item Fungsi toBiner, memiliki parameter dokumen. Parameter dokumen merupakan dokumen yang telah dilakukan penyukuan, sehingga fungsi ini hanya menghitung jumlah suku kata untuk setiap katanya. Jumlah kata akan disandikan dengan 0 untuk jumlah genap dan 1 untuk jumlah ganjil
+		\item Atribut dokumen, untuk menampung dokumen-dokumen yang ada.
+		\item Atribut hasilAnalisis, untuk menyimpan hasil dari penyukuan kata.
+		\item Atribut pesan, untuk menyimpan pesan rahasia yang akan disembunyikan.
+		\item Atribut stegoObject, untuk menyimpan \textit{stego-object} yang akan diektrak.
+		\item Fungsi dfsaTahap1, memiliki parameter pesan, mengembalikan keluaran berupa hasil proses dfsa tahap pertama.
+		\item Fungsi dfsaTahap2, memiliki parameter tahap1 yang merupakan keluaran dfsaTahap1 dan mengembalikan hasil proses dfsa tahap kedua.
+		\item Fungsi dfsaTahap3, memiliki parameter tahap2 yang merupakan keluaran dfsaTahap2 dan mengembalikan hasil penyukuan kata akhir.
+		\item Fungsi normalisasiText, memiliki parameter dokumen dan menghasilkan keluaran berupa dokumen tanpa tanda baca dan simbol, sehingga siap untuk dipotong berdasarkan suku katanya
+		\item Fungsi sisipkan, memiliki parameter pesan yang merupakan pesan rahasia yang diketikkan oleh pengguna dan akan mengeksekusi rangkaian penyisipan pesan.
+		\item Fungsi ekstraksi, memiliki parameter stegoObject yang merupakan \textit{stego-object} yang disalin oleh pengguna dari hasil penyisipan menggunakan perangkat lunak yang sama dan akan mengeksekusi rangkaian pengekstraksian kembali pesan rahasia.
+		\item Fungsi toBiner, memiliki parameter dokumen. Parameter dokumen merupakan dokumen yang telah dilakukan penyukuan, sehingga fungsi ini hanya menghitung jumlah suku kata untuk setiap katanya. Jumlah kata akan disandikan dengan 0 untuk jumlah genap dan 1 untuk jumlah ganjil.
 	\end{itemize}
 \end{enumerate}
