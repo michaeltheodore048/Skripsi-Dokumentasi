@@ -1,27 +1,30 @@
 \begin{thebibliography}{1}
 
+\bibitem{fbs:2009}
+H.~Singh, P.~K. Singh, and K.~Saroha, ``A survey on text based steganography,''
+  2009.
+
 \bibitem{Thomas:2000}
-T.~A. Basuki {\em Pengenalan Suku Kata Bahasa Indonesia Menggunakan
-  Finite-State Automata}, vol.~5, pp.~67--74, 2000.
+T.~A. Basuki, ``Pengenalan suku kata bahasa indonesia menggunakan finite-state
+  automata,'' {\em Integral}, vol.~5, pp.~67--74, 2000.
 
 \bibitem{Dpcrypto:2009}
-P.~Wayner in {\em Disappearing cryptography: Information hiding: Steganography
-  and watermarking}, vol.~3, 2009.
+P.~Wayner, {\em Disappearing Cryptography: Information Hiding : Steganography
+  \& Watermarking}.
+\newblock The Morgan Kaufmann Series in Software Engineering and Programming
+  Series, Morgan Kaufmann Publishers, 2009.
 
 \bibitem{eyd:2009}
 Permendiknas in {\em EYD Terbaru (Sesuai Permendikbud No. 46 Tahun 2009)},
   JENDELA PUBLISHING, 2009.
 
 \bibitem{NLA:2003}
-J.~P. .~A. Stubbs in {\em Natural Language Annotation for Machine Learning},
-  O'Reilly Media,Inc., 2013.
+J.~Pustejovsky and A.~Stubbs, {\em Natural Language Annotation for Machine
+  Learning}.
+\newblock O'Reilly Media, 2012.
 
 \bibitem{Frisca:2014}
 F.~Sumarlin in {\em Sistem Text-To-Speech Untuk Membacakan Dongeng Berbahasa
   Indonesia}, 2014.
-
-\bibitem{fbs:2009}
-K.~S. Hitesh~Singh, Pradeep Kumar~Singh {\em A Survey on Text Based
-  Steganography}, 2009.
 
 \end{thebibliography}

@@ -132,6 +132,13 @@ Deskripsi setiap kelas beserta dengan atribut dan fungsinya akan dijelaskan seba
 		\end{itemize}
 	\end{itemize}
 	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.6]{Gambar/class-diagram-lengkap}
+		\caption{Diagram kelas lengkap} 
+		\label{fig:6-class-diagram-lengkap}
+	\end{figure}	
+	
 	\item Kelas DatabaseReader\\
 	Kelas ini berfungsi untuk membaca \textit{file database} dengan tujuan mencari sinonim. Atribut yang ada pada kelas DatabaseReader adalah:
 	\begin{itemize}
@@ -161,14 +168,75 @@ Deskripsi setiap kelas beserta dengan atribut dan fungsinya akan dijelaskan seba
 		\item \textbf{FileReader fr:} Objek FileReader yang berfungsi untuk membuka suatu \textit{file}.
 		\item \textbf{BufferedReader br:} Objek BufferedReader yang berfungsi untuk membaca isi dari \textit{file} yang dibuka FileReader.
 	\end{itemize}
+	
+	Fungsi-fungsi yang dimiliki kelas ini adalah:
+	
+	\begin{itemize}
+		\item \textbf{Embedder(String stegoFileName)}\\
+		Merupakan \textit{constructor} dari kelas Embedder dengan parameter nama \textit{stego-cover} yang akan langsung dibuka oleh FileReader.\\
+		\textbf{Parameter:}
+		\begin{itemize}
+			\item \textbf{stegoFileName} Nama \textit{file stego-cover} yang akan dibuka oleh FileReader.
+		\end{itemize}
+		
+		\item \textbf{Embedder()}\\
+		Merupakan \textit{constructor} tanpa parameter dari kelas Embedder yang akan menginisialisasi FileReader dan BufferedReader.
+		
+		\item \textbf{String stringToBinaryCode(String input)}\\
+		Berfungsi untuk mengubah setiap karakter dalam string menjadi biner.\\
+		\textbf{Parameter:}
+		\begin{itemize}
+			\item \textbf{input} String yang akan diubah menjadi biner.
+		\end{itemize}
+		
+		\item \textbf{String toBinaryString(char in)}\\
+		Berfungsi untuk mendapatkan kode ASCII dari karakter.\\
+		\textbf{Parameter:}
+		\begin{itemize}
+			\item \textbf{in} Karakter yang akan didapatkan kode ASCII-nya.
+		\end{itemize}
+		
+		\item \textbf{String embed(String secret)}\\
+		Berfungsi untuk melakukan proses \textit{embedding}.\\
+		\textbf{Parameter:}
+		\begin{itemize}
+			\item \textbf{secret} Pesan rahasia yang akan disembunyikan.
+		\end{itemize}
+		
+		\item \textbf{String checkAllSynonym(String stegoFileName)}\\
+		Berfungsi untuk cek ketersediaan sinonim \textit{stego-cover} pada \textit{file database}.\\
+		\textbf{Parameter:}
+		\begin{itemize}
+			\item \textbf{stegoFileName} Nama \textit{file stego-cover} yang akan dicek.
+		\end{itemize}
+	\end{itemize}
+	
+	\item Kelas Extractor\\
+	Kelas ini berfungsi untuk menangani seluruh kegiatan \textit{extracting} pesan dari \textit{stego-object}. Atribut yang ada pada kelas Extractor adalah:
+	\begin{itemize}
+		\item \textbf{PemotongKata pk:} Objek PemotongKata berfungsi untuk memotong kata.
+		\item \textbf{String asciiCode:} Untuk menyimpan kode yang siap diubah menjadi karakter ASCII.
+	\end{itemize}
+	
+	Fungsi-fungsi yang dimiliki kelas ini adalah:
+	
+	\begin{itemize}
+		\item \textbf{void read(String stegoObject)}\\
+		Berfungsi untuk mengubah \textit{stego-object} menjadi kode yang siap diubah menjadi karakter ASCII.\\
+		\textbf{Paramter:}
+		\begin{itemize}
+			\item \textbf{stegoObject} \textit{Stego-object} yang akan didapatkan kodenya.
+		\end{itemize}
+		
+		\item \textbf{String extract(String stegoObject)}\\
+		Berfungsi untuk melakukan proses \textit{extracting}\\
+		\textbf{Parameter:}
+		\begin{itemize}
+			\item \textbf{stegoObject} \textit{Stego-object} yang akan diekstraksi.
+		\end{itemize}
+	\end{itemize}
+	
 \end{enumerate}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.6]{Gambar/class-diagram-lengkap}
-	\caption{Diagram kelas lengkap} 
-	\label{fig:6-class-diagram-lengkap}
-\end{figure}
 
 \section{Analisis Diagram Aktivitas}
 
@@ -176,7 +244,7 @@ Diagram aktivitas dari perangkat lunak dibagi menjadi dua. Diagram aktivitas saa
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.5]{Gambar/activity-penyisipan}
+	\includegraphics[scale=0.4]{Gambar/activity-penyisipan}
 	\caption{Activity Diagram perangkat lunak steganografi saat menyisipkan} 
 	\label{fig:4_activity-penyisipan}
 \end{figure}
@@ -184,19 +252,25 @@ Diagram aktivitas dari perangkat lunak dibagi menjadi dua. Diagram aktivitas saa
 Dari diagram aktivitas dapat dijelaskan sebagai berikut:
 
 \begin{enumerate}
-	\item Pengguna memasukkan input berupa string (pesan rahasia)
+	\item Pengguna memasukkan input pesan rahasia berupa string
 	\item Pesan akan diubah ke bentuk ASCII
-	\item Dokumen korpus akan dibuka satu per satu
-	\item Untuk setiap dokumen yang dibuka akan dilakukan penyukuan kata dan dilakukan penyandian. Angka 1 untuk kata dengan jumlah suku kata genap dan angka 2 untuk kata dengan jumlah suku kata ganjil
-	\item Pesan rahasia yang telah diubah ke bentuk ASCII dan dokumen yang telah disandikan akan dibandingkan. Dari sini akan dihasilkan dua kemungkinan:
+	\item Sistem akan mencari \textit{stego-cover} yang dapat dipakai (kapasitas mencukupi)
+	\item Dari beberapa \textit{stego-cover} yang dapat dipakai, akan dipilih satu secara acak
+	\item Sistem akan membaca satu per satu kata yang ada pada \textit{stego-cover}
+	\item Kode ASCII dari pesan rahasia akan dibaca satu per satu
+	\item Sistem menghitung banyaknya suku kata pada kata yang sedang dibaca
+	\item Cek apakah banyak suku kata dan nilai kode ASCII yang sedang dibaca sama-sama bernilai genap atau ganjil. Dari sini akan dihasilkan dua kemungkinan:
 	\begin{itemize}
-		\item Jika ditemukan dokumen cocok dengan pesan rahasia, akan diambil kalimat yang sesuai
-		\item Jika tidak ditemukan dokumen yang cocok, dari dokumen yang paling mirip akan dilakukan modifikasi (perubahan sinonim atau perubahan kalimat aktif/pasif)
+		\item Jika keduanya sesuai, ada dua kemungkinan lagi:
+		\begin{itemize}
+			\item Jika masih ada kode yang belum diperiksa, maka akan kembali ke tahap 6 dan 7.
+			\item Jika semua kode telah diperiksa, maka \textit{stego-cover} berhasil dibuat dan proses \textit{embedding} selesai.
+		\end{itemize}
+		\item Jika tidak sesuai, maka sistem akan mengganti kata tersebut dengan sinonimnya dan kembali ke tahap 6 dan 7.
 	\end{itemize}
-	\item Jika telah didapatkan kalimat yang sesuai, kalimat akan ditampilkan dan program selesai
 \end{enumerate}
 
-Diagram aktivitas ekstraksi dapat dilihat pada 
+Diagram aktivitas ekstraksi dapat dilihat pada Gambar \ref{fig:4_activity-ekstraksi}
 
 \begin{figure}[H]
 	\centering
