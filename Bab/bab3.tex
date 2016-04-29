@@ -1,16 +1,18 @@
 \chapter{Analisis}
-Pada bab ini akan dibahas mengenai algoritma yang dipilih untuk menyembunyikan \textit{secret message}. \textit{Stego-cover} yang akan digunakan berupa \textit{text file} yang tentu terdiri dari banyak kata. Algoritma yang dipilih akan memanfaatkan banyaknya suku kata dalam suatu kata. Notasi $\sum$ akan digunakan untuk merepresentasikan banyaknya suku kata dalam suatu kata. Diketahui bahwa $\sum$ dapat bernilai ganjil atau genap. Dua kemungkinan tersebut identik dengan bilangan biner. Dengan demikian diputuskan bahwa $\sum$ yang bernilai genap akan merepresentasikan 0 dan $\sum$ bernilai ganjil merepresentasikan 1. Dapat ditarik kesimpulan berarti 1 kata dapat diubah menjadi 1 bit bilangan biner. Jika sebuah \textit{stego-cover} memiliki 700 kata, berarti \textit{stego-cover} tersebut memiliki kapasitas sebesar 700 bit.
+Pada bab ini akan dibahas mengenai algoritma yang dipilih untuk menyembunyikan \textit{secret message}. Untuk itu penjelasannya akan dibagi menjadi beberapa bagian. Bagian pertama akan menjelaskan tentang gambaran umum algoritma yang dipakai. Selanjutnya akan dijelaskan bagaimana pemenggalan kata akan dilakukan. Ada pula bagian kamus sinonim, penjelasan lebih lengkapnya terdapat pada Bab \ref{sec:gambaran_umum} dan Bab \ref{sec:kamus_sinonim}. Setelah penjelasan tentang kamus sinonim, akan dijelaskan juga mengenai \textit{stego-cover} seperti apa yang akan dipakai, serta bagaimana proses \textit{embedding} dan \textit{extracting information}.
+
+\section{Gambaran Algoritma Umum}
+\label{sec:gambaran_umum}
+\textit{Stego-cover} yang akan digunakan berupa \textit{text file} yang tentu terdiri dari banyak kata. Algoritma yang dipilih akan memanfaatkan banyaknya suku kata dalam suatu kata. Notasi \textit{c}(\textit{w}) akan digunakan untuk merepresentasikan banyaknya suku kata dalam suatu kata, dimana suatu katanya adalah \textit{w}. Diketahui bahwa \textit{c}(\textit{w}) dapat bernilai ganjil atau genap. Dua kemungkinan tersebut identik dengan bilangan biner. Dengan demikian diputuskan bahwa \textit{c}(\textit{w}) yang bernilai genap akan merepresentasikan 0 dan \textit{c}(\textit{w}) bernilai ganjil merepresentasikan 1. Dapat ditarik kesimpulan berarti 1 kata dapat diubah menjadi 1 bit bilangan biner. Jika sebuah \textit{stego-cover} memiliki 700 kata, berarti \textit{stego-cover} tersebut memiliki kapasitas sebesar 700 bit.
 
 Setelah menemukan cara mengubah \textit{stego-cover} menjadi bilangan biner, \textit{secret message} juga harus diubah menjadi bilangan biner. Diketahui bahwa setiap karakter yang ditampilkan pada layar komputer, memiliki kode ASCII yang unik. Kode ASCII merupakan representasi numerik dari karakter seperti 'a', '1', atau '@'. Kode ASCII merupakan representasi numerik, berarti kode ASCII dapat diubah lagi menjadi bilangan biner. Sebagai contoh, jika sebuah \textit{secret message} terdiri dari n karakter dan tiap karakter diubah menjadi 7 bit bilangan biner dengan memanfaatkan kode ASCII, maka dibutuhkan minimal 7*n bit \textit{stego-cover} untuk dapat menyembunyikan \textit{secret message} tersebut. 
 
-Setelah \textit{stego-cover} dan \textit{secret message} dapat diubah menjadi deret bilangan biner, \textit{stego-cover} harus dapat diubah lagi sedemikian rupa agar 7*n deret biner pertamanya identik dengan deret biner \textit{secret message}. Sehingga saat proses ekstraksi, deret biner dari \textit{stego-cover} dapat diubah lagi menjadi karakter yang sesuai dengan \textit{secret message}. Karena $\sum$ dalam \textit{stego-cover} dapat bernilai 0 atau 1, ada kemungkinan $\sum$ tidak sesuai dengan angka biner dari \textit{secret message} yang akan disembunyikan. Untuk mengatasi hal ini, kata dengan nilai $\sum$ yang tidak sesuai, akan diganti dengan sinonim yang memiliki $\sum$ yang sesuai.
+Setelah \textit{stego-cover} dan \textit{secret message} dapat diubah menjadi deret bilangan biner, \textit{stego-cover} harus dapat diubah lagi sedemikian rupa agar 7*n deret biner pertamanya identik dengan deret biner \textit{secret message}. Sehingga saat proses ekstraksi, deret biner dari \textit{stego-cover} dapat diubah lagi menjadi karakter yang sesuai dengan \textit{secret message}. Karena \textit{c}(\textit{w}) dalam \textit{stego-cover} dapat bernilai 0 atau 1, ada kemungkinan \textit{c}(\textit{w}) tidak sesuai dengan angka biner dari \textit{secret message} yang akan disembunyikan. Untuk mengatasi hal ini, kata dengan nilai \textit{c}(\textit{w}) yang tidak sesuai, akan diganti dengan sinonim yang memiliki \textit{c}(\textit{w}) yang sesuai.
 
-Tentunya semua kata yang ada pada \textit{stego-cover} harus memiliki sinonim agar setiap kata dapat memiliki $\sum$ yang bernilai 0 atau 1. Tesaurus\footnote{http://kbbi.web.id/tesaurus} merupakan buku referensi berupa daftar kata dengan sinonimnya. Namun karena format tesaurus yang memiliki banyak pengelompokkan kata, seperti kata "bobol" bisa berarti "ambrol"/"hancur", bisa juga berarti "buyar"/"tembus". Lalu dari kata "bobol" bisa jadi "membobol" yang juga bisa berarti "membobok", bisa juga berarti "mencuri". Karena format yang terlalu rumit untuk dapat dibaca secara otomatis oleh program, maka diputuskan untuk membuat \textit{file database} yang lebih ringkas. \textit{File database} ini berisi pasangan kata dengan sinonimnya pada tiap barisnya. Karena \textit{file database} dibuat sendiri, maka daftar kata yang ada di dalamnya, masih terbatas, artinya jika pengguna menambahkan \textit{stego-cover} baru, pengguna juga harus melengkapi sinonim yang belum terdaftar pada \textit{file database}.
-
-\section{Hipotesis}
+Tentunya semua kata yang ada pada \textit{stego-cover} harus memiliki sinonim agar setiap kata dapat memiliki \textit{c}(\textit{w}) yang bernilai 0 atau 1. Tesaurus merupakan buku referensi berupa daftar kata dengan sinonimnya\footnote{http://kbbi.web.id/tesaurus}. Namun karena format tesaurus yang memiliki banyak pengelompokkan kata, seperti kata "bobol" bisa berarti "ambrol"/"hancur", bisa juga berarti "buyar"/"tembus". Lalu dari kata "bobol" bisa jadi "membobol" yang juga bisa berarti "membobok", bisa juga berarti "mencuri". Karena format yang terlalu rumit untuk dapat dibaca secara otomatis oleh program, maka diputuskan untuk membuat kamus sinonim yang lebih ringkas. Kamus sinonim ini berisi pasangan kata dengan sinonimnya pada tiap barisnya. Karena kamus sinonim dibuat sendiri, maka daftar kata yang ada di dalamnya, masih terbatas, artinya jika pengguna menambahkan \textit{stego-cover} baru, pengguna juga harus melengkapi sinonim yang belum terdaftar pada kamus sinonim.
 
 \subsection{Pemenggalan Kata}
-Untuk proses pemenggalan kata, akan menggunakan skripsi Frisca Sumarlin 2010 yang berjudul Aplikasi Pendongeng. Untuk mengenali suku kata dalam bahasa Indonesia, akan digunakan tiga tahap DFSA. Setiap masukan dari DFSA merupakan hasil DFSA tahap sebelumnya. Seperti yang telah dijelaskan , FSA memiliki prinsip kerja membaca hanya satu arah dan tidak bisa membaca mundur masukannya. Sedangkan untuk mengenali suku kata, untuk beberapa kasus kata dibutuhkan kemampuan untuk membaca mundur masukannya. Sebagai contoh, pada kata "anda", huruf ketiga adalah huruf konsonan sehingga pemenggalan suku kata dapat dilakukan pada saat membaca huruf ketiga.
+Untuk proses pemenggalan kata, akan menggunakan skripsi Frisca Sumarlin 2010 yang berjudul Aplikasi Pendongeng. Untuk mengenali suku kata dalam bahasa Indonesia, akan digunakan tiga tahap DFSA. Setiap masukan dari DFSA merupakan hasil DFSA tahap sebelumnya. Seperti yang telah dijelaskan, FSA memiliki prinsip kerja membaca hanya satu arah dan tidak bisa membaca mundur masukannya. Sedangkan untuk mengenali suku kata, untuk beberapa kasus kata dibutuhkan kemampuan untuk membaca mundur masukannya. Sebagai contoh, pada kata "anda", huruf ketiga adalah huruf konsonan sehingga pemenggalan suku kata dapat dilakukan pada saat membaca huruf ketiga.
 
 Pada tahap 1 ini memang beberapa kata belum sesuai dengan aturan penyukuan kata yang benar, karena itu akan dilakukan tiga tahapan. Untuk diagramnya dapat dilihat pada Gambar \ref{fig:1-DFSA-1}.
 
@@ -110,27 +112,28 @@ Pemenggalan suku kata akan dipakai untuk mendapatkan banyak suku kata kata-kata 
 
 Setelah menemui hambatan-hambatan di atas, akhirnya diputuskan beberapa solusi. Pertama-tama, dari keseluruhan isi \textit{stego-cover}, tanda baca akan diabaikan (kecuali tanda penghubung '-'), sehingga yang akan dipenggal hanyalah kata-katanya saja. Satu digit angka akan dihitung sebagai satu suku kata, namun pada \textit{stego-cover} diputuskan untuk tidak boleh mengandung angka sama sekali, karena tidak memiliki sinonim. Semua singkatan atau kata dalam bahasa asing, akan dilakukan pemenggalan kata apa adanya.
 
-\subsection{\textit{Database} sinonim}
-Proses \textit{embedding} akan memanfaatkan daftar sinonim yang ada pada \textit{file database}. \textit{File database} kata akan disimpan dalam sebuah \textit{file} dengan ekstensi .txt. Pada \textit{file database} satu per satu kata yang ada pada \textit{stego-cover} memiliki sinonimnya sendiri. Pencarian sinonim pertama-tama akan dicari di tesaurus. Tesaurus \footnote{http://kbbi.web.id/tesaurus}merupakan buku referensi berupa daftar kata dengan sinonimnya. Kata-kata yang terdaftar di tesaurus adalah kata baku, sehingga jika pada \textit{stego-cover} terdapat kata yang tidak dapat ditemukan pada tesaurus, diperlukan penanganan tersendiri.
+\subsection{Kamus sinonim}
+\label{sec:kamus_sinonim}
+Proses \textit{embedding} akan memanfaatkan daftar sinonim yang ada pada kamus sinonim. Kamus sinonim akan disimpan dalam sebuah \textit{file} dengan ekstensi .txt. Pada kamus sinonim setiap kata yang ada pada \textit{stego-cover} memiliki sinonimnya sendiri. Pencarian sinonim pertama-tama akan dicari di tesaurus. Tesaurus merupakan buku referensi berupa daftar kata dengan sinonimnya\footnote{http://kbbi.web.id/tesaurus}. Kata-kata yang terdaftar di tesaurus adalah kata baku, sehingga jika pada \textit{stego-cover} terdapat kata yang tidak dapat ditemukan pada tesaurus, diperlukan penanganan tersendiri.
 
 Solusinya adalah dengan mengubah-ubah imbuhan pada awal atau akhir kalimat, namun tetap memperhatikan konteks kalimat tersebut. Sebagai contoh, pada \textit{stego-cover} terdapat kata 'menggendongnya', namun kata tersebut tidak dapat ditemukan pada tesaurus, karena terdapat imbuhan. Sehingga untuk sinonimnya dapat digunakan kata 'menggendong'. Kedua kata tersebut memiliki jumlah suku kata yang berbeda, namun memiliki arti yang sama.
 
-Terdapat beberapa kata yang memang tidak memiliki sinonim dengan jumlah suku kata yang berbeda. Kata 'lama' memiliki 2 suku kata, sedangkan sinonim yang ada pada Tesaurus adalah 'lamban' dan 'lelet'. Kedua sinonimnya memiliki $\sum$ genap, tetapi yang dibutuhkan adalah $\sum$ ganjil. Hal ini dapat diatasi dengan menyamarkannya sebagai \textit{typo} atau kesalahan pengetikkan. Contohnya dengan memasukkan kata 'lambaan' atau 'lamaa' sebagai sinonim dari kata 'lama'. Kata 'lambaan' dan 'lamaa', jika dipotong suku katanya dengan menggunakan pemotong suku kata yang telah dibuat, kedua kata tersebut memiliki $\sum$ ganjil.
+Terdapat beberapa kata yang memang tidak memiliki sinonim dengan jumlah suku kata yang berbeda. Kata 'lama' memiliki 2 suku kata, sedangkan sinonim yang ada pada Tesaurus adalah 'lamban' dan 'lelet'. Kedua sinonimnya memiliki \textit{c}(\textit{w}) genap, tetapi yang dibutuhkan adalah \textit{c}(\textit{w}) ganjil. Hal ini dapat diatasi dengan menyamarkannya sebagai \textit{typo} atau kesalahan pengetikkan. Contohnya dengan memasukkan kata 'lambaan' atau 'lamaa' sebagai sinonim dari kata 'lama'. Kata 'lambaan' dan 'lamaa', jika dipotong suku katanya dengan menggunakan pemotong suku kata yang telah dibuat, kedua kata tersebut memiliki \textit{c}(\textit{w}) ganjil.
 
 \subsection{\textit{Stego-cover}}
-\textit{Stego-cover} yang telah dikumpulkan berupa puisi dan cerpen. Alasan dipilihnya cerpen dan puisi sebagai \textit{stego-cover}, karena puisi umumnya menggunakan satu kata berulang-ulang, sehingga dapat mengurangi banyaknya kata yang disimpan pada \textit{file database}. Sedangkan cerpen yang dipilih memiliki jumlah kata yang cukup banyak, ini menandakan kapasitas penyimpanan yang cukup besar.
+\textit{Stego-cover} yang telah dikumpulkan berupa puisi dan cerpen. Alasan dipilihnya cerpen dan puisi sebagai \textit{stego-cover}, karena puisi umumnya menggunakan satu kata berulang-ulang, sehingga dapat mengurangi banyaknya kata yang disimpan pada kamus sinonim. Sedangkan cerpen yang dipilih memiliki jumlah kata yang cukup banyak, ini menandakan kapasitas penyimpanan yang cukup besar.
 
 Dengan dipilihnya cerpen dan puisi sebagai \textit{stego-cover}, maka dibutuhkan skema komunikasi yang dapat menyamarkan artikel tersebut agar tidak menimbulkan kecurigaan oleh pihak lain. Skema komunikasi yang dipilih berupa komunikasi antara dua mahasiswa yang gemar mengirim puisi atau cerpen melalui \textit{email}. \textit{Email} yang dikirim mengandung \textit{stego-object} yang merupakan hasil dari \textit{embedding secret message} pada \textit{stego-cover}. Dengan skema komunikasi seperti ini, jika ada pihak lain yang membaca \textit{email} kedua mahasiswa tersebut, tidak akan mencurigai adanya kejanggalan karena kedua mahasiswa gemar berkirim puisi dan cerpen.
 
 \subsection{\textit{Embedding}}
-Proses \textit{embedding} akan memanfaatkan suku kata dan sinonim kata itu sendiri. Ide utamanya adalah dengan mengganti kata-kata tertentu yang ada dalam \textit{stego-cover} dengan kata-kata yang telah disediakan pada \textit{file database}, agar 7*n deret bilangan biner pertama pada \textit{stego-cover} identik dengan deret bilangan biner \textit{secret message}.  \textit{File database} berisi semua kata yang ada pada \textit{stego cover} berpasangan dengan sinonimnya. Pasangan kata yang ada pada \textit{database} merupakan sinonim dengan $\sum$ yang berbeda (ganjil dan genap) dengan kata aslinya.
+Proses \textit{embedding} akan memanfaatkan suku kata dan sinonim kata itu sendiri. Ide utamanya adalah dengan mengganti kata-kata tertentu yang ada dalam \textit{stego-cover} dengan kata-kata yang telah disediakan pada kamus sinonim, agar 7*n deret bilangan biner pertama pada \textit{stego-cover} identik dengan deret bilangan biner \textit{secret message}. Kamus sinonim berisi semua kata yang ada pada \textit{stego cover} berpasangan dengan sinonimnya. Pasangan kata yang ada pada \textit{database} merupakan sinonim dengan \textit{c}(\textit{w}) yang berbeda (ganjil dan genap) dengan kata aslinya.
 
-Penggantian kata pada \textit{stego-cover} ditentukan dari ASCII \textit{secret message} yang akan disembunyikan. ASCII\footnote{http://whatis.techtarget.com/definition/ASCII-American-Standard-Code-for-Information-Interchange} (\textit{American Standard Code for Information Interchange}) merupakan format yang paling umum untuk \textit{file} teks yang ada di komputer dan internet. Kode ASCII yang akan dipakai direpresentasikan dengan 7-bit angka biner, yang berarti ada 7 digit angka 0 atau 1. Pemilihan 7-bit ini dikarenakan kode ASCII pada bilangan desimal hanya ada dari 0 sampai 127, sehingga jika menggunakan 8-bit, angka pertama(paling kiri) akan selalu bernilai 0. Dapat disimpulkan bahwa untuk menyisipkan 7-bit dibutuhkan 7 kata, 8-bit dibutuhkan 8 kata.  Untuk alasan memaksimalkan kapasitas penyisipan, maka diputuskan untuk merepresentasikan 1 karakter menjadi 7-bit.
+Penggantian kata pada \textit{stego-cover} ditentukan dari ASCII \textit{secret message} yang akan disembunyikan. ASCII (\textit{American Standard Code for Information Interchange}) merupakan format yang paling umum untuk \textit{file} teks yang ada di komputer dan internet\footnote{http://whatis.techtarget.com/definition/ASCII-American-Standard-Code-for-Information-Interchange}. Kode ASCII yang akan dipakai direpresentasikan dengan 7-bit angka biner, yang berarti ada 7 digit angka 0 atau 1. Pemilihan 7-bit ini dikarenakan kode ASCII pada bilangan desimal hanya ada dari 0 sampai 127, sehingga jika menggunakan 8-bit, angka pertama(paling kiri) akan selalu bernilai 0. Dapat disimpulkan bahwa untuk menyisipkan 7-bit dibutuhkan 7 kata, 8-bit dibutuhkan 8 kata.  Untuk alasan memaksimalkan kapasitas penyisipan, maka diputuskan untuk merepresentasikan 1 karakter menjadi 7-bit.
 
-Setelah \textit{secret message} diubah menjadi deret bilangan biner dengan memanfaatkan kode ASCII, satu per satu digit kodenya akan dicocokkan dengan $\sum$ pada \textit{stego cover}. Kode digit pertama akan disisipkan pada kata pertama \textit{stego-cover}, digit kedua disisipkan pada kata kedua, dst. Jika $\sum$ pada \textit{stego-cover} tidak sesuai dengan digit kodenya, maka kata tersebut akan diganti dengan sinonimnya yang ada pada \textit{file database}. Pemberitahuan akan muncul jika ada kata yang sinonimnya tidak ditemukan pada \textit{file database}.
+Setelah \textit{secret message} diubah menjadi deret bilangan biner dengan memanfaatkan kode ASCII, satu per satu digit kodenya akan dicocokkan dengan \textit{c}(\textit{w}) pada \textit{stego cover}. Kode digit pertama akan disisipkan pada kata pertama \textit{stego-cover}, digit kedua disisipkan pada kata kedua, dst. Jika \textit{c}(\textit{w}) pada \textit{stego-cover} tidak sesuai dengan digit kodenya, maka kata tersebut akan diganti dengan sinonimnya yang ada pada kamus sinonim. Pemberitahuan akan muncul jika ada kata yang sinonimnya tidak ditemukan pada kamus sinonim.
 
 \subsubsection{Algoritma}
-Seperti yang telah dijelaskan sebelumnya, algoritma ini akan memanfaatkan kata yang ada pada \textit{stego-cover} untuk menyisipkan kode ASCII dari pesan rahasia ditambah kode ASCII karakter '\#' (untuk menandakan bahwa pesan rahasia telah berakhir). Proses penyisipan ini juga memanfaatkan \textit{file database} untuk mengubah kata asli yang ada pada \textit{stego-cover} dengan sinonim yang ada pada \textit{file database} jika $\sum$ tidak sesuai dengan kode ASCII pesan rahasia.
+Seperti yang telah dijelaskan sebelumnya, algoritma ini akan memanfaatkan kata yang ada pada \textit{stego-cover} untuk menyisipkan kode ASCII dari pesan rahasia ditambah kode ASCII karakter '\#' (untuk menandakan bahwa pesan rahasia telah berakhir). Proses penyisipan ini juga memanfaatkan kamus sinonim untuk mengubah kata asli yang ada pada \textit{stego-cover} dengan sinonim yang ada pada kamus sinonim jika \textit{c}(\textit{w}) tidak sesuai dengan kode ASCII pesan rahasia.
 
 Algoritma \textit{embedding} pesan rahasia pada \textit{stego-cover} dengan memanfaatkan sinonim
 
@@ -142,10 +145,10 @@ Algoritma \textit{embedding} pesan rahasia pada \textit{stego-cover} dengan mema
 	\item Cari \textit{stego cover} yang dapat menampung \textit{secret code}. (Banyaknya kata yang ada dalam \textit{stego cover} $\geq$ panjang \textit{secret code}).
 	\item Bangkitkan angka acak (r) dari 0 sampai banyaknya \textit{stego cover} yang dapat menampung \textit{secret code} - 1. 
 	\item Buka \textit{file} ke-(r) dan baca per kata dengan mengabaikan tanda baca dan spasi.
-	\item Untuk 7*n+1 kata pertama, lakukan pemenggalan kata dan dapatkan nilai $\sum$.
-	\item Cocokkan nilai $\sum$ dengan angka ke-n yang ada pada \textit{secret code} secara berurutan. ($\sum$ kata ke-n dicocokkan dengan angka ke-n \textit{secret code}).
-	\item Jika pada tahap 9 didapatkan $\sum$ yang tidak sesuai dengan angka ke-n \textit{secret code}, lanjut ke tahap 11. Jika sesuai, ulangi tahap 9.
-	\item Cari sinonim kata tersebut pada \textit{file database}. Kata yang diambil hanya kata dengan nilai $\sum$ yang berbeda.
+	\item Untuk 7*n+1 kata pertama, lakukan pemenggalan kata dan dapatkan nilai \textit{c}(\textit{w}).
+	\item Cocokkan nilai \textit{c}(\textit{w}) dengan angka ke-n yang ada pada \textit{secret code} secara berurutan. (\textit{c}(\textit{w}) kata ke-n dicocokkan dengan angka ke-n \textit{secret code}).
+	\item Jika pada tahap 9 didapatkan \textit{c}(\textit{w}) yang tidak sesuai dengan angka ke-n \textit{secret code}, lanjut ke tahap 11. Jika sesuai, ulangi tahap 9.
+	\item Cari sinonim kata tersebut pada kamus sinonim. Kata yang diambil hanya kata dengan nilai \textit{c}(\textit{w}) yang berbeda.
 	\item Dari kata-kata yang didapatkan dari tahap 11, akan dilakukan pengambilan satu kata secara acak.
 	\item Kata yang telah diambil dari tahap 12, akan menggantikan kata yang tidak sesuai sebelumnya.
 	\item Kembali ke tahap 9.
@@ -193,7 +196,7 @@ Dari diagram dapat dilihat dua \textit{use case}, yakni:
 				\item Pengirim menekan tombol \textit{Embed}.
 				\item Sistem lalu akan mengubah pesan yang diketik menjadi kode ASCII.
 				\item Sistem mencari \textit{stego-cover} yang dapat menampung pesan yang sudah dalam bentuk ASCII.
-				\item Sistem melakukan proses \textit{embedding} dengan bantuan \textit{file database}.
+				\item Sistem melakukan proses \textit{embedding} dengan bantuan kamus sinonim.
 				\item \textit{Stego-object} sebagai hasil dari proses \textit{embedding} akan muncul pada kotak hasil.
 			\end{enumerate}
 	\end{itemize}
@@ -227,9 +230,9 @@ Dari diagram dapat dilihat dua \textit{use case}, yakni:
 			\begin{enumerate}
 				\item Pengirim mengetikkan kata yang ada pada \textit{stego-cover}, yang akan ditambahkan sinonimnya.
 				\item Pengirim mengetikkan sinonim dari kata pada tahap 1.
-				\item Sistem akan menghitung nilai $\sum$ kata pada tahap 1 dan $\sum$ sinonim pada tahap 2.
-				\item Jika nilai $\sum$ sama, maka akan ditampilkan hasil pemenggalan kata dari sinonim yang diketikkan.
-				\item Jika nilai $\sum$ berbeda, maka sistem akan menambahkan kata beserta sinonimnya pada \textit{file database}.
+				\item Sistem akan menghitung nilai \textit{c}(\textit{w}) kata pada tahap 1 dan \textit{c}(\textit{w}) sinonim pada tahap 2.
+				\item Jika nilai \textit{c}(\textit{w}) sama, maka akan ditampilkan hasil pemenggalan kata dari sinonim yang diketikkan.
+				\item Jika nilai \textit{c}(\textit{w}) berbeda, maka sistem akan menambahkan kata beserta sinonimnya pada kamus sinonim.
 				\item Akan tampil peringatan jika sinonim berhasil ditambahkan.
 			\end{enumerate}
 	\end{itemize}
@@ -244,7 +247,7 @@ Dari diagram dapat dilihat dua \textit{use case}, yakni:
 		\item Skenario:
 			\begin{enumerate}
 				\item Pengirim menekan tombol Periksa semua sinonim.
-				\item Sistem akan memeriksa semua kata yang ada pada semua \textit{stego-cover} untuk dicari sinonimnya pada \textit{file database}.
+				\item Sistem akan memeriksa semua kata yang ada pada semua \textit{stego-cover} untuk dicari sinonimnya pada kamus sinonim.
 				\item Kata yang belum memiliki sinonim akan ditampilkan.
 			\end{enumerate}
 	\end{itemize}
@@ -285,7 +288,7 @@ Dari diagram dapat dilihat dua \textit{use case}, yakni:
 
 \subsection{Analisis Diagram Kelas}
 
-Diagram kelas perangkat lunak steganografi dapat dilihat pada \ref{fig:3_classdiagram}
+Diagram kelas perangkat lunak steganografi dapat dilihat pada Gambar \ref{fig:3_classdiagram}
 
 \begin{figure}[H]
 	\centering

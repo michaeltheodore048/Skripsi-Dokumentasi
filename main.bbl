@@ -1,5 +1,18 @@
 \begin{thebibliography}{1}
 
+\bibitem{eyd:2009}
+Permendiknas in {\em EYD Terbaru (Sesuai Permendikbud No. 46 Tahun 2009)},
+  JENDELA PUBLISHING, 2009.
+
+\bibitem{NLA:2003}
+J.~Pustejovsky and A.~Stubbs, {\em Natural Language Annotation for Machine
+  Learning}.
+\newblock O'Reilly Media, 2012.
+
+\bibitem{Frisca:2014}
+F.~Sumarlin in {\em Sistem Text-To-Speech Untuk Membacakan Dongeng Berbahasa
+  Indonesia}, 2014.
+
 \bibitem{fbs:2009}
 H.~Singh, P.~K. Singh, and K.~Saroha, ``A survey on text based steganography,''
   2009.
@@ -14,17 +27,8 @@ P.~Wayner, {\em Disappearing Cryptography: Information Hiding : Steganography
 \newblock The Morgan Kaufmann Series in Software Engineering and Programming
   Series, Morgan Kaufmann Publishers, 2009.
 
-\bibitem{eyd:2009}
-Permendiknas in {\em EYD Terbaru (Sesuai Permendikbud No. 46 Tahun 2009)},
-  JENDELA PUBLISHING, 2009.
-
-\bibitem{NLA:2003}
-J.~Pustejovsky and A.~Stubbs, {\em Natural Language Annotation for Machine
-  Learning}.
-\newblock O'Reilly Media, 2012.
-
-\bibitem{Frisca:2014}
-F.~Sumarlin in {\em Sistem Text-To-Speech Untuk Membacakan Dongeng Berbahasa
-  Indonesia}, 2014.
+\bibitem{Neil:1995}
+N.~F. Johnson, ``Information system and software engineering,'' tech. rep.,
+  George Mason University, 1995.
 
 \end{thebibliography}
