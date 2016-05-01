@@ -1,7 +1,7 @@
 \chapter{Landasan Teori}
 \label{chap:landasan_teori}
 
-Dari topik yang ada, akan dipilah-pilah menjadi beberapa komponen penyusun. Pada judul tertera kata steganografi, maka pada bab ini akan dibahas mengenai dasar-dasar steganografi, istilah-istilah yang akan digunakan, dan beberapa contoh dari steganografi. Begitu pula dengan suku kata bahasa Indonesia, tentunya akan ada pengantar terlebih dahulu tentang bahasa Indonesia sebelum mengenalkan suku katanya. Selain unsur-unsur yang nampak jelas pada topik, ada juga beberapa elemen yang tidak nampak tetapi akan dibutuhkan, seperti beberapa teori tentang pemotongan kata, bahasa alami, dan pencarian temu yang tergabung menjadi pengolahan teks.
+Dari topik yang ada, akan dipilah-pilah menjadi beberapa komponen penyusun. Pada judul terdapat suku kata bahasa Indonesia, tentunya akan ada pengantar terlebih dahulu tentang bahasa Indonesia sebelum mengenalkan suku katanya. Begitu pula dengan steganografi, maka pada bab ini akan dibahas mengenai dasar-dasar steganografi, istilah-istilah yang akan digunakan, dan beberapa contoh dari steganografi. Selain unsur-unsur yang nampak jelas pada topik, ada juga beberapa elemen yang tidak nampak tetapi akan dibutuhkan, seperti beberapa teori tentang pemotongan kata, bahasa alami, dan pencarian temu yang tergabung menjadi pengolahan teks.
 
 \section{Bahasa Indonesia \cite{eyd:2009}}
 Bahasa Indonesia merupakan bahasa pemersatu Negara Indonesia. Dalam bahasa Indonesia dikenal bahasa tulisan dan bahasa lisan. Pada bahasa lisan dikenal istilah \textit{fonem} yang merupakan satuan bahasa terkecil yang dapat membedakan arti. Dalam bahasa tulisan, \textit{fonem} dilambangkan dengan huruf (alfabet). \textit{Fonem} dibagi menjadi dua, yaitu vokal dan konsonan. Dalam bahasa Indonesia dikenal 5 vokal yaitu a, i, u, e, o, dan 25 konsonan yaitu b, c, d, f, g, h, j, k, l, m, n, p, q, r, s, t, v, w, x, y, z, kh, ng, ny, sy. Konsonan kh, ng, ny, dan sy merupakan contoh fonem yang terdiri atas dua huruf. Ada pula istilah diftong, yaitu gabungan 2 vokal yang membentuk kesatuan bunyi, di antaranya adalah au, ai, oi.
@@ -59,7 +59,7 @@ Untuk melakukan pemenggalan suku kata, telah dibuat aturan pemenggalan atau peny
 	\item \textit{Summarization}\\
 	Membuat ringkasan dari artikel, dokumen atau email secara otomatis. Dengan \textit{auto-summarization}, \textit{user} akan mendapatkan hasil ringkasan secara langsung. Ringkasan yang didapatkan telah berisi poin-poin penting dari keseluruhan dokumen.
 	\item \textit{Machine Translation}\\
-	Area NLP ini dapat menerima masukan berupa bahasa alami dan menghasilkan keluaran berupa terjemahan bahasa alami dalam bahasa lain(Inggris, Jerman, dll).
+	Area NLP ini dapat menerima masukan berupa bahasa alami dan menghasilkan keluaran berupa terjemahan bahasa alami dalam bahasa lain (Inggris, Jerman, dll).
 	\item \textit{Speech Recognition}\\
 	Area yang merupakan cabang dari NLP yang cukup sulit karena mampu mengenali bahasa lisan. Biasanya merespon pada suara berupa perintah atau pertanyaan.
 	\item \textit{Document classification}\\
@@ -68,7 +68,7 @@ Untuk melakukan pemenggalan suku kata, telah dibuat aturan pemenggalan atau peny
 
 NLP juga memiliki tiga aspek utama yaitu sintaks, semantik, dan pragmatik. Sintaks merupakan aturan tatabahasa, semantik menjelaskan arti dari suatu kalimat, dan pragmatik menjelaskan bagaimana pernyataan yang berhubungan dengan dunia. Selain itu juga yang terkait dengan NLP adalah morfologi, yang merupakan pengetahuan tentang kata dan bentukannya.
 
-\subsection{Information Retrieval}
+\subsection{Information Retrieval\cite{kowalski2010information}}
 \label{sec:ir}
 
 \textit{Information Retrieval} atau IR merupakan proses mencari, menemukan lalu mengambil dokumen yang relevan dengan informasi yang dicari user. \textit{Search engine} yang populer seperti \textit{Google} merupakan contoh dari sistem IR. Kata kunci yang biasa diketikkan pada \textit{search engine} merupakan \textit{query} yang akan digunakan oleh IR untuk mencari dan ditampilkan pada layar. Berikut merupakan karakteristik dari sistem IR:
@@ -85,11 +85,11 @@ Teori automata merupakan teori mengenai mesin-mesin abstrak dan memiliki hubunga
 
 \begin{itemize}
 	\item bekerja secara sekuensial
-	\item menerima input
-	\item menghasilkan output
+	\item menerima \textit{input}
+	\item menghasilkan \textit{output}
 \end{itemize}
 
-Pengertian mesin di sini buka hanya mesin elektronis/mekanis, tetapi juga perangkat lunak yang memenuhi ketiga kriteria tersebut. Seperti yang telah disampaikan sebelumnya, teori automata berhubungan erat dengan bahasa formal. Secara umum terdapat dua fungsi automata dalam hubungannya dengan bahasa, yaitu:
+Pengertian mesin di sini bukan hanya mesin elektronis/mekanis, tetapi juga perangkat lunak yang memenuhi ketiga kriteria tersebut. Seperti yang telah disampaikan sebelumnya, teori automata berhubungan erat dengan bahasa formal. Secara umum terdapat dua fungsi automata dalam hubungannya dengan bahasa, yaitu:
 
 \begin{itemize}
 	\item sebagai pengenal string dari suatu bahasa, dalam kasus ini bahasa sebagai masukan dari automata
@@ -168,30 +168,30 @@ Metode ini menggunakan format fisik dari teks seperti spasi, tinggi huruf, dan f
 
 Mirip dengan \textit{line-shift coding}, teknik ini menggeser kata secara horizontal untuk memberikan sebuah tanda. Pada laporan teknikalnya, Neil F. Johnson memberikan contoh bahwa suatu teks dapat mengandung teks lain di dalamnya dengan menggunakan \textit{line-shift coding}\cite{Neil:1995}. Diberikan suatu kalimat S0:
 \begin{figure}[H]
-	\texttt{We  explore  new  steganographic  and  cryptographic\\
-	algorithms  and  techniques  throughout  the  world  to\\
-	produce  wide  variety  and  security  in  the  electronic  web\\
-	called  the  Internet.}
+	\centering
+	\includegraphics[scale=0.8]{Gambar/S0}
 	\caption{Kalimat awal (S0)} 
 \end{figure}
 
 lalu setelah disembunyikan suatu pesan dengan menggunakan \textit{line-shift coding}, muncul kalimat S1.
 
 \begin{figure}[H]
-	\texttt{We   explore new  steganographic  and  cryptographic\\
-	algorithms  and  techniques  throughout   the  world to\\
-	produce   wide variety  and  security  in  the  electronic   web\\
-	called  the  Internet.}
+	\centering
+	\includegraphics[scale=0.8]{Gambar/S1}
 	\caption{Kalimat setelah melalui proses \textit{line-shift coding} (S1)}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1.6]{Gambar/perbandingan-s0-s1}
+	\caption{Perbedaan S0 dan S1}
 \end{figure}
 
 Dengan menumpukkan kedua kalimat S0 dan S1, didapatkan hasil sebagai berikut:
 
 \begin{figure}[H]
-	\texttt{We  explore  new  steganographic  and  cryptographic\\
-	algorithms  and  techniques  throughout  the  world  to\\
-	produce  wide  variety  and  security  in  the  electronic  web\\
-	called  the  Internet.}
+	\centering
+	\includegraphics[scale=0.8]{Gambar/overlap-result}
 	\caption{Hasil penumpukkan kalimat S0 dan S1}
 \end{figure}
 

@@ -3,19 +3,30 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Kalimat awal (S0)}}{13}{figure.2.1}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Kalimat setelah melalui proses \textit {line-shift coding} (S1)}}{13}{figure.2.2}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Hasil penumpukkan kalimat S0 dan S1}}{13}{figure.2.3}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Perbedaan S0 dan S1}}{13}{figure.2.3}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Hasil penumpukkan kalimat S0 dan S1}}{13}{figure.2.4}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Diagram Transisi DFSA tahap 1\cite {Thomas:2000}}}{17}{figure.3.1}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Diagram Transisi DFSA tahap 2\cite {Thomas:2000} }}{19}{figure.3.2}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Diagram Transisi DFSA tahap 3\cite {Thomas:2000}}}{20}{figure.3.3}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Use Case Diagram Perangkat Lunak Steganografi}}{25}{figure.3.4}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Class Diagram perangkat lunak steganografi}}{28}{figure.3.5}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Format kamus sinonim}}{22}{figure.3.4}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces \textit {Data Flow Diagram Embedding}}}{23}{figure.3.5}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces \textit {Data Flow Diagram Extract}}}{25}{figure.3.6}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Use Case Diagram Perangkat Lunak Steganografi}}{25}{figure.3.7}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Class Diagram perangkat lunak steganografi}}{28}{figure.3.8}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Tampilan \textit {tab Embed}}}{31}{figure.4.1}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Tampilan \textit {tab Extract}}}{32}{figure.4.2}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Tampilan \textit {tab} Tambah \textit {Cover}}}{32}{figure.4.3}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Tampilan \textit {tab} Tambah Sinonim}}{33}{figure.4.4}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Tampilan \textit {tab} Petunjuk}}{34}{figure.4.5}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Diagram kelas lengkap}}{35}{figure.4.6}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Activity Diagram perangkat lunak steganografi saat menyisipkan}}{37}{figure.4.7}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Activity Diagram perangkat lunak steganografi saat proses ekstraksi}}{38}{figure.4.8}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Tampilan \textit {tab}}}{31}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Tampilan \textit {tab Embed}}}{32}{figure.4.2}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Tampilan \textit {tab Extract}}}{32}{figure.4.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Tampilan \textit {tab} Tambah \textit {Cover}}}{33}{figure.4.4}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Tampilan \textit {tab} Tambah Sinonim}}{34}{figure.4.5}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Tampilan \textit {tab} Petunjuk}}{35}{figure.4.6}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Diagram kelas lengkap}}{36}{figure.4.7}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Activity Diagram perangkat lunak steganografi saat menyisipkan}}{39}{figure.4.8}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Activity Diagram perangkat lunak steganografi saat proses ekstraksi}}{39}{figure.4.9}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Tampilan \textit {tab Embed}}}{41}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Tampilan \textit {tab Extract}}}{42}{figure.5.2}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Tampilan \textit {tab Tambah Cover}}}{42}{figure.5.3}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Tampilan \textit {tab Tambah Sinonim}}}{43}{figure.5.4}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Tampilan \textit {tab Petunjuk}}}{43}{figure.5.5}

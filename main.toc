@@ -14,7 +14,7 @@
 \contentsline {subsection}{\numberline {2.1.1}Pemenggalan kata}{7}{subsection.2.1.1}
 \contentsline {section}{\numberline {2.2}Pengolahan Teks}{8}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Natural Language Processing\cite {NLA:2003}}{8}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Information Retrieval}{9}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.2}Information Retrieval\cite {kowalski2010information}}{9}{subsection.2.2.2}
 \contentsline {subsection}{\numberline {2.2.3}Teori Automata\cite {Frisca:2014}}{10}{subsection.2.2.3}
 \contentsline {subsection}{\numberline {2.2.4}Teori Finite State Automata (FSA)\cite {Frisca:2014}}{11}{subsection.2.2.4}
 \contentsline {subsection}{\numberline {2.2.5}Teori Deterministic FSA (DFSA)\cite {Frisca:2014}}{11}{subsection.2.2.5}
@@ -29,22 +29,27 @@
 \contentsline {chapter}{\numberline {3}Analisis}{15}{chapter.3}
 \contentsline {section}{\numberline {3.1}Gambaran Algoritma Umum}{15}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Pemenggalan Kata}{16}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Kamus sinonim}{21}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}\textit {Stego-cover}}{22}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.2}\textit {Stego-cover}}{21}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Kamus sinonim}{22}{subsection.3.1.3}
 \contentsline {subsection}{\numberline {3.1.4}\textit {Embedding}}{22}{subsection.3.1.4}
 \contentsline {subsubsection}{Algoritma}{23}{subsubsection*.10}
 \contentsline {subsection}{\numberline {3.1.5}\textit {Extracting Information}}{24}{subsection.3.1.5}
-\contentsline {section}{\numberline {3.2}Analisis Use Case}{24}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Skenario Use Case}{25}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Analisis Diagram Kelas}{27}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.2}Analisis Use Case}{25}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Skenario Use Case}{26}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Analisis Diagram Kelas}{28}{subsection.3.2.2}
 \contentsline {chapter}{\numberline {4}Perancangan}{31}{chapter.4}
 \contentsline {section}{\numberline {4.1}Perancangan Antarmuka}{31}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}\textit {Tab Embed}}{31}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.1}\textit {Tab Embed}}{32}{subsection.4.1.1}
 \contentsline {subsection}{\numberline {4.1.2}\textit {Tab Extract}}{32}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}\textit {Tab} Tambah \textit {Cover}}{32}{subsection.4.1.3}
-\contentsline {subsection}{\numberline {4.1.4}\textit {Tab} Tambah Sinonim}{33}{subsection.4.1.4}
-\contentsline {subsection}{\numberline {4.1.5}\textit {Tab} Petunjuk}{34}{subsection.4.1.5}
-\contentsline {section}{\numberline {4.2}Diagram Kelas Lengkap}{34}{section.4.2}
-\contentsline {section}{\numberline {4.3}Analisis Diagram Aktivitas}{37}{section.4.3}
-\contentsline {chapter}{Daftar Referensi}{39}{chapter*.11}
+\contentsline {subsection}{\numberline {4.1.3}\textit {Tab} Tambah \textit {Cover}}{33}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}\textit {Tab} Tambah Sinonim}{34}{subsection.4.1.4}
+\contentsline {subsection}{\numberline {4.1.5}\textit {Tab} Petunjuk}{35}{subsection.4.1.5}
+\contentsline {section}{\numberline {4.2}Diagram Kelas Lengkap}{35}{section.4.2}
+\contentsline {section}{\numberline {4.3}Analisis Diagram Aktivitas}{38}{section.4.3}
+\contentsline {chapter}{\numberline {5}Implementasi dan Pengujian}{41}{chapter.5}
+\contentsline {section}{\numberline {5.1}Implementasi}{41}{section.5.1}
+\contentsline {section}{\numberline {5.2}Pengujian}{44}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Pengujian Fungsional}{44}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Pengujian Eksperimental}{44}{subsection.5.2.2}
+\contentsline {chapter}{Daftar Referensi}{47}{chapter*.11}
 \renewcommand {\cftchappresnum }{\bf \scshape }

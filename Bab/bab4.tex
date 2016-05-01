@@ -2,8 +2,16 @@
 Bab ini akan membahas mengenai perancangan aplikasi. Perancangan aplikasi akan meliputi tampilan antarmuka, diagram kelas lengkap beserta dengan deskripsi dan fungsinya.
 
 \section{Perancangan Antarmuka}
+\label{perancangan_antarmuka}
 
-Agar pengguna dapat menggunakan perangkat lunak ini dengan nyaman, maka dibutuhkan antarmuka. Rancangan antarmuka yang dibuat terdiri dari satu \textit{frame} dan di dalamnya terdapat beberapa \textit{tab}.
+Agar pengguna dapat menggunakan perangkat lunak ini dengan nyaman, maka dibutuhkan antarmuka. Rancangan antarmuka yang dibuat terdiri dari satu \textit{frame} dan di dalamnya terdapat beberapa \textit{tab}, yaitu \textit{tab embed}, \textit{tab extract}, \textit{tab} tambah \textit{cover}, \textit{tab} tambah sinonim, dan \textit{tab} petunjuk seperti yang dapat dilihat pada Gambar \ref{fig:0-tab}(1).
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1.8]{Gambar/tab}
+	\caption{Tampilan \textit{tab}} 
+	\label{fig:0-tab}
+\end{figure}
 
 \subsection{\textit{Tab Embed}}
 
@@ -34,7 +42,7 @@ Pada \textit{tab Embed} (dapat dilihat pada Gambar \ref{fig:1-tab-embed}) terdap
 Pada \textit{tab Extract} (dapat dilihat pada Gambar \ref{fig:2-tab-extract}) terdapat beberapa elemen sebagai berikut.
 
 \begin{enumerate}
-	\item \textbf{\textit{Text area stego-object}}, pengguna dapat menyalin \textit{stego-object} yang diterima pada bagian ini.
+	\item \textbf{\textit{Text area stego-object}}, pengguna dapat memasukkan \textit{stego-object} yang diterima pada bagian ini.
 	\item \textbf{Tombol Ekstrak}, pengguna dapat menekan tombol ini untuk melakukan proses \textit{extracting}.
 	\item \textbf{\textit{Text box secret message}}, hasil \textit{extracting} akan ditampilkan pada bagian ini.
 \end{enumerate} 
@@ -53,7 +61,8 @@ Pada \textit{tab} Tambah \textit{Cover} (dapat dilihat pada Gambar \ref{fig:3-ta
 \begin{enumerate}
 	\item \textbf{\textit{Text box} judul}, pengguna dapat mengetikkan judul dari \textit{stego-cover} yang akan ditambahkan pada bagian ini.
 	\item \textbf{Tombol Tambah \textit{Cover}}, pengguna dapat menekan tombol ini untuk menambahkan \textit{stego-cover} yang telah disalin pada no 3.
-	\item \textbf{\textit{Text area stego-cover}}, pengguna dapat menyalin \textit{stego-cover} yang memenuhi persyaratan di bagian ini.	
+	\item \textbf{\textit{Text area stego-cover}}, pengguna dapat menyalin \textit{stego-cover} yang memenuhi persyaratan di bagian ini.
+	\item \textbf{Label peringatan}, peringatan akan muncul jika pengguna belum memasukkan judul \textit{file}, judul yang diketik telah terdaftar, atau saat \textit{stego-cover} berhasil ditambahkan.
 \end{enumerate} 
 
 \subsection{\textit{Tab} Tambah Sinonim}
@@ -70,9 +79,10 @@ Pada \textit{tab} Tambah Sinonim (dapat dilihat pada Gambar \ref{fig:4-tab-tamba
 \begin{enumerate}
 	\item \textbf{\textit{Text box} kata pada \textit{cover}}, kata pada \textit{cover} berarti kata yang ada pada \textit{stego-cover}, pengguna dapat mengetikkannya pada bagian ini.
 	\item \textbf{\textit{Text box} sinonim}, pengguna dapat mengetik sinonimnya pada bagian ini.
-	\item \textbf{Tombol Tambahkan}, pengguna dapat menekan tombol ini untuk memasukkan pasangan kata dan sinonim yang baru ke \textit{file database}.
+	\item \textbf{Tombol Tambahkan}, pengguna dapat menekan tombol ini untuk memasukkan pasangan kata dan sinonim yang baru ke \textit{file} kamus.
 	\item \textbf{\textit{Text Area} Error Log}, akan menampilkan daftar kata yang belum memiliki sinonim jika pengguna menekan tombol Periksa semua sinonim.
 	\item \textbf{Tombol Periksa semua sinonim}, akan memeriksa semua kata dari tiap \textit{stego-cover} yang terdaftar dan menampilkan daftar kata yang belum memiliki sinonim.
+	\item \textbf{Label peringatan}, akan memberikan keterangan jika sinonim gagal atau berhasil ditambahkan.
 \end{enumerate} 
 
 \subsection{\textit{Tab} Petunjuk}
@@ -139,8 +149,8 @@ Deskripsi setiap kelas beserta dengan atribut dan fungsinya akan dijelaskan seba
 		\label{fig:6-class-diagram-lengkap}
 	\end{figure}	
 	
-	\item Kelas DatabaseReader\\
-	Kelas ini berfungsi untuk membaca \textit{file database} dengan tujuan mencari sinonim. Atribut yang ada pada kelas DatabaseReader adalah:
+	\item Kelas KamusReader\\
+	Kelas ini berfungsi untuk membaca \textit{file} kamus dengan tujuan mencari sinonim. Atribut yang ada pada kelas KamusReader adalah:
 	\begin{itemize}
 		\item \textbf{FileReader fr:} Objek FileReader yang berfungsi untuk membuka suatu \textit{file}.
 		\item \textbf{BufferedReader br:} Objek BufferedReader yang berfungsi untuk membaca isi dari \textit{file} yang dibuka FileReader.
@@ -150,8 +160,8 @@ Deskripsi setiap kelas beserta dengan atribut dan fungsinya akan dijelaskan seba
 	Fungsi-fungsi yang dimiliki kelas ini adalah:
 	
 	\begin{itemize}
-		\item \textbf{DatabaseReader()}\\
-		Merupakan \textit{constructor} dari kelas DatabaseReader yang akan menginisialisasi atribut-atributnya.
+		\item \textbf{KamusReader()}\\
+		Merupakan \textit{constructor} dari kelas KamusReader yang akan menginisialisasi atribut-atributnya.
 		\item \textbf{String findSynonym(String input)}\\
 		Berfungsi untuk mencari sinonim dari parameter.\\
 		\textbf{Parameter:}
@@ -163,7 +173,7 @@ Deskripsi setiap kelas beserta dengan atribut dan fungsinya akan dijelaskan seba
 	\item Kelas Embedder\\
 	Kelas ini berfungsi untuk menangani seluruh kegiatan \textit{embedding} pesan ke dalam \textit{stego-cover}. Atribut yang ada pada kelas Embedder adalah:
 	\begin{itemize}
-		\item \textbf{DatabaseReader dr:} Objek DatabaseReader berfungsi untuk membaca \textit{file database}.
+		\item \textbf{KamusReader dr:} Objek KamusReader berfungsi untuk membaca \textit{file} kamus.
 		\item \textbf{PemotongKata pk:} Objek PemotongKata berfungsi untuk memotong kata.
 		\item \textbf{FileReader fr:} Objek FileReader yang berfungsi untuk membuka suatu \textit{file}.
 		\item \textbf{BufferedReader br:} Objek BufferedReader yang berfungsi untuk membaca isi dari \textit{file} yang dibuka FileReader.
@@ -204,7 +214,7 @@ Deskripsi setiap kelas beserta dengan atribut dan fungsinya akan dijelaskan seba
 		\end{itemize}
 		
 		\item \textbf{String checkAllSynonym(String stegoFileName)}\\
-		Berfungsi untuk cek ketersediaan sinonim \textit{stego-cover} pada \textit{file database}.\\
+		Berfungsi untuk cek ketersediaan sinonim \textit{stego-cover} pada \textit{file} kamus.\\
 		\textbf{Parameter:}
 		\begin{itemize}
 			\item \textbf{stegoFileName} Nama \textit{file stego-cover} yang akan dicek.
@@ -242,13 +252,6 @@ Deskripsi setiap kelas beserta dengan atribut dan fungsinya akan dijelaskan seba
 
 Diagram aktivitas dari perangkat lunak dibagi menjadi dua. Diagram aktivitas saat menyisipkan pesan dapat dilihat pada \ref{fig:4_activity-penyisipan}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.4]{Gambar/activity-penyisipan}
-	\caption{Activity Diagram perangkat lunak steganografi saat menyisipkan} 
-	\label{fig:4_activity-penyisipan}
-\end{figure}
-
 Dari diagram aktivitas dapat dijelaskan sebagai berikut:
 
 \begin{enumerate}
@@ -257,18 +260,28 @@ Dari diagram aktivitas dapat dijelaskan sebagai berikut:
 	\item Sistem akan mencari \textit{stego-cover} yang dapat dipakai (kapasitas mencukupi)
 	\item Dari beberapa \textit{stego-cover} yang dapat dipakai, akan dipilih satu secara acak
 	\item Sistem akan membaca satu per satu kata yang ada pada \textit{stego-cover}
-	\item Kode ASCII dari pesan rahasia akan dibaca satu per satu
-	\item Sistem menghitung banyaknya suku kata pada kata yang sedang dibaca
-	\item Cek apakah banyak suku kata dan nilai kode ASCII yang sedang dibaca sama-sama bernilai genap atau ganjil. Dari sini akan dihasilkan dua kemungkinan:
+	\item Kode ASCII dari pesan rahasia akan dibaca bit per bit
+	\item Bandingkan apakah \textit{c}(\textit{w}) dan bit ASCII yang sedang dibaca sama-sama bernilai genap atau ganjil. Dari sini akan dihasilkan dua kemungkinan:
 	\begin{itemize}
 		\item Jika keduanya sesuai, ada dua kemungkinan lagi:
 		\begin{itemize}
-			\item Jika masih ada kode yang belum diperiksa, maka akan kembali ke tahap 6 dan 7.
+			\item Jika masih ada bit yang belum diperiksa, maka akan kembali ke tahap 5 dan 6.
 			\item Jika semua kode telah diperiksa, maka \textit{stego-cover} berhasil dibuat dan proses \textit{embedding} selesai.
 		\end{itemize}
-		\item Jika tidak sesuai, maka sistem akan mengganti kata tersebut dengan sinonimnya dan kembali ke tahap 6 dan 7.
+		\item Jika tidak sesuai, maka sistem akan mengganti kata tersebut dengan sinonimnya. Setelah itu ada dua kemungkinan lagi:
+		\begin{itemize}
+			\item Jika masih ada bit yang belum diperiksa, maka akan kembali ke tahap 5 dan 6.
+			\item Jika semua kode telah diperiksa, maka \textit{stego-cover} berhasil dibuat dan proses \textit{embedding} selesai.
+		\end{itemize}
 	\end{itemize}
 \end{enumerate}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{Gambar/activity-penyisipan}
+	\caption{Activity Diagram perangkat lunak steganografi saat menyisipkan} 
+	\label{fig:4_activity-penyisipan}
+\end{figure}
 
 Diagram aktivitas ekstraksi dapat dilihat pada Gambar \ref{fig:4_activity-ekstraksi}
 
@@ -282,7 +295,7 @@ Diagram aktivitas ekstraksi dapat dilihat pada Gambar \ref{fig:4_activity-ekstra
 Dari diagram aktivitas di atas dapat dijelaskan sebagai berikut:
 
 \begin{enumerate}
-	\item Pengguna akan memberikan input berupa stego-object dari program yang sama
+	\item Pengguna akan memberikan input berupa \textit{stego-object} dari program yang sama
 	\item Sistem lalu akan menyukukan kata-kata yang ada. Setelah itu dilakukan penyandian, angka 0 untuk kata dengan jumlah suku kata genap dan angka 1 untuk jumlah ganjil
 	\item Selesai melakukan penyandian, hasilnya akan diubah menjadi karakter ASCII yang sesuai
 	\item Kini sudah didapatkan pesan dengan karakter ASCII, hasil akan ditampilkan pada layar
