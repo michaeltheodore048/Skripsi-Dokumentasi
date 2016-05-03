@@ -2,7 +2,17 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Tabel Skenario \textit {Embed}}}{26}{table.3.1}
+\contentsline {table}{\numberline {3.2}{\ignorespaces Tabel Skenario Tambah \textit {stego-cover}}}{27}{table.3.2}
+\contentsline {table}{\numberline {3.3}{\ignorespaces Tabel Skenario Tambah Sinonim}}{28}{table.3.3}
+\contentsline {table}{\numberline {3.4}{\ignorespaces Tabel Skenario Cek Semua Sinonim}}{28}{table.3.4}
+\contentsline {table}{\numberline {3.5}{\ignorespaces Tabel Skenario \textit {Extract}}}{29}{table.3.5}
+\contentsline {table}{\numberline {3.6}{\ignorespaces Tabel Skenario Baca Petunjuk}}{29}{table.3.6}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Tabel Pengujian Fungsional}}{44}{table.5.1}
-\contentsline {table}{\numberline {5.2}{\ignorespaces Tabel Pengujian Eksperimental}}{45}{table.5.2}
+\contentsline {table}{\numberline {5.1}{\ignorespaces Tabel Pengujian Fungsional \textit {Embed}}}{46}{table.5.1}
+\contentsline {table}{\numberline {5.2}{\ignorespaces Tabel Pengujian Fungsional \textit {Extract}}}{47}{table.5.2}
+\contentsline {table}{\numberline {5.3}{\ignorespaces Tabel Pengujian Fungsional Tambah Cover}}{47}{table.5.3}
+\contentsline {table}{\numberline {5.4}{\ignorespaces Tabel Pengujian Fungsional Tambah Sinonim}}{48}{table.5.4}
+\contentsline {table}{\numberline {5.5}{\ignorespaces Tabel Pengujian Fungsional Cek Semua Sinonim}}{48}{table.5.5}
+\addvspace {10\p@ }

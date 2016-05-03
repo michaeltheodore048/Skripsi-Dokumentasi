@@ -28,7 +28,7 @@
 \contentsline {subsection}{\numberline {2.3.2}Linguistic Steganography}{14}{subsection.2.3.2}
 \contentsline {chapter}{\numberline {3}Analisis}{15}{chapter.3}
 \contentsline {section}{\numberline {3.1}Gambaran Algoritma Umum}{15}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Pemenggalan Kata}{16}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.1}Pemenggalan Kata Menjadi Suku Kata}{16}{subsection.3.1.1}
 \contentsline {subsection}{\numberline {3.1.2}\textit {Stego-cover}}{21}{subsection.3.1.2}
 \contentsline {subsection}{\numberline {3.1.3}Kamus sinonim}{22}{subsection.3.1.3}
 \contentsline {subsection}{\numberline {3.1.4}\textit {Embedding}}{22}{subsection.3.1.4}
@@ -36,20 +36,23 @@
 \contentsline {subsection}{\numberline {3.1.5}\textit {Extracting Information}}{24}{subsection.3.1.5}
 \contentsline {section}{\numberline {3.2}Analisis Use Case}{25}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Skenario Use Case}{26}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Analisis Diagram Kelas}{28}{subsection.3.2.2}
-\contentsline {chapter}{\numberline {4}Perancangan}{31}{chapter.4}
-\contentsline {section}{\numberline {4.1}Perancangan Antarmuka}{31}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}\textit {Tab Embed}}{32}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}\textit {Tab Extract}}{32}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}\textit {Tab} Tambah \textit {Cover}}{33}{subsection.4.1.3}
-\contentsline {subsection}{\numberline {4.1.4}\textit {Tab} Tambah Sinonim}{34}{subsection.4.1.4}
-\contentsline {subsection}{\numberline {4.1.5}\textit {Tab} Petunjuk}{35}{subsection.4.1.5}
-\contentsline {section}{\numberline {4.2}Diagram Kelas Lengkap}{35}{section.4.2}
-\contentsline {section}{\numberline {4.3}Analisis Diagram Aktivitas}{38}{section.4.3}
-\contentsline {chapter}{\numberline {5}Implementasi dan Pengujian}{41}{chapter.5}
-\contentsline {section}{\numberline {5.1}Implementasi}{41}{section.5.1}
-\contentsline {section}{\numberline {5.2}Pengujian}{44}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Pengujian Fungsional}{44}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Pengujian Eksperimental}{44}{subsection.5.2.2}
-\contentsline {chapter}{Daftar Referensi}{47}{chapter*.11}
+\contentsline {subsection}{\numberline {3.2.2}Analisis Diagram Kelas}{29}{subsection.3.2.2}
+\contentsline {chapter}{\numberline {4}Perancangan}{33}{chapter.4}
+\contentsline {section}{\numberline {4.1}Perancangan Antarmuka}{33}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}\textit {Tab Embed}}{34}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}\textit {Tab Extract}}{34}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}\textit {Tab} Tambah \textit {Cover}}{35}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}\textit {Tab} Tambah Sinonim}{36}{subsection.4.1.4}
+\contentsline {subsection}{\numberline {4.1.5}\textit {Tab} Petunjuk}{37}{subsection.4.1.5}
+\contentsline {section}{\numberline {4.2}Diagram Kelas Lengkap}{37}{section.4.2}
+\contentsline {section}{\numberline {4.3}Analisis Diagram Aktivitas}{40}{section.4.3}
+\contentsline {chapter}{\numberline {5}Implementasi dan Pengujian}{43}{chapter.5}
+\contentsline {section}{\numberline {5.1}Implementasi}{43}{section.5.1}
+\contentsline {section}{\numberline {5.2}Pengujian}{46}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Pengujian Fungsional}{46}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Pengujian Eksperimental}{48}{subsection.5.2.2}
+\contentsline {chapter}{\numberline {6}Kesimpulan dan Saran}{51}{chapter.6}
+\contentsline {section}{\numberline {6.1}Kesimpulan}{51}{section.6.1}
+\contentsline {section}{\numberline {6.2}Saran}{51}{section.6.2}
+\contentsline {chapter}{Daftar Referensi}{53}{chapter*.11}
 \renewcommand {\cftchappresnum }{\bf \scshape }

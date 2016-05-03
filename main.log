@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.2.14)  1 MAY 2016 17:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.2.14)  3 MAY 2016 23:12
 entering extended mode
 **./main.tex
 (main.tex
@@ -673,7 +673,7 @@ LaTeX Info: Redefining \nameref on input line 318.
 \openout4 = `main.out'.
 
 
-<Gambar/logo-unpar.png, id=191, 360.59718pt x 356.0803pt>
+<Gambar/logo-unpar.png, id=203, 360.59718pt x 356.0803pt>
 File: Gambar/logo-unpar.png Graphic file (type png)
 
 <use Gambar/logo-unpar.png>
@@ -795,19 +795,19 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\@ifnextchar' on input line 162.
 
-<Gambar/S0.png, id=499, 303.38344pt x 48.18pt>
+<Gambar/S0.png, id=538, 303.38344pt x 48.18pt>
 File: Gambar/S0.png Graphic file (type png)
  <use Gambar/S0.png>
 Package pdftex.def Info: Gambar/S0.png used on input line 172.
 (pdftex.def)             Requested size: 242.70708pt x 38.54402pt.
  [12]
-<Gambar/S1.png, id=506, 307.1475pt x 57.96657pt>
+<Gambar/S1.png, id=545, 307.1475pt x 57.96657pt>
 File: Gambar/S1.png Graphic file (type png)
  <use Gambar/S1.png>
 Package pdftex.def Info: Gambar/S1.png used on input line 180.
 (pdftex.def)             Requested size: 245.71832pt x 46.3733pt.
 
-<Gambar/perbandingan-s0-s1.png, id=507, 303.38344pt x 48.18pt>
+<Gambar/perbandingan-s0-s1.png, id=546, 303.38344pt x 48.18pt>
 File: Gambar/perbandingan-s0-s1.png Graphic file (type png)
 
 <use Gambar/perbandingan-s0-s1.png>
@@ -818,7 +818,7 @@ Overfull \hbox (15.94366pt too wide) in paragraph at lines 186--187
  [][] 
  []
 
-<Gambar/overlap-result.png, id=508, 304.88907pt x 49.68562pt>
+<Gambar/overlap-result.png, id=547, 304.88907pt x 49.68562pt>
 File: Gambar/overlap-result.png Graphic file (type png)
 
 <use Gambar/overlap-result.png>
@@ -834,187 +834,178 @@ Bab 3.
 
 
 
-] <Gambar/DFSA-1.png, id=533, 477.28313pt x 437.38406pt>
+] <Gambar/DFSA-1.png, id=574, 477.28313pt x 437.38406pt>
 File: Gambar/DFSA-1.png Graphic file (type png)
 
 <use Gambar/DFSA-1.png>
 Package pdftex.def Info: Gambar/DFSA-1.png used on input line 22.
 (pdftex.def)             Requested size: 381.82701pt x 349.90771pt.
  [16] [17 <./Gambar/DFSA-1.png>]
-<Gambar/DFSA-2.png, id=547, 419.31656pt x 374.14781pt>
+<Gambar/DFSA-2.png, id=588, 419.31656pt x 374.14781pt>
 File: Gambar/DFSA-2.png Graphic file (type png)
  <use Gambar/DFSA-2.png>
 Package pdftex.def Info: Gambar/DFSA-2.png used on input line 64.
 (pdftex.def)             Requested size: 335.45369pt x 299.31863pt.
 
-[18] <Gambar/DFSA-3.png, id=553, 365.11406pt x 430.60875pt>
+[18] <Gambar/DFSA-3.png, id=594, 365.11406pt x 430.60875pt>
 File: Gambar/DFSA-3.png Graphic file (type png)
 
 <use Gambar/DFSA-3.png>
 Package pdftex.def Info: Gambar/DFSA-3.png used on input line 87.
 (pdftex.def)             Requested size: 365.11316pt x 430.60768pt.
  [19 <./Gambar/DFSA-2.png>] [20 <./Gambar/DFSA-3.png>]
-[21] <Gambar/format-kamus.png, id=572, 152.82094pt x 97.86563pt>
+[21] <Gambar/format-kamus.png, id=613, 152.82094pt x 97.86563pt>
 File: Gambar/format-kamus.png Graphic file (type png)
 
 <use Gambar/format-kamus.png>
 Package pdftex.def Info: Gambar/format-kamus.png used on input line 126.
 (pdftex.def)             Requested size: 122.2569pt x 78.29259pt.
  [22 <./Gambar/format-kamus.png>]
-<Gambar/dfd-embed.png, id=581, 529.22719pt x 194.97844pt>
+<Gambar/dfd-embed.png, id=622, 585.68813pt x 214.55156pt>
 File: Gambar/dfd-embed.png Graphic file (type png)
 
 <use Gambar/dfd-embed.png>
-Package pdftex.def Info: Gambar/dfd-embed.png used on input line 142.
-(pdftex.def)             Requested size: 423.38232pt x 155.98294pt.
+Package pdftex.def Info: Gambar/dfd-embed.png used on input line 144.
+(pdftex.def)             Requested size: 468.55113pt x 171.64146pt.
  [23 <./Gambar/dfd-embed.png>]
-<Gambar/dfd-extract.png, id=594, 535.2497pt x 78.2925pt>
+<Gambar/dfd-extract.png, id=633, 323.70938pt x 137.01187pt>
 File: Gambar/dfd-extract.png Graphic file (type png)
 
 <use Gambar/dfd-extract.png>
-Package pdftex.def Info: Gambar/dfd-extract.png used on input line 179.
-(pdftex.def)             Requested size: 428.20033pt x 62.63406pt.
+Package pdftex.def Info: Gambar/dfd-extract.png used on input line 181.
+(pdftex.def)             Requested size: 258.96785pt x 109.60963pt.
  [24]
-<Gambar/usecase.png, id=611, 662.475pt x 501.37312pt>
+<Gambar/usecase.png, id=652, 662.475pt x 501.37312pt>
 File: Gambar/usecase.png Graphic file (type png)
  <use Gambar/usecase.png>
-Package pdftex.def Info: Gambar/usecase.png used on input line 190.
+Package pdftex.def Info: Gambar/usecase.png used on input line 192.
 (pdftex.def)             Requested size: 331.2367pt x 250.68594pt.
 
-[25 <./Gambar/dfd-extract.png> <./Gambar/usecase.png>] [26] [27]
-<Gambar/classdiagram.png, id=660, 588.69937pt x 322.20375pt>
+[25 <./Gambar/dfd-extract.png> <./Gambar/usecase.png>] [26] [27] [28]
+<Gambar/classdiagram.png, id=684, 750.55406pt x 560.0925pt>
 File: Gambar/classdiagram.png Graphic file (type png)
 
 <use Gambar/classdiagram.png>
-Package pdftex.def Info: Gambar/classdiagram.png used on input line 329.
-(pdftex.def)             Requested size: 470.96013pt x 257.76334pt.
-
-Overfull \hbox (1.48964pt too wide) in paragraph at lines 329--330
- [][] 
- []
-
-[28 <./Gambar/classdiagram.png>] [29]) [30]
+Package pdftex.def Info: Gambar/classdiagram.png used on input line 377.
+(pdftex.def)             Requested size: 450.3359pt x 336.05809pt.
+ [29] [30 <./Gambar/classdiagram.png>]) [31]
 \openout2 = `Bab/bab4.aux'.
 
- (Bab/bab4.tex
+
+(Bab/bab4.tex [32
+
+
+
+]
 Bab 4.
-<Gambar/tab.png, id=692, 189.1065pt x 105.7551pt>
+<Gambar/tab.png, id=710, 189.1065pt x 105.7551pt>
 File: Gambar/tab.png Graphic file (type png)
  <use Gambar/tab.png>
 Package pdftex.def Info: Gambar/tab.png used on input line 11.
 (pdftex.def)             Requested size: 340.39143pt x 190.35902pt.
 
-<Gambar/tab-embed.png, id=693, 189.1065pt x 105.7551pt>
+<Gambar/tab-embed.png, id=711, 189.1065pt x 105.7551pt>
 File: Gambar/tab-embed.png Graphic file (type png)
 
 <use Gambar/tab-embed.png>
 Package pdftex.def Info: Gambar/tab-embed.png used on input line 20.
 (pdftex.def)             Requested size: 340.39143pt x 190.35902pt.
- [31
-
-
-
- <./Gambar/tab.png>]
-<Gambar/tab-extract.png, id=700, 189.1065pt x 105.7551pt>
+ [33 <./Gambar/tab.png>]
+<Gambar/tab-extract.png, id=718, 189.1065pt x 105.7551pt>
 File: Gambar/tab-extract.png Graphic file (type png)
 
 <use Gambar/tab-extract.png>
 Package pdftex.def Info: Gambar/tab-extract.png used on input line 37.
 (pdftex.def)             Requested size: 340.39143pt x 190.35902pt.
- [32 <./Gambar/tab-embed.png> <./Gambar/tab-extract.png>] <Gambar/tab-tambah-co
-ver.png, id=711, 189.1065pt x 105.7551pt>
+ [34 <./Gambar/tab-embed.png> <./Gambar/tab-extract.png>] <Gambar/tab-tambah-co
+ver.png, id=729, 189.1065pt x 105.7551pt>
 File: Gambar/tab-tambah-cover.png Graphic file (type png)
 
 <use Gambar/tab-tambah-cover.png>
 Package pdftex.def Info: Gambar/tab-tambah-cover.png used on input line 54.
 (pdftex.def)             Requested size: 340.39143pt x 190.35902pt.
 
-<Gambar/tab-tambah-sinonim.png, id=713, 189.1065pt x 105.7551pt>
+<Gambar/tab-tambah-sinonim.png, id=731, 189.1065pt x 105.7551pt>
 File: Gambar/tab-tambah-sinonim.png Graphic file (type png)
 
 <use Gambar/tab-tambah-sinonim.png>
 Package pdftex.def Info: Gambar/tab-tambah-sinonim.png used on input line 72.
 (pdftex.def)             Requested size: 340.39143pt x 190.35902pt.
- [33 <./Gambar/tab-tambah-cover.png>]
-<Gambar/tab-petunjuk.png, id=727, 189.1065pt x 105.7551pt>
+ [35 <./Gambar/tab-tambah-cover.png>]
+<Gambar/tab-petunjuk.png, id=746, 189.1065pt x 105.7551pt>
 File: Gambar/tab-petunjuk.png Graphic file (type png)
 
 <use Gambar/tab-petunjuk.png>
 Package pdftex.def Info: Gambar/tab-petunjuk.png used on input line 92.
 (pdftex.def)             Requested size: 340.39143pt x 190.35902pt.
- [34 <./Gambar/tab-tambah-sinonim.png>] [35 <./Gambar/tab-petunjuk.png>]
-<Gambar/class-diagram-lengkap.png, id=749, 863.47594pt x 456.20438pt>
+ [36 <./Gambar/tab-tambah-sinonim.png>] [37 <./Gambar/tab-petunjuk.png>]
+<Gambar/class-diagram-lengkap.png, id=767, 732.48656pt x 656.4525pt>
 File: Gambar/class-diagram-lengkap.png Graphic file (type png)
 
 <use Gambar/class-diagram-lengkap.png>
 Package pdftex.def Info: Gambar/class-diagram-lengkap.png used on input line 14
 7.
-(pdftex.def)             Requested size: 518.08955pt x 273.72473pt.
-
-Overfull \hbox (48.61906pt too wide) in paragraph at lines 147--148
- [][] 
- []
-
-[36 <./Gambar/class-diagram-lengkap.png>] [37] [38]
-<Gambar/activity-penyisipan.png, id=773, 706.13812pt x 816.80156pt>
+(pdftex.def)             Requested size: 439.49532pt x 393.87454pt.
+ [38 <./Gambar/class-diagram-lengkap.png>] [39] [40]
+<Gambar/activity-penyisipan.png, id=793, 706.13812pt x 834.86906pt>
 File: Gambar/activity-penyisipan.png Graphic file (type png)
 
 <use Gambar/activity-penyisipan.png>
-Package pdftex.def Info: Gambar/activity-penyisipan.png used on input line 281.
+Package pdftex.def Info: Gambar/activity-penyisipan.png used on input line 274.
 
-(pdftex.def)             Requested size: 282.45024pt x 326.71483pt.
+(pdftex.def)             Requested size: 282.45024pt x 333.94171pt.
 
-<Gambar/activity-ekstraksi.png, id=775, 605.26125pt x 260.47313pt>
+<Gambar/activity-ekstraksi.png, id=795, 605.26125pt x 260.47313pt>
 File: Gambar/activity-ekstraksi.png Graphic file (type png)
 
 <use Gambar/activity-ekstraksi.png>
-Package pdftex.def Info: Gambar/activity-ekstraksi.png used on input line 290.
+Package pdftex.def Info: Gambar/activity-ekstraksi.png used on input line 283.
 (pdftex.def)             Requested size: 302.62987pt x 130.23624pt.
- [39 <./Gambar/activity-penyisipan.png> <./Gambar/activity-ekstraksi.png>]) [40
+ [41 <./Gambar/activity-penyisipan.png> <./Gambar/activity-ekstraksi.png>]) [42
 ]
 \openout2 = `Bab/bab5.aux'.
 
  (Bab/bab5.tex
 Bab 5.
-<Gambar/ui-embed.png, id=791, 558.58687pt x 325.96782pt>
+<Gambar/ui-embed.png, id=812, 558.58687pt x 325.96782pt>
 File: Gambar/ui-embed.png Graphic file (type png)
 
 <use Gambar/ui-embed.png>
 Package pdftex.def Info: Gambar/ui-embed.png used on input line 9.
 (pdftex.def)             Requested size: 446.8701pt x 260.7746pt.
 
-<Gambar/ui-extract.png, id=792, 557.83406pt x 325.96782pt>
+<Gambar/ui-extract.png, id=813, 557.83406pt x 325.96782pt>
 File: Gambar/ui-extract.png Graphic file (type png)
 
 <use Gambar/ui-extract.png>
 Package pdftex.def Info: Gambar/ui-extract.png used on input line 16.
 (pdftex.def)             Requested size: 446.26784pt x 260.7746pt.
- [41
+ [43
 
 
 
  <./Gambar/ui-embed.png>]
-<Gambar/ui-tambah-cover.png, id=801, 557.08125pt x 326.72063pt>
+<Gambar/ui-tambah-cover.png, id=821, 557.08125pt x 326.72063pt>
 File: Gambar/ui-tambah-cover.png Graphic file (type png)
 
 <use Gambar/ui-tambah-cover.png>
 Package pdftex.def Info: Gambar/ui-tambah-cover.png used on input line 25.
 (pdftex.def)             Requested size: 445.6656pt x 261.37685pt.
 
-<Gambar/ui-tambah-sinonim.png, id=802, 555.57562pt x 324.46219pt>
+<Gambar/ui-tambah-sinonim.png, id=822, 555.57562pt x 324.46219pt>
 File: Gambar/ui-tambah-sinonim.png Graphic file (type png)
 
 <use Gambar/ui-tambah-sinonim.png>
 Package pdftex.def Info: Gambar/ui-tambah-sinonim.png used on input line 32.
 (pdftex.def)             Requested size: 444.46109pt x 259.57008pt.
- [42 <./Gambar/ui-extract.png> <./Gambar/ui-tambah-cover.png>] <Gambar/ui-petun
-juk.png, id=811, 557.83406pt x 327.47343pt>
+ [44 <./Gambar/ui-extract.png> <./Gambar/ui-tambah-cover.png>] <Gambar/ui-petun
+juk.png, id=831, 557.83406pt x 327.47343pt>
 File: Gambar/ui-petunjuk.png Graphic file (type png)
 
 <use Gambar/ui-petunjuk.png>
 Package pdftex.def Info: Gambar/ui-petunjuk.png used on input line 41.
 (pdftex.def)             Requested size: 446.26784pt x 261.97911pt.
- [43 <./Gambar/ui-tambah-sinonim.png> <./Gambar/ui-petunjuk.png>]
+ [45 <./Gambar/ui-tambah-sinonim.png> <./Gambar/ui-petunjuk.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 50--51
 
  []
@@ -1026,59 +1017,274 @@ Overfull \hbox (8.09517pt too wide) in paragraph at lines 57--57
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 59--59
-[]|\T1/cmr/m/n/10.95 Pengguna meng-e-tikk-
+[]|\T1/cmr/m/n/10.95 Pengguna meng-e-tikk-an
+ []
+
+
+Underfull \hbox (badness 4518) in paragraph at lines 59--59
+\T1/cmr/m/n/10.95 pes-an ra-ha-sia se-pan-jang
+ []
+
+
+Underfull \hbox (badness 3668) in paragraph at lines 59--59
+\T1/cmr/m/n/10.95 tom-bol Em-bed (pan-jang
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 59--59
-\T1/cmr/m/n/10.95 an pes-an ra-ha-sia la-lu
+\T1/cmr/m/n/10.95 ka-rak-ter pes-an ra-ha-sia
+ []
+
+
+Underfull \hbox (badness 6063) in paragraph at lines 59--59
+\T1/cmr/m/n/10.95 ma-sih da-pat di-tam-pung
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 60--60
-[]|\T1/cmr/m/n/10.95 Pengguna me-ma-sukk-an
+[]|\T1/cmr/m/n/10.95 Pengguna meng-e-tikk-an
+ []
+
+
+Underfull \hbox (badness 4518) in paragraph at lines 60--60
+\T1/cmr/m/n/10.95 pes-an ra-ha-sia se-pan-jang
+ []
+
+
+Underfull \hbox (badness 3668) in paragraph at lines 60--60
+\T1/cmr/m/n/10.95 tom-bol Em-bed (pan-jang
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\T1/cmr/m/n/10.95 ka-rak-ter pes-an ra-ha-sia
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\T1/cmr/m/n/10.95 ti-dak da-pat di-tam-pung
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--61
+[]|\T1/cmr/m/n/10.95 Perangkat
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--61
+\T1/cmr/m/n/10.95 pilk-an teks
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--61
+\T1/cmr/m/n/10.95 "Pes-an ra-ha-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--61
+\T1/cmr/m/n/10.95 sia me-le-bi-hi
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 61--61
-[]|\T1/cmr/m/n/10.95 Pengguna me-nam-bahk-an
+[]|\T1/cmr/m/n/10.95 Pengguna meng-e-tikk-an
  []
 
 
-Underfull \hbox (badness 1527) in paragraph at lines 61--61
-\T1/cmr/m/n/10.95 yang ba-ru dan men-daf-tar-kan-nya pa-da
+Underfull \hbox (badness 10000) in paragraph at lines 61--61
+\T1/cmr/m/n/10.95 an-dung ka-rak-ter yang
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 62--62
-[]|\T1/cmr/m/n/10.95 Pengguna me-nam-bahk-an
- []
-
-
-Underfull \hbox (badness 2799) in paragraph at lines 63--63
-[]|\T1/cmr/m/n/10.95 Pengguna me-me-rik-sa se-
- []
-
-
-Overfull \hbox (8.09517pt too wide) in paragraph at lines 76--76
+Overfull \hbox (8.09517pt too wide) in paragraph at lines 71--71
 []|\T1/cmr/m/n/10.95 No.| 
  []
 
 
-Underfull \hbox (badness 1270) in paragraph at lines 79--79
-\T1/cmr/m/it/10.95 bed\T1/cmr/m/n/10.95 , na-mun \T1/cmr/m/it/10.95 stego-cover
- \T1/cmr/m/n/10.95 be-lum
+Underfull \hbox (badness 10000) in paragraph at lines 73--73
+[]|\T1/cmr/m/n/10.95 Pengguna me-ma-sukk-an
  []
 
 
-Underfull \hbox (badness 3635) in paragraph at lines 83--83
-[]|\T1/cmr/m/n/10.95 Pengguna me-nam-bahk-an si-no-
+Underfull \hbox (badness 10000) in paragraph at lines 74--74
+[]|\T1/cmr/m/n/10.95 Pengguna me-ma-sukk-an
  []
 
-) [44] [45]
+
+Underfull \hbox (badness 4954) in paragraph at lines 74--74
+\T1/cmr/m/n/10.95 teks yang buk-an \T1/cmr/m/it/10.95 stego-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 74--74
+\T1/cmr/m/it/10.95 object \T1/cmr/m/n/10.95 la-lu me-nek-an
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--75
+[]|\T1/cmr/m/n/10.95 Pengguna me-ma-sukk-an
+ []
+
+
+Underfull \hbox (badness 8038) in paragraph at lines 75--75
+\T1/cmr/m/it/10.95 stego-object \T1/cmr/m/n/10.95 yang me-ru-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--75
+\T1/cmr/m/n/10.95 ra-ha-sia yang meng-an-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--76
+[]|\T1/cmr/m/n/10.95 Perangkat
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--76
+\T1/cmr/m/n/10.95 pilk-an pes-an
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--76
+\T1/cmr/m/n/10.95 ti-dak se-su-ai
+ []
+
+
+Underfull \hbox (badness 4927) in paragraph at lines 75--76
+\T1/cmr/m/n/10.95 de-ngan pes-an
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--76
+\T1/cmr/m/n/10.95 ra-ha-sia yang
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--76
+\T1/cmr/m/n/10.95 di-sem-bu-nyik-
+ []
+
+[46]
+Overfull \hbox (8.09517pt too wide) in paragraph at lines 87--87
+[]|\T1/cmr/m/n/10.95 No.| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 89--89
+[]|\T1/cmr/m/n/10.95 Pengguna me-ma-sukk-an
+ []
+
+
+Underfull \hbox (badness 1527) in paragraph at lines 89--89
+\T1/cmr/m/n/10.95 yang ba-ru dan men-daf-tar-kan-nya pa-da
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--90
+[]|\T1/cmr/m/n/10.95 Pengguna me-ma-sukk-an
+ []
+
+
+Underfull \hbox (badness 1436) in paragraph at lines 90--90
+\T1/cmr/m/it/10.95 stego-cover \T1/cmr/m/n/10.95 tan-pa me-ma-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--91
+[]|\T1/cmr/m/n/10.95 Pengguna me-ma-sukk-an
+ []
+
+
+Underfull \hbox (badness 1924) in paragraph at lines 91--91
+\T1/cmr/m/it/10.95 stego-cover \T1/cmr/m/n/10.95 de-ngan ju-dul
+ []
+
+
+Underfull \hbox (badness 3954) in paragraph at lines 92--92
+\T1/cmr/m/n/10.95 dul yang be-lum ter-daf-
+ []
+
+
+Underfull \hbox (badness 1527) in paragraph at lines 92--92
+\T1/cmr/m/n/10.95 yang ba-ru dan men-daf-tar-kan-nya pa-da
+ []
+
+
+Overfull \hbox (8.09517pt too wide) in paragraph at lines 104--104
+[]|\T1/cmr/m/n/10.95 No.| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--106
+[]|\T1/cmr/m/n/10.95 Pengguna me-nam-bahk-an
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--107
+[]|\T1/cmr/m/n/10.95 Pengguna me-nam-bahk-an
+ []
+
+[47]
+Overfull \hbox (8.09517pt too wide) in paragraph at lines 117--117
+[]|\T1/cmr/m/n/10.95 No.| 
+ []
+
+
+Underfull \hbox (badness 2799) in paragraph at lines 119--119
+[]|\T1/cmr/m/n/10.95 Pengguna me-me-rik-sa se-
+ []
+
+
+Underfull \hbox (badness 3919) in paragraph at lines 119--119
+\T1/cmr/m/n/10.95 mua si-no-nim (ada ka-ta
+ []
+
+
+Underfull \hbox (badness 7740) in paragraph at lines 119--119
+\T1/cmr/m/n/10.95 yang si-no-nim-nya be-lum
+ []
+
+
+Underfull \hbox (badness 2799) in paragraph at lines 120--120
+[]|\T1/cmr/m/n/10.95 Pengguna me-me-rik-sa se-
+ []
+
+
+Underfull \hbox (badness 1092) in paragraph at lines 120--120
+\T1/cmr/m/n/10.95 mua si-no-nim (se-mua ka-
+ []
+
+<Gambar/graf-embed.png, id=850, 382.42876pt x 208.52907pt>
+File: Gambar/graf-embed.png Graphic file (type png)
+
+<use Gambar/graf-embed.png>
+Package pdftex.def Info: Gambar/graf-embed.png used on input line 130.
+(pdftex.def)             Requested size: 305.9434pt x 166.82347pt.
+
+<Gambar/graf-extract.png, id=851, 389.95688pt x 207.77625pt>
+File: Gambar/graf-extract.png Graphic file (type png)
+
+<use Gambar/graf-extract.png>
+Package pdftex.def Info: Gambar/graf-extract.png used on input line 137.
+(pdftex.def)             Requested size: 311.96591pt x 166.2212pt.
+ [48 <./Gambar/graf-embed.png>]
+<Gambar/graf-tambah-cover.png, id=858, 385.44pt x 215.30438pt>
+File: Gambar/graf-tambah-cover.png Graphic file (type png)
+
+<use Gambar/graf-tambah-cover.png>
+Package pdftex.def Info: Gambar/graf-tambah-cover.png used on input line 146.
+(pdftex.def)             Requested size: 308.35242pt x 172.24373pt.
+) [49 <./Gambar/graf-extract.png> <./Gambar/graf-tambah-cover.png>]
 \openout2 = `Bab/bab6.aux'.
 
- (Bab/bab6.tex)
+ (Bab/bab6.tex [50
+
+
+
+]
+Bab 6.
+) [51]
 \openout2 = `Bab/bab7.aux'.
 
  (Bab/bab7.tex)
@@ -1087,8 +1293,7 @@ Underfull \hbox (badness 3635) in paragraph at lines 83--83
  (Bab/bab8.tex)
 \openout2 = `Bab/bab9.aux'.
 
- (Bab/bab9.tex)
-(main.bbl [46
+ (Bab/bab9.tex) (main.bbl [52
 
 
 
@@ -1097,59 +1302,58 @@ Underfull \hbox (badness 3635) in paragraph at lines 83--83
 
 
 
-
-
-]) [47]
+]) [53]
 \openout2 = `Lampiran/lampA.aux'.
 
- (Lampiran/lampA.tex)
+
+(Lampiran/lampA.tex)
 \openout2 = `Lampiran/lampB.aux'.
 
  (Lampiran/lampB.tex)
 \openout2 = `Lampiran/lampC.aux'.
 
-
-(Lampiran/lampC.tex)
+ (Lampiran/lampC.tex)
 \openout2 = `Lampiran/lampD.aux'.
 
- (Lampiran/lampD.tex)
+
+(Lampiran/lampD.tex)
 \openout2 = `Lampiran/lampE.aux'.
 
  (Lampiran/lampE.tex)
 \openout2 = `Lampiran/lampF.aux'.
 
-
-(Lampiran/lampF.tex)
+ (Lampiran/lampF.tex)
 \openout2 = `Lampiran/lampG.aux'.
 
- (Lampiran/lampG.tex)
+
+(Lampiran/lampG.tex)
 \openout2 = `Lampiran/lampH.aux'.
 
  (Lampiran/lampH.tex)
 \openout2 = `Lampiran/lampI.aux'.
 
-
-(Lampiran/lampI.tex)
+ (Lampiran/lampI.tex)
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 531.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 531.
- (main.aux (Bab/bab1.aux) (Bab/bab2.aux) (Bab/bab3.aux)
-(Bab/bab4.aux) (Bab/bab5.aux) (Bab/bab6.aux) (Bab/bab7.aux) (Bab/bab8.aux)
-(Bab/bab9.aux) (Lampiran/lampA.aux) (Lampiran/lampB.aux) (Lampiran/lampC.aux)
-(Lampiran/lampD.aux) (Lampiran/lampE.aux) (Lampiran/lampF.aux)
-(Lampiran/lampG.aux) (Lampiran/lampH.aux) (Lampiran/lampI.aux))
+ (main.aux
+(Bab/bab1.aux) (Bab/bab2.aux) (Bab/bab3.aux) (Bab/bab4.aux) (Bab/bab5.aux)
+(Bab/bab6.aux) (Bab/bab7.aux) (Bab/bab8.aux) (Bab/bab9.aux) (Lampiran/lampA.aux
+) (Lampiran/lampB.aux) (Lampiran/lampC.aux) (Lampiran/lampD.aux)
+(Lampiran/lampE.aux) (Lampiran/lampF.aux) (Lampiran/lampG.aux)
+(Lampiran/lampH.aux) (Lampiran/lampI.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 531.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 531.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: E813DE643816B7E3614CC89F6D5C2FBB;7228.
+(rerunfilecheck)             Checksum: 8ABB69243AE52148AE5CC79076DAD299;7665.
  ) 
 Here is how much of TeX's memory you used:
- 14441 strings out of 493634
- 197494 string characters out of 3143738
- 415030 words of memory out of 3000000
- 17188 multiletter control sequences out of 15000+200000
+ 14463 strings out of 493634
+ 198090 string characters out of 3143738
+ 416387 words of memory out of 3000000
+ 17209 multiletter control sequences out of 15000+200000
  20925 words of font info for 48 fonts, out of 3000000 for 9000
  1029 hyphenation exceptions out of 8191
- 45i,11n,44p,1190b,596s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 45i,12n,44p,1189b,548s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Michael\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi60
 0\ecbi1095.pk> <C:\Users\Michael\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknap
 pen\ec\dpi600\ecbi1200.pk> <C:\Users\Michael\AppData\Local\MiKTeX\2.9\fonts\pk\
@@ -1167,12 +1371,11 @@ ta\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\M
 ichael\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk>
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Prog
 ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program File
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (67 pages, 1118125 bytes).
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on main.pdf (73 pages, 1259695 bytes).
 PDF statistics:
- 1428 PDF objects out of 1440 (max. 8388607)
- 282 named destinations out of 1000 (max. 500000)
- 512 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1484 PDF objects out of 1728 (max. 8388607)
+ 280 named destinations out of 1000 (max. 500000)
+ 551 words of extra memory for PDF output out of 10000 (max. 10000000)
 

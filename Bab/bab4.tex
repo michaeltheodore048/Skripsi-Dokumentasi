@@ -106,14 +106,14 @@ Deskripsi setiap kelas beserta dengan atribut dan fungsinya akan dijelaskan seba
 	\item Kelas PemotongKata\\
 	Kelas ini merupakan kelas yang merepresentasikan pemotong kata. Fungsi-fungsi yang ada pada kelas ini adalah:
 	\begin{itemize}
-		\item \textbf{public String getPattern(String input)}\\
-		Berfungsi untuk mendapatkan pola suku kata.\\
+		\item \textbf{public String getPattern(String input)} \\
+		Berfungsi untuk mendapatkan pola suku kata (KV, K, V, dst.).\\
 		\textbf{Parameter:}
 		\begin{itemize}
-			\item \textbf{input} Teks yang akan dicari pola suku katanya.
+			\item \textbf{input} Teks yang akan didapatkan pola suku katanya.
 		\end{itemize}
 		
-		\item \textbf{public ArrayList generateLevel1(String text)}\\
+		\item \textbf{public ArrayList generateLevel1(String text)} \\
 		Berfungsi untuk melakukan DFSA tahap 1.\\
 		\textbf{Parameter:}
 		\begin{itemize}
@@ -173,7 +173,7 @@ Deskripsi setiap kelas beserta dengan atribut dan fungsinya akan dijelaskan seba
 	\item Kelas Embedder\\
 	Kelas ini berfungsi untuk menangani seluruh kegiatan \textit{embedding} pesan ke dalam \textit{stego-cover}. Atribut yang ada pada kelas Embedder adalah:
 	\begin{itemize}
-		\item \textbf{KamusReader dr:} Objek KamusReader berfungsi untuk membaca \textit{file} kamus.
+		\item \textbf{KamusReader kr:} Objek KamusReader berfungsi untuk membaca \textit{file} kamus.
 		\item \textbf{PemotongKata pk:} Objek PemotongKata berfungsi untuk memotong kata.
 		\item \textbf{FileReader fr:} Objek FileReader yang berfungsi untuk membuka suatu \textit{file}.
 		\item \textbf{BufferedReader br:} Objek BufferedReader yang berfungsi untuk membaca isi dari \textit{file} yang dibuka FileReader.
@@ -214,7 +214,7 @@ Deskripsi setiap kelas beserta dengan atribut dan fungsinya akan dijelaskan seba
 		\end{itemize}
 		
 		\item \textbf{String checkAllSynonym(String stegoFileName)}\\
-		Berfungsi untuk cek ketersediaan sinonim \textit{stego-cover} pada \textit{file} kamus.\\
+		Berfungsi untuk cek kata mana saja (yang ada pada \textit{stego-cover}) yang sinonimnya belum terdaftar pada kamus sinonim.\\
 		\textbf{Parameter:}
 		\begin{itemize}
 			\item \textbf{stegoFileName} Nama \textit{file stego-cover} yang akan dicek.
@@ -225,24 +225,16 @@ Deskripsi setiap kelas beserta dengan atribut dan fungsinya akan dijelaskan seba
 	Kelas ini berfungsi untuk menangani seluruh kegiatan \textit{extracting} pesan dari \textit{stego-object}. Atribut yang ada pada kelas Extractor adalah:
 	\begin{itemize}
 		\item \textbf{PemotongKata pk:} Objek PemotongKata berfungsi untuk memotong kata.
-		\item \textbf{String asciiCode:} Untuk menyimpan kode yang siap diubah menjadi karakter ASCII.
 	\end{itemize}
 	
 	Fungsi-fungsi yang dimiliki kelas ini adalah:
 	
-	\begin{itemize}
-		\item \textbf{void read(String stegoObject)}\\
-		Berfungsi untuk mengubah \textit{stego-object} menjadi kode yang siap diubah menjadi karakter ASCII.\\
-		\textbf{Paramter:}
-		\begin{itemize}
-			\item \textbf{stegoObject} \textit{Stego-object} yang akan didapatkan kodenya.
-		\end{itemize}
-		
+	\begin{itemize}		
 		\item \textbf{String extract(String stegoObject)}\\
 		Berfungsi untuk melakukan proses \textit{extracting}\\
 		\textbf{Parameter:}
 		\begin{itemize}
-			\item \textbf{stegoObject} \textit{Stego-object} yang akan diekstraksi.
+			\item \textbf{stegoObject} \textit{Stego-object} yang akan diekstrak.
 		\end{itemize}
 	\end{itemize}
 	
@@ -257,6 +249,7 @@ Dari diagram aktivitas dapat dijelaskan sebagai berikut:
 \begin{enumerate}
 	\item Pengguna memasukkan input pesan rahasia berupa string
 	\item Pesan akan diubah ke bentuk ASCII
+	\item Pesan yang telah diubah ke bentuk ASCII akan ditambahkan kode ASCII dari karakter '\#' (untuk menandakan berakhirnya pesan rahasia).
 	\item Sistem akan mencari \textit{stego-cover} yang dapat dipakai (kapasitas mencukupi)
 	\item Dari beberapa \textit{stego-cover} yang dapat dipakai, akan dipilih satu secara acak
 	\item Sistem akan membaca satu per satu kata yang ada pada \textit{stego-cover}
@@ -265,12 +258,12 @@ Dari diagram aktivitas dapat dijelaskan sebagai berikut:
 	\begin{itemize}
 		\item Jika keduanya sesuai, ada dua kemungkinan lagi:
 		\begin{itemize}
-			\item Jika masih ada bit yang belum diperiksa, maka akan kembali ke tahap 5 dan 6.
+			\item Jika masih ada bit yang belum diperiksa, maka akan kembali ke tahap 6 dan 7.
 			\item Jika semua kode telah diperiksa, maka \textit{stego-cover} berhasil dibuat dan proses \textit{embedding} selesai.
 		\end{itemize}
 		\item Jika tidak sesuai, maka sistem akan mengganti kata tersebut dengan sinonimnya. Setelah itu ada dua kemungkinan lagi:
 		\begin{itemize}
-			\item Jika masih ada bit yang belum diperiksa, maka akan kembali ke tahap 5 dan 6.
+			\item Jika masih ada bit yang belum diperiksa, maka akan kembali ke tahap 6 dan 7.
 			\item Jika semua kode telah diperiksa, maka \textit{stego-cover} berhasil dibuat dan proses \textit{embedding} selesai.
 		\end{itemize}
 	\end{itemize}

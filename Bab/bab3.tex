@@ -9,10 +9,10 @@ Setelah menemukan cara mengubah \textit{stego-cover} menjadi bilangan biner, \te
 
 \textit{Stego-cover} dan \textit{secret message} kini dapat diubah menjadi deret bilangan biner, \textit{stego-cover} harus dapat diubah lagi sedemikian rupa agar 7*\textit{n} deret biner pertamanya identik dengan deret biner \textit{secret message}. Sehingga saat proses ekstraksi, deret biner dari \textit{stego-cover} dapat diubah lagi menjadi karakter yang sesuai dengan \textit{secret message}. Karena \textit{c}(\textit{w}) dalam \textit{stego-cover} dapat bernilai 0 atau 1, ada kemungkinan \textit{c}(\textit{w}) tidak sesuai dengan angka biner dari \textit{secret message} yang akan disembunyikan. Untuk mengatasi hal ini, kata dengan nilai \textit{c}(\textit{w}) yang tidak sesuai, akan diganti dengan sinonim yang memiliki \textit{c}(\textit{w}) yang sesuai.
 
-Tentunya semua kata yang ada pada \textit{stego-cover} harus memiliki sinonim agar setiap kata dapat memiliki \textit{c}(\textit{w}) yang bernilai 0 atau 1. Tesaurus merupakan buku referensi berupa daftar kata dengan sinonimnya\footnote{http://kbbi.web.id/tesaurus}. Namun karena format tesaurus yang memiliki banyak pengelompokkan kata, seperti kata "bobol" bisa berarti "ambrol"/"hancur", bisa juga berarti "buyar"/"tembus". Lalu dari kata "bobol" bisa jadi "membobol" yang juga bisa berarti "membobok", bisa juga berarti "mencuri". Karena format yang terlalu rumit untuk dapat dibaca secara otomatis oleh program, maka diputuskan untuk membuat kamus sinonim yang lebih ringkas. Untuk kamus pada skripsi ini, telah disiapkan kamus sinonim yang daftar sinonimnya sebagian besar diambil dari tesaurus. Kamus sinonim ini berisi pasangan kata dengan sinonimnya pada tiap barisnya. Karena kamus sinonim dibuat sendiri, maka daftar kata yang ada di dalamnya, masih terbatas, artinya jika pengguna menambahkan \textit{stego-cover} baru, pengguna juga harus melengkapi sinonim yang belum terdaftar pada kamus sinonim.
+Tentunya semua kata yang ada pada \textit{stego-cover} harus memiliki sinonim agar setiap kata dapat memiliki \textit{c}(\textit{w}) yang bernilai 0 atau 1. Tesaurus merupakan buku referensi berupa daftar kata dengan sinonimnya\footnote{http://kbbi.web.id/tesaurus}. Namun karena format tesaurus yang memiliki banyak pengelompokan kata, seperti kata "bobol" bisa berarti "ambrol"/"hancur", bisa juga berarti "buyar"/"tembus". Lalu dari kata "bobol" bisa jadi "membobol" yang juga bisa berarti "membobok", bisa juga berarti "mencuri". Karena format yang terlalu rumit untuk dapat dibaca secara otomatis oleh program, maka diputuskan untuk membuat kamus sinonim yang lebih ringkas. Untuk kamus pada skripsi ini, telah disiapkan kamus sinonim yang daftar sinonimnya sebagian besar diambil dari tesaurus. Kamus sinonim ini berisi pasangan kata dengan sinonimnya pada tiap barisnya. Karena kamus sinonim dibuat sendiri, maka daftar kata yang ada di dalamnya, masih terbatas, artinya jika pengguna menambahkan \textit{stego-cover} baru, pengguna juga harus melengkapi sinonim yang belum terdaftar pada kamus sinonim.
 
-\subsection{Pemenggalan Kata}
-Untuk proses pemenggalan kata, akan menggunakan skripsi Frisca Sumarlin 2010 yang berjudul Aplikasi Pendongeng. Untuk mengenali suku kata dalam bahasa Indonesia, akan digunakan tiga tahap DFSA. Setiap masukan dari DFSA merupakan hasil DFSA tahap sebelumnya. Seperti yang telah dijelaskan, FSA memiliki prinsip kerja membaca hanya satu arah dan tidak bisa membaca mundur masukannya. Sedangkan untuk mengenali suku kata, untuk beberapa kasus kata dibutuhkan kemampuan untuk membaca mundur masukannya. Sebagai contoh, pada kata "anda", huruf ketiga adalah huruf konsonan sehingga pemenggalan suku kata dapat dilakukan pada saat membaca huruf ketiga.
+\subsection{Pemenggalan Kata Menjadi Suku Kata}
+Seperti yang telah dijelaskan pada Bab \ref{sec:gambaran_umum} untuk menghitung \textit{c}(\textit{w}) dibutuhkan proses pemenggalan kata menjadi suku kata. Untuk proses pemenggalan kata, akan menggunakan skripsi Frisca Sumarlin 2010 yang berjudul Aplikasi Pendongeng\cite{Frisca:2014}. Untuk mengenali suku kata dalam bahasa Indonesia, akan digunakan tiga tahap DFSA. Setiap masukan dari DFSA merupakan hasil DFSA tahap sebelumnya. Seperti yang telah dijelaskan, FSA memiliki prinsip kerja membaca hanya satu arah dan tidak bisa membaca mundur masukannya. Sedangkan untuk mengenali suku kata, untuk beberapa kasus kata dibutuhkan kemampuan untuk membaca mundur masukannya. Sebagai contoh, pada kata "anda", huruf ketiga adalah huruf konsonan sehingga pemenggalan suku kata dapat dilakukan pada saat membaca huruf ketiga.
 
 Pada tahap 1 ini memang beberapa kata belum sesuai dengan aturan penyukuan kata yang benar, karena itu akan dilakukan tiga tahapan. Untuk diagramnya dapat dilihat pada Gambar \ref{fig:1-DFSA-1}.
 
@@ -119,7 +119,7 @@ Dengan dipilihnya cerpen dan puisi sebagai \textit{stego-cover}, maka dibutuhkan
 
 \subsection{Kamus sinonim}
 \label{sec:kamus_sinonim}
-Proses \textit{embedding} akan memanfaatkan daftar sinonim yang ada pada kamus sinonim. Kamus sinonim akan disimpan dalam sebuah \textit{file} dengan ekstensi .txt. Kamus sinonim dibuat dengan format seperti pada Gambar \ref{fig:6-format-kamus}. Dimana kata pertama merupakan kata yang ada pada \textit{stego cover} dan kata di sebelahnya adalah sinonimnya. Format ini dipilih agar pencarian sinonim lebih mudah karena sudah berpasangan antara kata dan sinonimnya. Untuk skripsi ini telah disiapkan terlebih dahulu kamus sinonim yang dibuat secara manual. Pada kamus sinonim setiap kata yang ada pada \textit{stego-cover} memiliki sinonimnya sendiri. Referensi utama pembuatan kamus sinonim ini adalah tesaurus. Tesaurus merupakan buku referensi berupa daftar kata dengan sinonimnya\footnote{http://kbbi.web.id/tesaurus}. Kata-kata yang terdaftar di tesaurus adalah kata baku, sehingga jika pada \textit{stego-cover} terdapat kata yang tidak dapat ditemukan pada tesaurus, diperlukan penanganan tersendiri.
+Proses \textit{embedding} akan memanfaatkan daftar sinonim yang ada pada kamus sinonim. Kamus sinonim akan disimpan dalam sebuah \textit{file} dengan ekstensi .txt. Kamus sinonim dibuat dengan format seperti pada Gambar \ref{fig:6-format-kamus}. Kata pertama merupakan kata yang ada pada \textit{stego cover} dan kata di sebelahnya adalah sinonimnya. Format ini dipilih agar pencarian sinonim lebih mudah karena sudah berpasangan antara kata dan sinonimnya. Untuk skripsi ini telah disiapkan terlebih dahulu kamus sinonim yang dibuat secara manual. Pada kamus sinonim setiap kata yang ada pada \textit{stego-cover} memiliki sinonimnya sendiri. Referensi utama pembuatan kamus sinonim ini adalah tesaurus. Tesaurus merupakan buku referensi berupa daftar kata dengan sinonimnya\footnote{http://kbbi.web.id/tesaurus}. Kata-kata yang terdaftar di tesaurus adalah kata baku, sehingga jika pada \textit{stego-cover} terdapat kata yang tidak dapat ditemukan pada tesaurus, diperlukan penanganan tersendiri.
 
 \begin{figure}[H]
 	\centering
@@ -130,12 +130,14 @@ Proses \textit{embedding} akan memanfaatkan daftar sinonim yang ada pada kamus s
 
 Solusinya adalah dengan mengubah-ubah imbuhan pada awal atau akhir kalimat, namun tetap memperhatikan konteks kalimat tersebut. Sebagai contoh, pada \textit{stego-cover} terdapat kata 'menggendongnya', namun kata tersebut tidak dapat ditemukan pada tesaurus, karena terdapat imbuhan. Sehingga untuk sinonimnya dapat digunakan kata 'menggendong'. Kedua kata tersebut memiliki jumlah suku kata yang berbeda, namun memiliki arti yang sama.
 
-Terdapat beberapa kata yang memang tidak memiliki sinonim dengan jumlah suku kata yang berbeda. Kata 'lama' memiliki 2 suku kata, sedangkan sinonim yang ada pada Tesaurus adalah 'lamban' dan 'lelet'. Kedua sinonimnya memiliki \textit{c}(\textit{w}) genap, tetapi yang dibutuhkan adalah \textit{c}(\textit{w}) ganjil. Hal ini dapat diatasi dengan menyamarkannya sebagai \textit{typo} atau kesalahan pengetikkan. Contohnya dengan memasukkan kata 'lambaan' atau 'lamaa' sebagai sinonim dari kata 'lama'. Kata 'lambaan' dan 'lamaa', jika dipotong suku katanya dengan menggunakan pemotong suku kata yang telah dibuat, kedua kata tersebut memiliki \textit{c}(\textit{w}) ganjil.
+Terdapat beberapa kata yang memang tidak memiliki sinonim dengan jumlah suku kata yang berbeda. Kata 'lama' memiliki 2 suku kata, sedangkan sinonim yang ada pada Tesaurus adalah 'lamban' dan 'lelet'. Kedua sinonimnya memiliki \textit{c}(\textit{w}) genap, tetapi yang dibutuhkan adalah \textit{c}(\textit{w}) ganjil. Hal ini dapat diatasi dengan menyamarkannya sebagai \textit{typo} atau kesalahan pengetikan. Contohnya dengan memasukkan kata 'lambaan' atau 'lamaa' sebagai sinonim dari kata 'lama'. Kata 'lambaan' dan 'lamaa', jika dipotong suku katanya dengan menggunakan pemotong suku kata yang telah dibuat, kedua kata tersebut memiliki \textit{c}(\textit{w}) ganjil.
 
 \subsection{\textit{Embedding}}
-Proses \textit{embedding} akan memanfaatkan suku kata dan sinonim kata itu sendiri. Ide utamanya adalah dengan mengganti kata-kata tertentu yang ada dalam \textit{stego-cover} dengan kata-kata yang telah disediakan pada kamus sinonim, agar 7*\textit{n} deret bilangan biner pertama pada \textit{stego-cover} identik dengan deret bilangan biner \textit{secret message}. Kamus sinonim berisi semua kata yang ada pada \textit{stego cover} berpasangan dengan sinonimnya. Pasangan kata yang ada pada \textit{database} merupakan sinonim dengan \textit{c}(\textit{w}) yang berbeda (ganjil dan genap) dengan kata aslinya. \textit{Data Flow Diagram Embedding} dapat dilihat pada Gambar \ref{fig:4-dfd-embed}.
+Pada awal proses \textit{embedding} ada pemilihan \textit{stego-cover} yang akan dipakai untuk menyembunyikan pesan rahasia. Dari kumpulan \textit{stego-cover} akan diambil semua \textit{stego-cover} dengan kapasitas yang mencukupi untuk disisipkan \textit{secret message}. Dari banyak \textit{stego-cover} yang kapasitasnya mencukupi tersebut, dipilih satu secara acak untuk dijadikan masukan pada proses modifikasi \textit{stego-cover}.
 
-Penggantian kata pada \textit{stego-cover} ditentukan dari ASCII \textit{secret message} yang akan disembunyikan. ASCII (\textit{American Standard Code for Information Interchange}) merupakan format yang paling umum untuk \textit{file} teks yang ada di komputer dan internet\footnote{http://whatis.techtarget.com/definition/ASCII-American-Standard-Code-for-Information-Interchange}. Kode ASCII yang akan dipakai direpresentasikan dengan 7-bit angka biner, yang berarti ada 7 digit angka 0 atau 1. Pemilihan 7-bit ini dikarenakan kode ASCII pada bilangan desimal hanya ada dari 0 sampai 127, sehingga jika menggunakan 8-bit, angka pertama(paling kiri) akan selalu bernilai 0. Dapat disimpulkan bahwa untuk menyisipkan 7-bit dibutuhkan 7 kata, 8-bit dibutuhkan 8 kata.  Untuk alasan memaksimalkan kapasitas penyisipan, maka diputuskan untuk merepresentasikan 1 karakter menjadi 7-bit.
+Proses modifikasi akan memanfaatkan suku kata dan sinonim kata itu sendiri. Ide utamanya adalah dengan mengganti kata-kata tertentu yang ada dalam \textit{stego-cover} dengan kata-kata yang telah disediakan pada kamus sinonim, agar 7*\textit{n} deret bilangan biner pertama pada \textit{stego-cover} identik dengan deret bilangan biner \textit{secret message}. Kamus sinonim berisi semua kata yang ada pada \textit{stego cover} berpasangan dengan sinonimnya. Pasangan kata yang ada pada \textit{database} merupakan sinonim dengan \textit{c}(\textit{w}) yang berbeda (ganjil dan genap) dengan kata aslinya. \textit{Data Flow Diagram Embedding} dapat dilihat pada Gambar \ref{fig:4-dfd-embed}.
+
+Penggantian kata pada \textit{stego-cover} ditentukan dari ASCII \textit{secret message} yang akan disembunyikan. ASCII (\textit{American Standard Code for Information Interchange}) merupakan format yang paling umum untuk \textit{file} teks yang ada di komputer dan internet\footnote{http://whatis.techtarget.com/definition/ASCII-American-Standard-Code-for-Information-Interchange}. Kode ASCII yang akan dipakai direpresentasikan dengan 7-bit angka biner, yang berarti ada 7 digit angka 0 atau 1. Pemilihan 7-bit ini dikarenakan kode ASCII yang umum dipakai hanya pada rentang desimal dari 0 sampai 127, sehingga jika menggunakan 8-bit, angka pertama(paling kiri) akan selalu bernilai 0. Dapat disimpulkan bahwa untuk menyisipkan 7-bit dibutuhkan 7 kata, 8-bit dibutuhkan 8 kata.  Untuk alasan memaksimalkan kapasitas penyisipan, maka diputuskan untuk merepresentasikan 1 karakter menjadi 7-bit.
 
 \begin{figure}[H]
 	\centering
@@ -156,11 +158,11 @@ Algoritma \textit{embedding} pesan rahasia pada \textit{stego-cover} dengan mema
 	\item Meminta input berupa pesan rahasia(\textit{secret message}).
 	\item Tiap karakter pada \textit{secret message} diubah menjadi kode ASCII 7-bit dan disimpan menjadi \textit{secret code}.
 	\item Tambahkan deret biner 0100011, yang merupakan kode ASCII untuk karakter '\#' untuk menandakan bahwa \textit{secret message} telah berakhir.
-	\item Jika n adalah banyak karakter yang ada pada \textit{secret message}, maka panjang \textit{secret code} = 7*\textit{n}+1 (ditambah karakter '\#').
+	\item Jika n adalah banyak karakter yang ada pada \textit{secret message}, maka panjang \textit{secret code} = 7*(\textit{n}+1) (ditambah karakter '\#').
 	\item Cari \textit{stego cover} yang dapat menampung \textit{secret code}. (Banyaknya kata yang ada dalam \textit{stego cover} $\geq$ panjang \textit{secret code}).
-	\item Bangkitkan angka acak (r) dari 0 sampai banyaknya \textit{stego cover} yang dapat menampung \textit{secret code} - 1. 
+	\item Bangkitkan angka acak (r) dari \textit{range} 0 sampai banyaknya \textit{stego cover} yang dapat menampung \textit{secret code} - 1. 
 	\item Buka \textit{file} ke-(r) dan baca per kata dengan mengabaikan tanda baca dan spasi.
-	\item Untuk 7*\textit{n}+1 kata pertama, lakukan pemenggalan kata dan dapatkan nilai \textit{c}(\textit{w}).
+	\item Untuk 7*(\textit{n}+1) kata pertama, lakukan pemenggalan kata dan dapatkan nilai \textit{c}(\textit{w}).
 	\item Cocokkan nilai \textit{c}(\textit{w}) dengan angka ke-n yang ada pada \textit{secret code} secara berurutan. (\textit{c}(\textit{w}) kata ke-n dicocokkan dengan angka ke-n \textit{secret code}).
 	\item Jika pada tahap 9 didapatkan \textit{c}(\textit{w}) yang tidak sesuai dengan angka ke-n \textit{secret code}, lanjut ke tahap 11. Jika sesuai, ulangi tahap 9.
 	\item Cari sinonim kata tersebut pada kamus sinonim. Kata yang diambil hanya kata dengan nilai \textit{c}(\textit{w}) yang berbeda.
@@ -192,7 +194,7 @@ Diagram \textit{use case} perangkat lunak steganografi ini memiliki dua aktor, y
 	\label{fig:3_usecase}
 \end{figure}
 
-Dari diagram dapat dilihat dua \textit{use case}, yakni:
+Dari diagram dapat dilihat enam \textit{use case}, yakni:
 \begin{enumerate}
 	\item \textbf{\textit{Embed}}, pengirim mengetikkan pesan rahasia yang akan disembunyikan.
 	\item \textbf{Tambah \textit{stego-cover}}, pengirim menyalin teks sebagai \textit{stego-cover}. Jika pengirim menambahkan \textit{stego-cover}, maka pengirim wajib melengkapi sinonim yang belum terdaftar agar \textit{stego-cover} dapat digunakan.
@@ -212,41 +214,57 @@ Dari diagram dapat dilihat dua \textit{use case}, yakni:
 		\item Prakondisi: Pengirim mengetahui pesan rahasia yang akan disembunyikan
 		\item Tujuan: Menghasilkan \textit{stego-object}.
 		\item Skenario:
-		\renewcommand{\labelenumii}{\arabic{enumii}.}
-			\begin{enumerate}
-				\item Pengirim mengetikkan pesan rahasia yang akan disembunyikan.
-				\item Pengirim menekan tombol \textit{Embed}.
-				\item Sistem lalu akan mengubah pesan yang diketik menjadi kode ASCII.
-				\item Sistem mencari \textit{stego-cover} yang dapat menampung pesan yang sudah dalam bentuk ASCII.
-				\item Sistem melakukan proses \textit{embedding} dengan bantuan kamus sinonim.
-				\item \textit{Stego-object} sebagai hasil dari proses \textit{embedding} akan muncul pada kotak hasil.\\
-				Alternatif:
-				\begin{itemize}
-					\item [4.1] Tidak ada \textit{stego-cover} yang dapat menampung pesan.
-					\item [4.2] Sistem mengeluarkan peringatan bahwa pesan rahasia melebihi kapasitas.
-					\item [5.1] Proses \textit{embedding} gagal karena ada sinonim yang tidak ditemukan.
-					\item [5.2] Sistem mengembalikan daftar kata yang tidak terdaftar sinonimnya.
-					\item [5.3] Pengguna harus menambahkan sinonim kata yang belum terdaftar.
-				\end{itemize}
-			\end{enumerate}
+		\begin{table}[H]
+		\centering
+		\caption{Tabel Skenario \textit{Embed}}
+		\begin{tabular}{| p{6.5cm} | p{6.5cm} |}\hline
+		Pengirim & Sistem \\
+		\hline
+				1. Pengirim mengetikkan pesan rahasia yang akan disembunyikan. & \\
+				\hline
+				2. Pengirim menekan tombol \textit{Embed}. & 3. Sistem lalu akan mengubah pesan yang diketik menjadi kode ASCII. \\
+				\hline
+				& 4. Sistem mencari \textit{stego-cover} yang dapat menampung pesan yang sudah dalam bentuk ASCII. \\
+				&	4.1. Tidak ada \textit{stego-cover} yang dapat menampung pesan.\\
+				&	4.2. Sistem mengeluarkan peringatan bahwa pesan rahasia melebihi kapasitas dan kembali ke langkah 1.\\
+				\hline
+				& 5. Sistem melakukan proses \textit{embedding} dengan bantuan kamus sinonim. \\
+				&	5.1. Proses \textit{embedding} gagal karena ada kata yang tidak ditemukan sinonimnya.\\
+				&	5.2. Sistem mengembalikan daftar kata yang tidak terdaftar sinonimnya.\\
+				&	5.3. Pengguna harus menambahkan sinonim kata yang belum terdaftar.\\
+				\hline
+				& 6. \textit{Stego-object} sebagai hasil dari proses \textit{embedding} akan ditampilkan pada kotak hasil.\\
+		\hline
+		\end{tabular}
+		\end{table}
+			
 	\end{itemize}
 	
 	\item \textbf{Tambah \textit{stego-cover}}
 	\begin{itemize}
 		\item Nama: Tambah \textit{stego-cover}
 		\item Aktor: Pengirim
-		\item Prakondisi: Telah memiliki teks yang memenuhi syarat untuk dijadikan \textit{stego-cover}. Pengirim telah menuliskan judul untuk file tersebut.
+		\item Prakondisi: Telah memiliki teks yang memenuhi syarat untuk dijadikan \textit{stego-cover}.
 		\item Tujuan: Menambahkan variasi \textit{stego-cover}.
 		\item Skenario:
-		\renewcommand{\labelenumii}{\arabic{enumii}.}
-			\begin{enumerate}
-				\item Pengirim mengetikkan judul untuk \textit{stego-cover} yang baru.			
-				\item Pengirim menyalin teks yang akan dijadikan \textit{stego-cover}.
-				\item Pengirim menekan tombol Tambahkan Cover.
-				\item Sistem akan membuat file dengan nama \textit{file} yang dimasukkan pengirim, dan menuliskan \textit{stego-cover} dalam \textit{file} tersebut.
-				\item Sistem juga menuliskan nama \textit{file} beserta kapasitas \textit{stego-cover} pada file lain yang merupakan daftar \textit{stego-cover} yang ada.
-				\item Akan tampil peringatan jika \textit{stego-cover} berhasil / gagal ditambahkan.
-			\end{enumerate}
+		\begin{table}[H]
+		\centering
+		\caption{Tabel Skenario Tambah \textit{stego-cover}}
+		\begin{tabular}{| p{6.5cm} | p{6.5cm} |}\hline
+		Pengirim & Sistem \\
+		\hline
+				1. Pengirim mengetikkan judul untuk \textit{stego-cover} yang baru. & \\
+				\hline
+				2. Pengirim menyalin teks yang akan dijadikan \textit{stego-cover}. & \\
+				\hline
+				3. Pengirim menekan tombol Tambahkan Cover. & 4. Sistem akan membuat \textit{file} dengan nama \textit{file} sesuai dengan judul yang dimasukkan pengirim, dan menuliskan \textit{stego-cover} dalam \textit{file} tersebut. \\
+				\hline
+				& 5. Sistem menuliskan nama \textit{file} beserta kapasitas \textit{stego-cover} pada file lain yang merupakan daftar \textit{stego-cover} yang ada. \\
+				\hline
+				& 6. Akan tampil peringatan jika \textit{stego-cover} berhasil / gagal ditambahkan. \\
+		\hline
+		\end{tabular}
+		\end{table}
 	\end{itemize}
 	
 	\item \textbf{Tambah sinonim}
@@ -256,15 +274,26 @@ Dari diagram dapat dilihat dua \textit{use case}, yakni:
 		\item Prakondisi: -
 		\item Tujuan: Menambahkan daftar kata dan sinonimnya.
 		\item Skenario:
-		\renewcommand{\labelenumii}{\arabic{enumii}.}
-			\begin{enumerate}
-				\item Pengirim mengetikkan kata yang ada pada \textit{stego-cover}, yang akan ditambahkan sinonimnya.
-				\item Pengirim mengetikkan sinonim dari kata pada tahap 1.
-				\item Sistem akan menghitung nilai \textit{c}(\textit{w}) kata pada tahap 1 dan \textit{c}(\textit{w}) sinonim pada tahap 2.
-				\item Jika nilai \textit{c}(\textit{w}) sama, maka akan ditampilkan hasil pemenggalan kata dari sinonim yang diketikkan.
-				\item Jika nilai \textit{c}(\textit{w}) berbeda, maka sistem akan menambahkan kata beserta sinonimnya pada kamus sinonim.
-				\item Akan tampil peringatan jika sinonim berhasil atau gagal ditambahkan.
-			\end{enumerate}
+		\begin{table}[H]
+		\centering
+		\caption{Tabel Skenario Tambah Sinonim}
+		\begin{tabular}{| p{6.5cm} | p{6.5cm} |}\hline
+		Pengirim & Sistem \\
+		\hline
+				1. Pengirim mengetikkan kata yang ada pada \textit{stego-cover}, yang akan ditambahkan sinonimnya. & \\
+				\hline
+				2. Pengirim mengetikkan sinonim dari kata pada tahap 1. & 3. Sistem akan menghitung nilai \textit{c}(\textit{w}) kata pada tahap 1 dan \textit{c}(\textit{w}) sinonim pada tahap 2. \\
+				\hline
+				& 4. Sistem akan menambahkan sinonim karena nilai \textit{c}(\textit{w}) pada tahap 1 berbeda dengan nilai \textit{c}(\textit{w}) pada tahap 2. \\
+				& 4.1. Sistem tidak menambahkan sinonim karena nilai \textit{c}(\textit{w}) pada tahap 1 sama dengan nilai \textit{c}(\textit{w}) tahap 2. \\
+				& 4.2. Sistem menampilkan hasil pemotongan kata dari sinonim. \\
+				\hline
+				& 5. Sistem menampilkan pesan bahwa sinonim berhasil ditambahkan. \\
+				\hline
+				& 6. Akan tampil peringatan jika \textit{stego-cover} berhasil / gagal ditambahkan. \\
+		\hline
+		\end{tabular}
+		\end{table}
 	\end{itemize}
 	
 	\item \textbf{Cek semua sinonim}
@@ -274,16 +303,19 @@ Dari diagram dapat dilihat dua \textit{use case}, yakni:
 		\item Prakondisi: -
 		\item Tujuan: Menginformasikan kata mana saja yang belum memiliki sinonim.
 		\item Skenario:
-		\renewcommand{\labelenumii}{\arabic{enumii}.}
-			\begin{enumerate}
-				\item Pengirim menekan tombol Periksa semua sinonim.
-				\item Sistem akan memeriksa semua kata yang ada pada semua \textit{stego-cover} untuk dicari sinonimnya pada kamus sinonim.
-				\item Kata yang belum memiliki sinonim akan ditampilkan.\\
-				Alternatif:
-				\begin{itemize}
-					\item [3.1] Pengirim harus menambahkan sinonim untuk kata yang ditampilkan.
-				\end{itemize}
-			\end{enumerate}
+		\begin{table}[H]
+		\centering
+		\caption{Tabel Skenario Cek Semua Sinonim}
+		\begin{tabular}{| p{6.5cm} | p{6.5cm} |}\hline
+		Pengirim & Sistem \\
+		\hline
+				1. Pengirim menekan tombol Periksa semua sinonim. & 2. Sistem akan memeriksa semua kata yang ada pada semua \textit{stego-cover} untuk dicari sinonimnya pada kamus sinonim. \\
+				\hline
+				& 3. Kata yang belum memiliki sinonim akan ditampilkan oleh sistem. \\
+				& 3.1. Pengirim harus menambahkan sinonim untuk kata yang ditampilkan.\\
+		\hline
+		\end{tabular}
+		\end{table}
 	\end{itemize}
 	
 	\item \textbf{\textit{Extract}}
@@ -293,14 +325,21 @@ Dari diagram dapat dilihat dua \textit{use case}, yakni:
 		\item Prakondisi: Telah memiliki \textit{stego-object} yang dihasilkan dari perangkat lunak yang sama.
 		\item Tujuan: Mengkestraksi pesan rahasia dari \textit{stego-object}.
 		\item Skenario:
-		\renewcommand{\labelenumii}{\arabic{enumii}.}
-			\begin{enumerate}
-				\item Penerima menyalin \textit{stego-object} yang didapat dari perangkat yang sama.
-				\item Penerima menekan tombol \textit{Extract}.
-				\item Sistem akan mengeksekusi fungsi ekstraksi.
-				\item \textit{Secret message} yang merupakan hasil ekstraksi akan ditampilkan.
-				\item Karakter '$\#$' menandakan akhir dari \textit{secret message}.
-			\end{enumerate}
+		\begin{table}[H]
+		\centering
+		\caption{Tabel Skenario \textit{Extract}}
+		\begin{tabular}{| p{6.5cm} | p{6.5cm} |}\hline
+		Pengirim & Sistem \\
+		\hline
+				1. Penerima menyalin \textit{stego-object} yang didapat dari perangkat yang sama. & 2. Penerima menekan tombol \textit{Extract}. \\
+				\hline
+				& 3. Sistem akan mengeksekusi fungsi ekstraksi. \\
+				\hline
+				& 4. \textit{Secret message} yang merupakan hasil ekstraksi akan ditampilkan\\
+				& 4.1. Sistem tidak menemukan karakter '\#', ditampilkan pesan error. \\
+		\hline
+		\end{tabular}
+		\end{table}
 	\end{itemize}
 	
 	\item \textbf{Baca petunjuk}
@@ -310,13 +349,22 @@ Dari diagram dapat dilihat dua \textit{use case}, yakni:
 		\item Prakondisi: -
 		\item Tujuan: Memberi pemahaman kepada pengirim dan penerima mengenai cara menggunakan perangkat lunak ini.
 		\item Skenario:
-		\renewcommand{\labelenumii}{\arabic{enumii}.}
-			\begin{enumerate}
-				\item Pengirim atau penerima membaca petunjuk tentang \textit{embedding}.
-				\item Pengirim atau penerima membaca petunjuk tentang \textit{extract}.
-				\item Pengirim atau penerima membaca petunjuk tentang \textit{cover} (\textit{stego-cover}).
-				\item Pengirim atau penerima membaca petunjuk tentang sinonim.
-			\end{enumerate}
+		\begin{table}[H]
+		\centering
+		\caption{Tabel Skenario Baca Petunjuk}
+		\begin{tabular}{| p{6.5cm} | p{6.5cm} |}\hline
+		Pengirim & Sistem \\
+		\hline
+				1. Pengirim atau penerima membaca petunjuk tentang \textit{embedding}. & \\
+				\hline
+				2. Pengirim atau penerima membaca petunjuk tentang \textit{extract}. & \\
+				\hline
+				3. Pengirim atau penerima membaca petunjuk tentang \textit{cover} (\textit{stego-cover}). & \\
+				\hline
+				4. Pengirim atau penerima membaca petunjuk tentang sinonim. & \\
+		\hline
+		\end{tabular}
+		\end{table}
 	\end{itemize}
 \end{enumerate}
 
@@ -326,7 +374,7 @@ Diagram kelas perangkat lunak steganografi dapat dilihat pada Gambar \ref{fig:3_
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.8]{Gambar/classdiagram}
+	\includegraphics[scale=0.6]{Gambar/classdiagram}
 	\caption{Class Diagram perangkat lunak steganografi} 
 	\label{fig:3_classdiagram}
 \end{figure}
@@ -334,23 +382,11 @@ Diagram kelas perangkat lunak steganografi dapat dilihat pada Gambar \ref{fig:3_
 Keterangan atas diagram kelas akan dijelaskan sebagai berikut:
 
 \begin{enumerate}
-	\item \textbf{Kelas \textit{Embedder}}
-	\begin{itemize}
-		\item Atribut kamus, untuk mencari sinonim.
-		\item Atribut pk, untuk melakukan pemenggalan kata.
-		\item Atribut dok, untuk menyimpan kumpulan \textit{stego-cover}.
-		\item Atribut hasilAnalisis, untuk menyimpan hasil dari penyukuan kata.
-		\item Atribut pesan, untuk menyimpan pesan rahasia yang akan disembunyikan.
-		\item Atribut stegoObject, untuk menyimpan \textit{stego-object} yang akan diektrak.
-		\item Fungsi sisipkan, memiliki parameter pesan, untuk melakukan proses \textit{embedding}.
-	\end{itemize}
 
-	\item \textbf{Kelas KamusSinonim}
+	\item \textbf{Kelas \textit{Extractor}}
 	\begin{itemize}
-		\item Atribut fr, untuk membuka \textit{file}.
-		\item Atribut br, untuk membaca file yang dibuka fr.
-		\item Fungsi cariSinonim, memiliki parameter text, untuk mencari sinonim dari parameter.
-		\item Fungsi tambahSinonim, memiliki parameter kata dan sinonim, untuk menambah sinonim baru.
+		\item Atribut pk, untuk melakukan pemenggalan kata.
+		\item Fungsi ekstraksi, memiliki parameter stegoObject, untuk melakukan proses \textit{extract}.
 	\end{itemize}
 
 	\item \textbf{Kelas PemotongKata}
@@ -358,22 +394,18 @@ Keterangan atas diagram kelas akan dijelaskan sebagai berikut:
 		\item Fungsi dfsaTahap1, memiliki parameter pesan, mengembalikan keluaran berupa hasil proses dfsa tahap pertama.
 		\item Fungsi dfsaTahap2, memiliki parameter tahap1 yang merupakan keluaran dfsaTahap1 dan mengembalikan hasil proses dfsa tahap kedua.
 		\item Fungsi dfsaTahap3, memiliki parameter tahap2 yang merupakan keluaran dfsaTahap2 dan mengembalikan hasil penyukuan kata akhir.
-		\item Fungsi normalisasiText, memiliki parameter dokumen dan menghasilkan keluaran berupa dokumen tanpa tanda baca dan simbol, sehingga siap untuk dipotong berdasarkan suku katanya
-		\item Fungsi toBiner, memiliki parameter dokumen. Parameter dokumen merupakan dokumen yang telah dilakukan penyukuan, sehingga fungsi ini hanya menghitung jumlah suku kata untuk setiap katanya. Jumlah kata akan disandikan dengan 0 untuk jumlah genap dan 1 untuk jumlah ganjil.
+		\item normalisasiTeks, memiliki parameter dokumen. Parameter dokumen merupakan dokumen yang ingin dihilangkan semua tanda bacanya, sehingga siap untuk dilakukan pemenggalan kata.
+		\item Fungsi toBiner, memiliki parameter dokumen. Parameter dokumen merupakan dokumen yang siap untuk dilakukan pemenggalan kata, sehingga fungsi ini akan melakukan pemenggalan kata dan didapatkan \textit{c}(\textit{w}) untuk semua kata yang ada dalam dokumen.
 		\item Fungsi penggalKata, memiliki parameter pesan, melakukan pemenggalan kata dengan menggunakan fungsi dfsaTahap1, dfsaTahap2, dan dfsaTahap3.
 	\end{itemize}
-	
-	\item \textbf{Kelas Pesan}
+
+	\item \textbf{Kelas \textit{Embedder}}
 	\begin{itemize}
-		\item Atribut \textit{text}, untuk menampung teks dari pesan berupa \textit{string}.
-		\item \textit{Constructor} Pesan, memiliki parameter bertipe \textit{string}, parameter akan mengisi atribut teks.
-		\item Fungsi toBiner, memiliki parameter \textit{text}. Fungsi ini akan mengembalikan bentuk biner dari isi atribut \textit{text}.
-	\end{itemize}
-	
-	\item \textbf{Kelas \textit{Extractor}}
-	\begin{itemize}
+		\item Atribut kamus, untuk mencari sinonim.
 		\item Atribut pk, untuk melakukan pemenggalan kata.
-		\item Fungsi ekstraksi, memiliki parameter stegoObject, untuk melakukan proses \textit{extract}.
+		\item Atribut dok, untuk menyimpan kumpulan \textit{stego-cover}.
+		\item Atribut hasilAnalisis, untuk menyimpan kumpulan \textit{c}(\textit{w}) dari dokumen.
+		\item Fungsi sisipkan, memiliki parameter pesan, untuk melakukan proses \textit{embedding}.
 	\end{itemize}
 
 	\item \textbf{Kelas Dokumen}
@@ -381,7 +413,14 @@ Keterangan atas diagram kelas akan dijelaskan sebagai berikut:
 		\item Atribut \textit{text}, untuk menampung teks dari dokumen berupa \textit{string}.
 		\item \textit{Constructor} Dokumen, memiliki parameter bertipe \textit{string}, parameter akan mengisi atribut teks.
 		\item Fungsi getText, merupakan \textit{getter} untuk atribut \textit{text}.
-		\item Fungsi setText, memiliki parameter \textit{text}, merupakan \textit{setter} untuk atribut \textit{text}.		
+	\end{itemize}
+	
+	\item \textbf{Kelas KamusSinonim}
+	\begin{itemize}
+		\item Atribut fr, untuk membuka \textit{file}.
+		\item Atribut br, untuk membaca file yang dibuka fr.
+		\item Fungsi cariSinonim, memiliki parameter text, untuk mencari sinonim dari parameter.
+		\item Fungsi tambahSinonim, memiliki parameter kata dan sinonim, untuk menambah sinonim baru.
 	\end{itemize}
 	
 \end{enumerate}

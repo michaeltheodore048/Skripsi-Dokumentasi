@@ -13,20 +13,24 @@
 \contentsline {figure}{\numberline {3.5}{\ignorespaces \textit {Data Flow Diagram Embedding}}}{23}{figure.3.5}
 \contentsline {figure}{\numberline {3.6}{\ignorespaces \textit {Data Flow Diagram Extract}}}{25}{figure.3.6}
 \contentsline {figure}{\numberline {3.7}{\ignorespaces Use Case Diagram Perangkat Lunak Steganografi}}{25}{figure.3.7}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Class Diagram perangkat lunak steganografi}}{28}{figure.3.8}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Class Diagram perangkat lunak steganografi}}{30}{figure.3.8}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Tampilan \textit {tab}}}{31}{figure.4.1}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Tampilan \textit {tab Embed}}}{32}{figure.4.2}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Tampilan \textit {tab Extract}}}{32}{figure.4.3}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Tampilan \textit {tab} Tambah \textit {Cover}}}{33}{figure.4.4}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Tampilan \textit {tab} Tambah Sinonim}}{34}{figure.4.5}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Tampilan \textit {tab} Petunjuk}}{35}{figure.4.6}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Diagram kelas lengkap}}{36}{figure.4.7}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Activity Diagram perangkat lunak steganografi saat menyisipkan}}{39}{figure.4.8}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Activity Diagram perangkat lunak steganografi saat proses ekstraksi}}{39}{figure.4.9}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Tampilan \textit {tab}}}{33}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Tampilan \textit {tab Embed}}}{34}{figure.4.2}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Tampilan \textit {tab Extract}}}{34}{figure.4.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Tampilan \textit {tab} Tambah \textit {Cover}}}{35}{figure.4.4}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Tampilan \textit {tab} Tambah Sinonim}}{36}{figure.4.5}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Tampilan \textit {tab} Petunjuk}}{37}{figure.4.6}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Diagram kelas lengkap}}{38}{figure.4.7}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Activity Diagram perangkat lunak steganografi saat menyisipkan}}{41}{figure.4.8}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Activity Diagram perangkat lunak steganografi saat proses ekstraksi}}{41}{figure.4.9}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Tampilan \textit {tab Embed}}}{41}{figure.5.1}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Tampilan \textit {tab Extract}}}{42}{figure.5.2}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Tampilan \textit {tab Tambah Cover}}}{42}{figure.5.3}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Tampilan \textit {tab Tambah Sinonim}}}{43}{figure.5.4}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Tampilan \textit {tab Petunjuk}}}{43}{figure.5.5}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Tampilan \textit {tab Embed}}}{43}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Tampilan \textit {tab Extract}}}{44}{figure.5.2}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Tampilan \textit {tab Tambah Cover}}}{44}{figure.5.3}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Tampilan \textit {tab Tambah Sinonim}}}{45}{figure.5.4}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Tampilan \textit {tab Petunjuk}}}{45}{figure.5.5}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Grafik waktu yang dibutuhkan \textit {embed} pesan rahasia}}{48}{figure.5.6}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Grafik waktu yang dibutuhkan \textit {extract stego-object}}}{49}{figure.5.7}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Grafik waktu yang dibutuhkan untuk menambahkan \textit {cover}}}{49}{figure.5.8}
+\addvspace {10\p@ }
