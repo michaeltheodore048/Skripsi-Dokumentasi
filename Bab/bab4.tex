@@ -229,15 +229,53 @@ Deskripsi setiap kelas beserta dengan atribut dan fungsinya akan dijelaskan seba
 	
 	Fungsi-fungsi yang dimiliki kelas ini adalah:
 	
-	\begin{itemize}		
+	\begin{itemize}	
+	
 		\item \textbf{String extract(String stegoObject)}\\
 		Berfungsi untuk melakukan proses \textit{extracting}\\
 		\textbf{Parameter:}
 		\begin{itemize}
 			\item \textbf{stegoObject} \textit{Stego-object} yang akan diekstrak.
 		\end{itemize}
+				
 	\end{itemize}
 	
+	
+	
+	\item Kelas UI
+	Kelas ini merupakan antarmauka yang berhubungan langsung dengan pengguna. Kelas ini merupakan turunan dari kelas JFrame. Atribut yang ada pada kelas UI adalah:
+	\begin{itemize}
+		\item \textbf{ArrayList<String> stegoCover:} Objek stegoCover menyimpan judul-judul \textit{stego-cover} yang ada.
+		\item \textbf{Embedder emb:} Objek \textit{Embedder} berfungsi untuk melakukan operasi \textit{embedding}.
+		\item \textbf{Extractor ext:} Objek \textit{Extractor} berfungsi untuk melakukan operasi \textit{extracting}.
+		\item \textbf{FileReader fr:} Objek FileReader yang berfungsi untuk membuka suatu \textit{file}.
+		\item \textbf{BufferedReader br:} Objek BufferedReader yang berfungsi untuk membaca isi dari \textit{file} yang dibuka FileReader.
+	\end{itemize}
+	
+		Fungsi-fungsi yang dimiliki kelas ini adalah:
+		
+	\begin{itemize}
+		\item \textbf{UI()}\\
+		Berfungsi sebagai \textit{constructor} kelas ini.\\	
+		
+		\item \textbf{void initComponents()}\\
+		Berfungsi untuk menginisialisasi atribut di kelas ini.
+		
+		\item \textbf{void button1ActionPerformed(evt: ActionEvent)}\\
+		Berfungsi untuk mengeksekusi rangkaian proses \textit{embedding}.\\
+		
+		\item \textbf{void button2ActionPerformed(evt: ActionEvent)}\\
+		Berfungsi untuk mengeksekusi rangkaian proses \textit{extracting}.\\
+		
+		\item \textbf{void button3ActionPerformed(evt: ActionEvent)}\\
+		Berfungsi untuk mengeksekusi rangkaian proses tambah cover.\\
+		
+		\item \textbf{void button4ActionPerformed(evt: ActionEvent)}\\
+		Berfungsi untuk mengeksekusi rangkaian proses penambahan sinonim.\\
+		
+		\item \textbf{void button5ActionPerformed(evt: ActionEvent)}\\
+		Berfungsi untuk mengeksekusi rangkaian proses cek semua sinonim.\\
+	\end{itemize}
 \end{enumerate}
 
 \section{Analisis Diagram Aktivitas}
@@ -247,26 +285,25 @@ Diagram aktivitas dari perangkat lunak dibagi menjadi dua. Diagram aktivitas saa
 Dari diagram aktivitas dapat dijelaskan sebagai berikut:
 
 \begin{enumerate}
-	\item Pengguna memasukkan input pesan rahasia berupa string
-	\item Pesan akan diubah ke bentuk ASCII
-	\item Pesan yang telah diubah ke bentuk ASCII akan ditambahkan kode ASCII dari karakter '\#' (untuk menandakan berakhirnya pesan rahasia).
-	\item Sistem akan mencari \textit{stego-cover} yang dapat dipakai (kapasitas mencukupi)
-	\item Dari beberapa \textit{stego-cover} yang dapat dipakai, akan dipilih satu secara acak
-	\item Sistem akan membaca satu per satu kata yang ada pada \textit{stego-cover}
-	\item Kode ASCII dari pesan rahasia akan dibaca bit per bit
+	\item Pengirim memasukkan \textit{input} pesan rahasia berupa string.
+	\item Pesan akan diubah menjadi bentuk ASCII.
+	\item Pesan yang telah diubah menjadi bentuk ASCII akan ditambahkan kode ASCII dari karakter '\#' (untuk menandakan berakhirnya pesan rahasia).
+	\item Sistem akan mencari \textit{stego-cover} yang dapat dipakai (kapasitas mencukupi).
+	\item Dari beberapa \textit{stego-cover} yang dapat dipakai, akan dipilih satu secara acak.
+	\item Kode ASCII dari pesan rahasia akan dibaca bit per bit oleh sistem.
+	\item Sistem akan membaca satu per satu kata yang ada pada \textit{stego-cover}.
 	\item Bandingkan apakah \textit{c}(\textit{w}) dan bit ASCII yang sedang dibaca sama-sama bernilai genap atau ganjil. Dari sini akan dihasilkan dua kemungkinan:
-	\begin{itemize}
-		\item Jika keduanya sesuai, ada dua kemungkinan lagi:
 		\begin{itemize}
-			\item Jika masih ada bit yang belum diperiksa, maka akan kembali ke tahap 6 dan 7.
-			\item Jika semua kode telah diperiksa, maka \textit{stego-cover} berhasil dibuat dan proses \textit{embedding} selesai.
+			\item Jika keduanya sesuai, lanjut ke tahap 10.
+			\item Jika tidak sesuai, lanjut ke tahap 9.
 		\end{itemize}
-		\item Jika tidak sesuai, maka sistem akan mengganti kata tersebut dengan sinonimnya. Setelah itu ada dua kemungkinan lagi:
+	\item Sistem akan mengganti kata tersebut dengan sinonimnya.
+	\item Sistem akan memeriksa apakah masih ada bit yang belum dibandingkan, pada tahap ini muncul dua kemungkinan:
 		\begin{itemize}
-			\item Jika masih ada bit yang belum diperiksa, maka akan kembali ke tahap 6 dan 7.
-			\item Jika semua kode telah diperiksa, maka \textit{stego-cover} berhasil dibuat dan proses \textit{embedding} selesai.
+			\item Jika masih ada bit yang belum dibandingkan, maka akan kembali ke tahap 6.
+			\item Jika semua kode telah dibandingkan, lanjut ke tahap 11.
 		\end{itemize}
-	\end{itemize}
+	\item \textit{Stego-object} berhasil dibuat dan proses \textit{embedding} selesai.
 \end{enumerate}
 
 \begin{figure}[H]
@@ -288,8 +325,8 @@ Diagram aktivitas ekstraksi dapat dilihat pada Gambar \ref{fig:4_activity-ekstra
 Dari diagram aktivitas di atas dapat dijelaskan sebagai berikut:
 
 \begin{enumerate}
-	\item Pengguna akan memberikan input berupa \textit{stego-object} dari program yang sama
-	\item Sistem lalu akan menyukukan kata-kata yang ada. Setelah itu dilakukan penyandian, angka 0 untuk kata dengan jumlah suku kata genap dan angka 1 untuk jumlah ganjil
-	\item Selesai melakukan penyandian, hasilnya akan diubah menjadi karakter ASCII yang sesuai
-	\item Kini sudah didapatkan pesan dengan karakter ASCII, hasil akan ditampilkan pada layar
+	\item Penerima akan memberikan input berupa \textit{stego-object} dari program yang sama.
+	\item Sistem lalu akan memenggal kata-kata yang ada untuk mendapatkan banyak suku katanya. Setelah itu dilakukan penyandian, angka 0 untuk kata dengan banyak suku kata genap dan angka 1 untuk jumlah ganjil.
+	\item Selesai melakukan penyandian, hasilnya akan diubah menjadi karakter ASCII yang sesuai.
+	\item Kini sudah didapatkan pesan dengan karakter ASCII, hasil akan ditampilkan pada layar.
 \end{enumerate}

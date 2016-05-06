@@ -10,8 +10,7 @@
 \contentsline {section}{\numberline {1.4}Deskripsi Perangkat Lunak}{4}{section.1.4}
 \contentsline {section}{\numberline {1.5}Metode Penelitian}{5}{section.1.5}
 \contentsline {chapter}{\numberline {2}Landasan Teori}{7}{chapter.2}
-\contentsline {section}{\numberline {2.1}Bahasa Indonesia \cite {eyd:2009}}{7}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Pemenggalan kata}{7}{subsection.2.1.1}
+\contentsline {section}{\numberline {2.1}Pemenggalan Kata Dalam Bahasa Indonesia \cite {eyd:2009}}{7}{section.2.1}
 \contentsline {section}{\numberline {2.2}Pengolahan Teks}{8}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Natural Language Processing\cite {NLA:2003}}{8}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}Information Retrieval\cite {kowalski2010information}}{9}{subsection.2.2.2}
@@ -45,14 +44,14 @@
 \contentsline {subsection}{\numberline {4.1.4}\textit {Tab} Tambah Sinonim}{36}{subsection.4.1.4}
 \contentsline {subsection}{\numberline {4.1.5}\textit {Tab} Petunjuk}{37}{subsection.4.1.5}
 \contentsline {section}{\numberline {4.2}Diagram Kelas Lengkap}{37}{section.4.2}
-\contentsline {section}{\numberline {4.3}Analisis Diagram Aktivitas}{40}{section.4.3}
-\contentsline {chapter}{\numberline {5}Implementasi dan Pengujian}{43}{chapter.5}
-\contentsline {section}{\numberline {5.1}Implementasi}{43}{section.5.1}
-\contentsline {section}{\numberline {5.2}Pengujian}{46}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Pengujian Fungsional}{46}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Pengujian Eksperimental}{48}{subsection.5.2.2}
-\contentsline {chapter}{\numberline {6}Kesimpulan dan Saran}{51}{chapter.6}
-\contentsline {section}{\numberline {6.1}Kesimpulan}{51}{section.6.1}
-\contentsline {section}{\numberline {6.2}Saran}{51}{section.6.2}
-\contentsline {chapter}{Daftar Referensi}{53}{chapter*.11}
+\contentsline {section}{\numberline {4.3}Analisis Diagram Aktivitas}{41}{section.4.3}
+\contentsline {chapter}{\numberline {5}Implementasi dan Pengujian}{45}{chapter.5}
+\contentsline {section}{\numberline {5.1}Implementasi}{45}{section.5.1}
+\contentsline {section}{\numberline {5.2}Pengujian}{48}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Pengujian Fungsional}{48}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Pengujian Eksperimental}{50}{subsection.5.2.2}
+\contentsline {chapter}{\numberline {6}Kesimpulan dan Saran}{55}{chapter.6}
+\contentsline {section}{\numberline {6.1}Kesimpulan}{55}{section.6.1}
+\contentsline {section}{\numberline {6.2}Saran}{55}{section.6.2}
+\contentsline {chapter}{Daftar Referensi}{57}{chapter*.11}
 \renewcommand {\cftchappresnum }{\bf \scshape }

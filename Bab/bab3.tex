@@ -225,15 +225,24 @@ Dari diagram dapat dilihat enam \textit{use case}, yakni:
 				2. Pengirim menekan tombol \textit{Embed}. & 3. Sistem lalu akan mengubah pesan yang diketik menjadi kode ASCII. \\
 				\hline
 				& 4. Sistem mencari \textit{stego-cover} yang dapat menampung pesan yang sudah dalam bentuk ASCII. \\
-				&	4.1. Tidak ada \textit{stego-cover} yang dapat menampung pesan.\\
-				&	4.2. Sistem mengeluarkan peringatan bahwa pesan rahasia melebihi kapasitas dan kembali ke langkah 1.\\
 				\hline
 				& 5. Sistem melakukan proses \textit{embedding} dengan bantuan kamus sinonim. \\
-				&	5.1. Proses \textit{embedding} gagal karena ada kata yang tidak ditemukan sinonimnya.\\
-				&	5.2. Sistem mengembalikan daftar kata yang tidak terdaftar sinonimnya.\\
-				&	5.3. Pengguna harus menambahkan sinonim kata yang belum terdaftar.\\
 				\hline
 				& 6. \textit{Stego-object} sebagai hasil dari proses \textit{embedding} akan ditampilkan pada kotak hasil.\\
+				\hline
+				\hline
+				\multicolumn{2}{|c|}{Alternatif}\\
+				\hline
+				&	4.1. Tidak ada \textit{stego-cover} yang dapat menampung pesan.\\
+				\hline
+				&	4.2. Sistem mengeluarkan peringatan bahwa pesan rahasia melebihi kapasitas dan kembali ke langkah 1.\\
+				\hline
+				&	5.1. Proses \textit{embedding} gagal karena ada kata yang tidak ditemukan sinonimnya.\\
+				\hline
+				&	5.2. Sistem mengembalikan daftar kata yang tidak terdaftar sinonimnya.\\
+				\hline
+				&	5.3. Pengguna harus menambahkan sinonim kata yang belum terdaftar.\\
+				
 		\hline
 		\end{tabular}
 		\end{table}
@@ -285,12 +294,17 @@ Dari diagram dapat dilihat enam \textit{use case}, yakni:
 				2. Pengirim mengetikkan sinonim dari kata pada tahap 1. & 3. Sistem akan menghitung nilai \textit{c}(\textit{w}) kata pada tahap 1 dan \textit{c}(\textit{w}) sinonim pada tahap 2. \\
 				\hline
 				& 4. Sistem akan menambahkan sinonim karena nilai \textit{c}(\textit{w}) pada tahap 1 berbeda dengan nilai \textit{c}(\textit{w}) pada tahap 2. \\
-				& 4.1. Sistem tidak menambahkan sinonim karena nilai \textit{c}(\textit{w}) pada tahap 1 sama dengan nilai \textit{c}(\textit{w}) tahap 2. \\
-				& 4.2. Sistem menampilkan hasil pemotongan kata dari sinonim. \\
 				\hline
 				& 5. Sistem menampilkan pesan bahwa sinonim berhasil ditambahkan. \\
 				\hline
 				& 6. Akan tampil peringatan jika \textit{stego-cover} berhasil / gagal ditambahkan. \\
+				\hline
+				\hline
+				\multicolumn{2}{|c|}{Alternatif}\\
+				\hline
+				& 4.1. Sistem tidak menambahkan sinonim karena nilai \textit{c}(\textit{w}) pada tahap 1 sama dengan nilai \textit{c}(\textit{w}) tahap 2. \\
+				\hline
+				& 4.2. Sistem menampilkan hasil pemotongan kata dari sinonim. \\
 		\hline
 		\end{tabular}
 		\end{table}
@@ -312,6 +326,10 @@ Dari diagram dapat dilihat enam \textit{use case}, yakni:
 				1. Pengirim menekan tombol Periksa semua sinonim. & 2. Sistem akan memeriksa semua kata yang ada pada semua \textit{stego-cover} untuk dicari sinonimnya pada kamus sinonim. \\
 				\hline
 				& 3. Kata yang belum memiliki sinonim akan ditampilkan oleh sistem. \\
+				\hline
+				\hline
+				\multicolumn{2}{|c|}{Alternatif}\\
+				\hline
 				& 3.1. Pengirim harus menambahkan sinonim untuk kata yang ditampilkan.\\
 		\hline
 		\end{tabular}
@@ -336,8 +354,12 @@ Dari diagram dapat dilihat enam \textit{use case}, yakni:
 				& 3. Sistem akan mengeksekusi fungsi ekstraksi. \\
 				\hline
 				& 4. \textit{Secret message} yang merupakan hasil ekstraksi akan ditampilkan\\
+				\hline
+				\hline
+				\multicolumn{2}{|c|}{Alternatif}\\
+				\hline
 				& 4.1. Sistem tidak menemukan karakter '\#', ditampilkan pesan error. \\
-		\hline
+				\hline
 		\end{tabular}
 		\end{table}
 	\end{itemize}

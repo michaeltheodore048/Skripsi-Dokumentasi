@@ -22,15 +22,19 @@
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Tampilan \textit {tab} Tambah Sinonim}}{36}{figure.4.5}
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Tampilan \textit {tab} Petunjuk}}{37}{figure.4.6}
 \contentsline {figure}{\numberline {4.7}{\ignorespaces Diagram kelas lengkap}}{38}{figure.4.7}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Activity Diagram perangkat lunak steganografi saat menyisipkan}}{41}{figure.4.8}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Activity Diagram perangkat lunak steganografi saat proses ekstraksi}}{41}{figure.4.9}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Activity Diagram perangkat lunak steganografi saat menyisipkan}}{42}{figure.4.8}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Activity Diagram perangkat lunak steganografi saat proses ekstraksi}}{42}{figure.4.9}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Tampilan \textit {tab Embed}}}{43}{figure.5.1}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Tampilan \textit {tab Extract}}}{44}{figure.5.2}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Tampilan \textit {tab Tambah Cover}}}{44}{figure.5.3}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Tampilan \textit {tab Tambah Sinonim}}}{45}{figure.5.4}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Tampilan \textit {tab Petunjuk}}}{45}{figure.5.5}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Grafik waktu yang dibutuhkan \textit {embed} pesan rahasia}}{48}{figure.5.6}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Grafik waktu yang dibutuhkan \textit {extract stego-object}}}{49}{figure.5.7}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Grafik waktu yang dibutuhkan untuk menambahkan \textit {cover}}}{49}{figure.5.8}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Tampilan \textit {tab Embed}}}{45}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Tampilan \textit {tab Extract}}}{46}{figure.5.2}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Tampilan \textit {tab Tambah Cover}}}{46}{figure.5.3}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Tampilan \textit {tab Tambah Sinonim}}}{47}{figure.5.4}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Tampilan \textit {tab Petunjuk}}}{47}{figure.5.5}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Grafik waktu yang dibutuhkan \textit {embed} pesan rahasia}}{50}{figure.5.6}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Grafik waktu yang dibutuhkan \textit {extract stego-object}}}{51}{figure.5.7}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Grafik waktu yang dibutuhkan untuk menambahkan \textit {cover}}}{51}{figure.5.8}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Grafik waktu yang dibutuhkan untuk \textit {embed} 13 karakter pesan rahasia}}{52}{figure.5.9}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Grafik waktu yang dibutuhkan untuk \textit {extract} 13 karakter pesan rahasia}}{52}{figure.5.10}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Grafik kemunculan kata \textit {typo} sebelum optimasi}}{53}{figure.5.11}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Grafik kemunculan kata \textit {typo} setelah optimasi}}{53}{figure.5.12}
 \addvspace {10\p@ }

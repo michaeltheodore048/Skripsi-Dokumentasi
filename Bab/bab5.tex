@@ -57,7 +57,9 @@ Pengujian fungsional dilakukan untuk memeriksa apakah perangkat lunak memberikan
 No. & Aksi & Reaksi seharusnya & Hasil\\
 \hline
 1 & Pengguna mengetikkan pesan rahasia sepanjang 100 karakter lalu menekan tombol Embed (panjang karakter pesan rahasia masih dapat ditampung \textit{stego-cover} yang ada.) & Perangkat lunak menampilkan \textit{stego-cover} & Sesuai\\
+\hline
 2 & Pengguna mengetikkan pesan rahasia sepanjang 200 karakter lalu menekan tombol Embed (panjang karakter pesan rahasia tidak dapat ditampung \textit{stego-cover} yang ada.) & Perangkat lunak menampilkan \textit{stego-cover} & Perangkat lunak menampilkan teks "Pesan rahasia melebihi kapasitas yang ada!"\\
+\hline
 3 & Pengguna mengetikkan pesan rahasia yang mengandung karakter yang tidak didukung perangkat lunak & Perangkat lunak menampilkan \textit{stego-cover} & Sesuai \\
 \hline
 \end{tabular}
@@ -71,7 +73,9 @@ No. & Aksi & Reaksi seharusnya & Hasil\\
 No. & Aksi & Reaksi seharusnya & Hasil\\
 \hline
 1 & Pengguna memasukkan \textit{stego-object} lalu menekan tombol Extract & Perangkat lunak menampilkan pesan rahasia, karakter '\#' menandakan pesan rahasia telah berakhir & Sesuai \\
+\hline
 2 & Pengguna memasukkan teks yang bukan \textit{stego-object} lalu menekan tombol Extract & Perangkat lunak menampilkan pesan bahwa tidak ada pesan rahasia dalam \textit{stego-object} yang dimasukkan & Sesuai \\
+\hline
 3 & Pengguna memasukkan \textit{stego-object} yang merupakan hasil \textit{embed} pesan rahasia yang mengandung karakter yang tidak didukung perangkat lunak & Perangkat lunak menampilkan pesan rahasia & Perangkat lunak menampilkan pesan rahasia namun tidak sesuai dengan pesan rahasia yang disembunyikan.\\
 \hline
 \end{tabular}
@@ -87,8 +91,11 @@ Pada Tabel \ref{table-fungsional-extract}, dapat dilihat bahwa pada nomor 3 mena
 No. & Aksi & Reaksi seharusnya & Hasil\\
 \hline
 1 & Pengguna memasukkan \textit{stego-cover} dan judul yang belum terdaftar & Perangkat lunak membuat \textit{file stego-cover} yang baru dan mendaftarkannya pada \textit{stego-cover list} & Sesuai\\
+\hline
 2 & Pengguna memasukkan \textit{stego-cover} tanpa memasukkan judul & Perangkat lunak menampilkan pesan bahwa judul belum diisi & Sesuai \\
+\hline
 3 & Pengguna memasukkan \textit{stego-cover} dengan judul yang sudah terdaftar & Perangkat lunak menampilkan pesan bahwa judul sudah terdaftar & Sesuai \\
+\hline
 4 & Pengguna memasukkan judul yang belum terdaftar, tetapi \textit{stego-cover} yang dimasukkan sudah pernah ditambahkan & Perangkat lunak membuat \textit{file stego-cover} yang baru dan mendaftarkannya pada \textit{stego-cover list} & Sesuai \\
 \hline
 \end{tabular}
@@ -104,6 +111,7 @@ Pada Tabel \ref{table-fungsional-tambah-cover}, dapat dilihat bahwa untuk kasus 
 No. & Aksi & Reaksi seharusnya & Hasil \\
 \hline
 1 & Pengguna menambahkan kata dan sinonim dengan nilai \textit{c}(\textit{w}) yang berbeda & Perangkat lunak menambahkan sinonim ke kamus sinonim & Sesuai \\
+\hline
 2 & Pengguna menambahkan kata dan sinonim dengan nilai \textit{c}(\textit{w}) yang sama & Perangkat lunak menampilkan peringatan dan hasil pemenggalan sinonim & Sesuai \\
 \hline
 \end{tabular}
@@ -117,6 +125,7 @@ No. & Aksi & Reaksi seharusnya & Hasil \\
 No. & Aksi & Reaksi seharusnya & Hasil \\
 \hline
 1 & Pengguna memeriksa semua sinonim (ada kata yang sinonimnya belum terdaftar) & Perangkat lunak menampilkan kata-kata yang sinonimnya tidak terdaftar pada kamus sinonim & Sesuai\\
+\hline
 2 & Pengguna memeriksa semua sinonim (semua kata sudah terdaftar sinonimnya) & Perangkat lunak tidak menampilkan apa pun & Sesuai \\
 \hline
 \end{tabular}
@@ -149,3 +158,37 @@ Dapat dilihat pada Gambar \ref{fig:graf-extract} grafik perbandingan antara wakt
 \end{figure}
 
 Gambar \ref{fig:graf-tambah-cover} menunjukkan bahwa waktu yang dibutuhkan untuk menambahkan \textit{cover} tidaklah lama, karena perangkat hanya membuat \textit{file} baru dan menulis apa yang dimasukkan pengguna. Jika dilihat dari tiga grafik di atas, waktu yang paling lama adalah proses \textit{embed}, dikarenakan selain memenggal kata, proses \textit{embed} juga harus membaca \textit{file} kamus sinonim untuk memodifikasi \textit{stego-cover}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.8]{Gambar/graf-embed-13-karakter}
+	\caption{Grafik waktu yang dibutuhkan untuk \textit{embed} 13 karakter pesan rahasia} 
+	\label{fig:graf-embed-13-karakter}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.8]{Gambar/graf-extract-13-karakter}
+	\caption{Grafik waktu yang dibutuhkan untuk \textit{extract} 13 karakter pesan rahasia} 
+	\label{fig:graf-extract-13-karakter}
+\end{figure}
+
+Dapat dilihat pada Gambar \ref{fig:graf-embed-13-karakter} adalah grafik waktu yang dibutuhkan perangkat lunak untuk \textit{embed} pesan rahasia sepanjang 13 karakter ke dalam \textit{stego-cover} dengan panjang yang berbeda-beda. Pada Gambar \ref{fig:graf-extract-13-karakter} dapat dilihat grafik waktu yang dibutuhkan perangkat lunak untuk \textit{extract} pesan rahasia sepanjang 13 karakter dari \textit{stego-object} dengan panjang yang berbeda-beda pula.
+
+Dari grafik dapat disimpulkan bahwa memang ada perbedaan waktu antara \textit{embed} ke dalam \textit{stego-cover} dengan panjang yang berbeda, walaupun panjang pesan rahasia sama. Seperti yang telah dijelaskan sebelumnya, proses \textit{embed} selalu membutuhkan waktu yang lebih lama dari proses \textit{extract}, hal ini juga dapat dilihat pada Gambar \ref{fig:graf-embed-13-karakter} dan \ref{fig:graf-extract-13-karakter}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.8]{Gambar/graf-typo-before}
+	\caption{Grafik kemunculan kata \textit{typo} sebelum optimasi} 
+	\label{fig:graf-typo-before}
+\end{figure}
+
+Pada Gambar \ref{fig:graf-typo-before} dapat dilihat bahwa kemunculan kata \textit{typo} pada \textit{stego-object} ada 53 kata dari total 771 kata. Pemakaian \textit{typo} sebagai sinonim tadinya digunakan baik untuk kata yang memiliki maupun tidak memiliki sinonim dengan nilai \textit{c}(\textit{w}) yang berebeda, dengan tujuan memperbanyak variasi kata untuk satu \textit{stego-object}. Namun karena dinilai akan menimbulkan kecurigaan, maka akan dilakukan optimasi terhadap kamus sinonim. Optimasi dilakukan atas dasar beberapa pertimbangan. \textit{Stego-cover} yang digunakan mengandung cukup banyak kata. Pemakaian kata dalam \textit{stego-cover} sudah cukup bervariasi. Maka dari itu diputuskan bahwa sinonim \textit{typo} hanya digunakan untuk kata yang benar-benar tidak memiliki sinonim dengan nilai \textit{c}(\textit{w}) yang berbeda dengan katanya. Grafik kemunculan kata \textit{typo} setelah optimasi dapat dilihat pada Gambar \ref{fig:graf-typo-after}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.8]{Gambar/graf-typo-after}
+	\caption{Grafik kemunculan kata \textit{typo} setelah optimasi} 
+	\label{fig:graf-typo-after}
+\end{figure}

@@ -149,8 +149,8 @@
 %
 %=============================================================================
 \namanpm{Michael Theodore Pangestu}{2012730048}	%hilangkan tanda << & >>
-\tanggal{<<tanggal>>}{<<bulan>>}{2015}			%hilangkan tanda << & >>
-\pembimbing{\TAB}{<<pembimbing pendamping/2>>}     
+\tanggal{<<tanggal>>}{<<bulan>>}{2016}			%hilangkan tanda << & >>
+\pembimbing{\TAB}{}     
 %Lihat singkatan pembimbing anda di file dosen.tex, hilangkan tanda << & >>
 \penguji{<<penguji 1>>}{<<penguji 2>>} 		
 %Lihat singkatan penguji anda di file dosen.tex, hilangkan tanda << & >>
@@ -172,7 +172,7 @@
 
 \judulINA{Steganografi Berbasis Suku Kata Bahasa Indonesia}
 
-\judulENG{Indonesian Syllable-Based Steganography}
+\judulENG{Bahasa Indonesia Syllable-Based Steganography}
 
 %_____________________________________________________________________________
 %=============================================================================
@@ -185,9 +185,23 @@
 %			 bawahnya
 %=============================================================================
 
-\abstrakINA{<<Tuliskan abstrak anda di sini, dalam bahasa Indonesia>> \lipsum[5]}
+\abstrakINA{
+Kini internet merupakan sumber informasi yang luar biasa lengkap. Semua orang dapat mengakses internet dan berselancar mencari informasi apapun di sana. Informasi yang sengaja diunggah maupun yang secara tidak sadar terunggah pun dapat dilihat. Kebanyakan orang tidak menyadari hal ini. Data pribadi seperti alamat rumah, tanggal lahir, nomor telepon pun tidak sulit untuk dicari di internet. Sekarang ini privasi telah menjadi hal yang sulit didapatkan. Pembicaraan dengan orang-orang terdekat dapat dilacak oleh orang-orang yang ahli di bidangnya.
 
-\abstrakENG{<<Tuliskan abstrak anda di sini, dalam bahasa Inggris>> \lipsum[5]} 
+Steganografi menawarkan solusi untuk masalah ini. Steganografi merupakan cara untuk menyembunyikan pesan rahasia ke dalam pesan yang tidak rahasia (\textit{stego-cover}). Sehingga pesan rahasia akan tetap aman walaupun orang lain membacanya. Steganografi dapat memanfaatkan media seperti gambar, suara, vidio, ataupun teks. Untuk steganografi yang menggunakan teks sebagai medianya juga dibagi lagi berdasarkan bagaimana cara menyembunyikan pesan rahasianya. Ada yang menggeser posisi barisnya, melebarkan spasi, dan memanfaatkan suku kata. Pada skripsi ini akan dibuat perangkat lunak yang memanfaatkan suku kata untuk menyembunyikan pesan rahasia. Setiap kata pada \textit{stego-cover} akan merepresentasikan angka 0 atau 1, bergantung pada banyaknya suku kata pada kata tersebut (ganjil berarti 1 dan genap berarti 0). Notasi \textit{c}(\textit{w}) adalah banyaknya suku kata pada kata \textit{w}. Sedangkan semua karakter yang ada pada pesan rahasia akan diubah ke bentuk ASCII biner. Dengan menyesuaikan \textit{c}(\textit{w}) pada tiap kata di \textit{stego-cover} dengan angka biner pesan rahasia, penyembunyian dapat dilakukan. Tentu saja ada kemungkinan bahwa nilai \textit{c}(\textit{w}) tidak sama dengan angka biner pesan rahasia. Untuk mengatasi hal tersebut, kata akan diganti dengan sinonim yang memiliki \textit{c}(\textit{w}) yang sesuai dengan angka biner pesan rahasia.
+
+Pada skripsi ini berhasil dibuat perangkat lunak yang dapat menyembunyikan dan mengekstrasi kembali pesan rahasia dengan memanfaatkan suku kata. Perangkat lunak ini juga memungkinkan pengguna untuk menambahkan \textit{stego-cover} dengan syarat bahwa pengguna harus melengkapi sinonim untuk kata yang belum memiliki sinonimnya.
+}
+
+
+
+\abstrakENG{
+These days the internet is an incredible source of information. Everyone can access the Internet and surf to find any information there. The information uploaded intentionally or unconsciously uploaded can be seen. Most people do not realize this. Personal data such as home address, date of birth, telephone number was not difficult to find on the internet. Now privacy have become more difficult. Conversation with closest friends and family can be tracked by those skilled.
+
+Steganography offers a solution to this problem. Steganography is a way to hide secret messages into messages that are not confidential (stego-cover). So the secret message will remain secure even if someone else read it. Steganography can use the media like images, sounds, video, or text. Steganography using text as the media are also divided by how to hide secret messages. There are shifted its line, widen the space, and take advantage of syllables. In this thesis will be created software that takes advantage of syllables to hide secret messages. Any word on stego-cover will represent the numbers 0 or 1, depending on the number of syllables in the word (odd and even number means 1 means 0). The notation \textit{c} (\textit{w}) is the number of syllables in the word \textit{w}. While all the characters in the secret message will be converted to ASCII binary form. By adjusting the \textit{c}(\textit {w}) for each word in the stego-cover with binary digit secret message, embedding can be done. Of course there is a possibility that the value of \textit{c}(\ textit{w}) is not equal to binary digit secret message. To overcome this, the word will be replaced with a synonym that has \textit{c}(\textit{w}) corresponding to a binary digit secret message.
+
+In this thesis successfully created software that can embed and extract the secret messages by using syllables. The software also allows users to add more stego-cover on condition that the user must complete synonyms for words that do not have their synonyms.
+} 
 
 %=============================================================================
 
@@ -199,9 +213,9 @@
 % - kunciINA: kata-kata kunci dalam bahasa indonesia
 % - kunciENG: keywords in english
 %=============================================================================
-\kunciINA{<<Tuliskan di sini kata-kata kunci yang anda gunakan, dalam bahasa Indonesia>>}
+\kunciINA{Steganografi, Suku Kata, Steganografi Linguistik}
 
-\kunciENG{<<Tuliskan di sini kata-kata kunci yang anda gunakan, dalam bahasa Inggris>>}
+\kunciENG{Steganography, Syllables, Linguistic Steganography}
 %=============================================================================
 
 %_____________________________________________________________________________
